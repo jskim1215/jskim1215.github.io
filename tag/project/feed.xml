@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" >
+  <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
+  <link href="https://jskim1215.github.io/tag/project/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://jskim1215.github.io/" rel="alternate" type="text/html" />
+  <updated>2021-08-14T16:51:45+09:00</updated>
+  <id>https://jskim1215.github.io/tag/project/feed.xml</id>
+
+  
+  
+  
+
+  
+    <title type="html">우당탕 프로덕트 개발 여정 | </title>
+  
+
+  
+    <subtitle>우당탕 프로덕트 개발 여정</subtitle>
+  
+
+  
+
+  
+    
+      
+    
+  
+
+  
+  
+
+  
+    <entry>
+      <title type="html">투두리스트 Chrome Extension (4) - JS to React</title>
+      <link href="https://jskim1215.github.io/project-2-4" rel="alternate" type="text/html" title="투두리스트 Chrome Extension (4) - JS to React" />
+      <published>2021-08-12T13:01:06+09:00</published>
+      <updated>2021-08-12T13:01:06+09:00</updated>
+      <id>https://jskim1215.github.io/project-2-4</id>
+      <content type="html" xml:base="https://jskim1215.github.io/project-2-4">&lt;p&gt;테스트&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>CodePurple</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="project" />
+      
+
+      
+        <summary type="html">테스트</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">투두리스트 Chrome Extension (3) - 학습용 스톱워치 그리고 공부시간 수정하기</title>
+      <link href="https://jskim1215.github.io/project-2-3" rel="alternate" type="text/html" title="투두리스트 Chrome Extension (3) - 학습용 스톱워치 그리고 공부시간 수정하기" />
+      <published>2021-08-05T10:01:06+09:00</published>
+      <updated>2021-08-05T10:01:06+09:00</updated>
+      <id>https://jskim1215.github.io/project-2-3</id>
+      <content type="html" xml:base="https://jskim1215.github.io/project-2-3">&lt;h2 id=&quot;구현-아이디어&quot;&gt;구현 아이디어&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;start 버튼 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;addEventListener&lt;/code&gt;에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;click Event&lt;/code&gt; 발생시 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;startTimer()&lt;/code&gt; 함수 실행 &lt;br /&gt;
+    &lt;ul&gt;
+      &lt;li&gt;이 때, 다른 버튼 비활성화&lt;/li&gt;
+      &lt;li&gt;타이머의 경우, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Date.now()&lt;/code&gt;를 활용해 mileseconds 값을 Hh:Mm:Ss로 변환&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;스톱워치 중지 시, Dropdown list에 등록된 할 일 중에 하나를 선택
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;change Event&lt;/code&gt; 발생 시, 해당 option의 id를 local storage에 저장&lt;/li&gt;
+      &lt;li&gt;추가 버튼 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;click Event&lt;/code&gt; 발생 시, local storage에서 id 비교 후 공부시간 수정&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;화면에서 나갈 경우
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;onbeforeunload Event&lt;/code&gt;를 통해, 나가는 시간 local storage에 저장&lt;/li&gt;
+      &lt;li&gt;웹 켜졌을 경우, 현재 시간과 차이 계산해서 시간 수정 후 화면에 표시
+&lt;!--break--&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;예상-구현-결과&quot;&gt;예상 구현 결과&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;공부 하는 시간 측정하는 스톱워치&lt;/li&gt;
+  &lt;li&gt;등록되있는 할 일 중에 선택해서 공부시간 추가하기&lt;/li&gt;
+  &lt;li&gt;화면에서 나가더라도 스톱워치 유지하기&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;rate-determining-step-걸림돌&quot;&gt;Rate-Determining Step (걸림돌)&lt;/h2&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;Line&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;54&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;totalUsageTimeEdit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Dropdown list에서 할 일을 선택하는 순간, 바로 시간이 수정되는 것이 아니라 시간 수정 버튼을 눌렀을 경우에 시간이 수정되어야 된다. 
+ 이 때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dropdown list&lt;/code&gt;에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;submit event&lt;/code&gt;가 일어났을 때 정보를 받으려고 하니 list element 전부가 받아와져서 dropdown list에서 option의 id를 가져오는 데 어려움이 있었다. &lt;br /&gt;
+ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Local Storage&lt;/code&gt;에 잠깐 dropdown list element의 id를 저장했다가 submit할 때 받는 형식으로 해결해봤다.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;Line&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;54&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;totalUsageTimeEdit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;nl&quot;&gt;Line&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;77&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;totalUsageTimeToSeconds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;timeData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;nl&quot;&gt;Line&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;87&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;secondsToHhMmSs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;inputTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;공부 시간을 기존 데이터에서 추가하는 과정에 있어서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;String&lt;/code&gt;으로 표현된 시간을 수정하는 과정에서 전부 seconds로 바꿨다가 다시 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;string&lt;/code&gt;으로 전달하는 과정에서 코드의 실수가 꽤 잦았다.&lt;/p&gt;
+
+&lt;h2 id=&quot;구현-코드&quot;&gt;구현 코드&lt;/h2&gt;
+&lt;noscript&gt;&lt;pre&gt;400: Invalid request&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/1776b5a902e50562af45839e4f7442df.js&quot;&gt; &lt;/script&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>CodePurple</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="project" />
+      
+
+      
+        <summary type="html">구현 아이디어 start 버튼 addEventListener에서 click Event 발생시 startTimer() 함수 실행 이 때, 다른 버튼 비활성화 타이머의 경우, Date.now()를 활용해 mileseconds 값을 Hh:Mm:Ss로 변환 스톱워치 중지 시, Dropdown list에 등록된 할 일 중에 하나를 선택 change Event 발생 시, 해당 option의 id를 local storage에 저장 추가 버튼 click Event 발생 시, local storage에서 id 비교 후 공부시간 수정 화면에서 나갈 경우 onbeforeunload Event를 통해, 나가는 시간 local storage에 저장 웹 켜졌을 경우, 현재 시간과 차이 계산해서 시간 수정 후 화면에 표시</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">투두리스트 Chrome Extension (2) - 할 일 등록하기</title>
+      <link href="https://jskim1215.github.io/project-2-2" rel="alternate" type="text/html" title="투두리스트 Chrome Extension (2) - 할 일 등록하기" />
+      <published>2021-08-05T10:01:05+09:00</published>
+      <updated>2021-08-05T10:01:05+09:00</updated>
+      <id>https://jskim1215.github.io/project-2-2</id>
+      <content type="html" xml:base="https://jskim1215.github.io/project-2-2">&lt;h2 id=&quot;구현-아이디어&quot;&gt;구현 아이디어&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;기존 submit에서 input만 추가해서, object에 각각 key 값 설정 후 저장&lt;/li&gt;
+  &lt;li&gt;저장한 데이터를 테이블 형태로 표시하기&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!--break--&gt;
+&lt;h2 id=&quot;예상-구현-결과&quot;&gt;예상 구현 결과&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;할 일에 대한 데이터를 입력받고 표 형태로 화면에 보여주기&lt;/li&gt;
+  &lt;li&gt;할 일 완료시 해당 할 일 삭제하기&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;rate-determining-step-걸림돌&quot;&gt;Rate-Determining Step (걸림돌)&lt;/h2&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;deleteTargetSubject&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;subjectDropdown&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`[id=&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;]`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;queryselector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`#&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;아래 첨부한 코드에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Line 21&lt;/code&gt;에서 삭제할 element를 가져오는 과정에서 아래와 같은 방식으로 계속 코드를 작성하다가 오류가 발생했다. 구글링을 통해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[id=&quot; &quot;]&lt;/code&gt;도 같은 기능을 한다고 알게 되어 해결은 했지만, 아직도 아래 코드가 실행이 안되는 이유는 잘 모르겠다.&lt;/p&gt;
+
+&lt;h2 id=&quot;구현-코드&quot;&gt;구현 코드&lt;/h2&gt;
+
+&lt;noscript&gt;&lt;pre&gt;400: Invalid request&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/2c4853a5039d2fcfa5f1c821cf47eb72.js&quot;&gt; &lt;/script&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>CodePurple</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="project" />
+      
+
+      
+        <summary type="html">구현 아이디어 기존 submit에서 input만 추가해서, object에 각각 key 값 설정 후 저장 저장한 데이터를 테이블 형태로 표시하기</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">투두리스트 Chrome Extension (1) - 기획하기</title>
+      <link href="https://jskim1215.github.io/project-2-1" rel="alternate" type="text/html" title="투두리스트 Chrome Extension (1) - 기획하기" />
+      <published>2021-08-05T10:01:04+09:00</published>
+      <updated>2021-08-05T10:01:04+09:00</updated>
+      <id>https://jskim1215.github.io/project-2-1</id>
+      <content type="html" xml:base="https://jskim1215.github.io/project-2-1">&lt;h2 id=&quot;기획의도&quot;&gt;기획의도&lt;/h2&gt;
+&lt;p&gt;대학교 학습 지원 프로그램에서 과제나 일정을 확인하는데 과정이 번거롭다고 생각했다. &lt;!--break--&gt;
+그래서 크롬 익스텐션을 활용해서 매번 탭을 열 때마다 확인가능한 투두리스트 프로그램이 있다면 일정을 관리하는데 도움이 되지 않을까라는 아이디어에서 시작했다.
+특히 타겟 사용자인 대학생의 경우, 노트북이나 컴퓨터를 활용하는 경우가 많기 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Local Storage&lt;/code&gt;를 활용하는 데 어려움이 없을 것이라고 생각했다. &lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;추후에는 서버를 활용해서 다양한 기기에서 사용 가능하도록 확장해야겠지만 현재 배운 내용으로 구현할 수 있는 한계를 고려해서 해당 아이템을 선정했다.&lt;/p&gt;
+
+&lt;h2 id=&quot;최소-구현-기능&quot;&gt;최소 구현 기능&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;할 일 데이터 등록하고 보여주기&lt;/code&gt; &lt;br /&gt;
+과제의 형식이 다양하기 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;할 일(이름), 해당 과목(주제), 마감일 그리고 형식&lt;/code&gt;을 데이터로 받기로 선택했다. &lt;br /&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;예상 구현 아이디어&lt;/code&gt; &lt;br /&gt;
+&lt;a href=&quot;https://jskim1215.github.io/study-1-3&quot;&gt;바닐라 JS로 크롬 앱 만들기&lt;/a&gt;에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Local Storage&lt;/code&gt;에 Input을 추가해서 Submit 할 수 있도록 해서 구현해볼 예정이다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;학습용 타이머&lt;/code&gt; &lt;br /&gt;
+해당 과제를 하는 데 사용한 시간을 측정하고 등록된 할 일에 추가할 수 있는 기능을 만들었다. 매번 학습용 타이머를 사용하지만 어떤 할 일에 얼마나 시간을 사용했는지 알기 쉽도록 하기 위해 기능을 생각해봤다. &lt;br /&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;예상 구현 아이디어&lt;/code&gt; &lt;br /&gt;
+&lt;a href=&quot;https://jskim1215.github.io/study-1-3&quot;&gt;바닐라 JS로 크롬 앱 만들기&lt;/a&gt;에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Date&lt;/code&gt; 기능을 활용해서 시간 차이를 기록한 후, Hh:Mm:Ss로 변환해서 화면에 띄울 예정이다.
+해당 사이트를 닫혔을 경우, 닫힌 시간을 저장해서 닫혀있는 기간에도 스톱워치가 유지된 것처럼 보이게 해볼 예정이다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Sort By Subject&lt;/code&gt; &lt;br /&gt;
+할 일 목록을 주제에 따라 분류할 수 있도록해서 공부를 넘어 일상생활의 데이터도 활용 가능하도록 구상했다.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;예상 구현 아이디어&lt;/code&gt; &lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;addEventListener()&lt;/code&gt;에서 Click을 할 경우, 해당 Subject에 해당하는 정보를 local Storage에서 가져와서 보여주는 함수를 실행하면 될 것 같다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>CodePurple</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="project" />
+      
+
+      
+        <summary type="html">기획의도 대학교 학습 지원 프로그램에서 과제나 일정을 확인하는데 과정이 번거롭다고 생각했다. 그래서 크롬 익스텐션을 활용해서 매번 탭을 열 때마다 확인가능한 투두리스트 프로그램이 있다면 일정을 관리하는데 도움이 되지 않을까라는 아이디어에서 시작했다. 특히 타겟 사용자인 대학생의 경우, 노트북이나 컴퓨터를 활용하는 경우가 많기 때문에 Local Storage를 활용하는 데 어려움이 없을 것이라고 생각했다.</summary>
+      
+
+      
+      
+    </entry>
+  
+</feed>
