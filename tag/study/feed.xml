@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://jskim1215.github.io/tag/study/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://jskim1215.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-08-14T17:38:34+09:00</updated>
+  <updated>2021-08-14T21:42:44+09:00</updated>
   <id>https://jskim1215.github.io/tag/study/feed.xml</id>
 
   
@@ -646,6 +646,48 @@
       <updated>2021-08-05T10:01:02+09:00</updated>
       <id>https://jskim1215.github.io/study-1-2</id>
       <content type="html" xml:base="https://jskim1215.github.io/study-1-2">&lt;h2 id=&quot;document-object&quot;&gt;Document Object&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Javascript&lt;/code&gt;를 사용하면서 우리는 동적인 페이지를 구성할 수 있다. 그러기 위해서 페이지에서 각 부분이 어떻게 컴퓨터가 인식하고 있는지 알고 있어야한다. &lt;!--break--&gt;
+이 과정에서 먼저 HTML에 대한 이해도가 기반이 되어야 한다. Class와 Id 정도의 개념을 이해하고 있다면 괜찮다.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;telem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;event&quot;&gt;Event&lt;/h2&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>CodePurple</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="study" />
+      
+
+      
+        <summary type="html">Document Object</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">바닐라 JS로 크롬 앱 만들기 (2) - Document Object And Event</title>
+      <link href="https://jskim1215.github.io/study-1-7" rel="alternate" type="text/html" title="바닐라 JS로 크롬 앱 만들기 (2) - Document Object And Event" />
+      <published>2021-08-05T10:01:02+09:00</published>
+      <updated>2021-08-05T10:01:02+09:00</updated>
+      <id>https://jskim1215.github.io/study-1-7</id>
+      <content type="html" xml:base="https://jskim1215.github.io/study-1-7">&lt;h2 id=&quot;document-object&quot;&gt;Document Object&lt;/h2&gt;
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Javascript&lt;/code&gt;를 사용하면서 우리는 동적인 페이지를 구성할 수 있다. 그러기 위해서 페이지에서 각 부분이 어떻게 컴퓨터가 인식하고 있는지 알고 있어야한다. &lt;!--break--&gt;
 이 과정에서 먼저 HTML에 대한 이해도가 기반이 되어야 한다. Class와 Id 정도의 개념을 이해하고 있다면 괜찮다. 
 &lt;br /&gt;&lt;/p&gt;
@@ -707,57 +749,64 @@
       <published>2021-08-05T10:01:01+09:00</published>
       <updated>2021-08-05T10:01:01+09:00</updated>
       <id>https://jskim1215.github.io/study-1-1</id>
-      <content type="html" xml:base="https://jskim1215.github.io/study-1-1">&lt;h2 id=&quot;data-type&quot;&gt;Data Type&lt;/h2&gt;
-&lt;p&gt;기본적으로 프로그래밍 언어를 배우는데 있어서 데이터들의 타입에 대해 인지하고 있는 것이 중요하다.  &lt;!--break--&gt;
- 왜냐하면 예를 들어, 저장된 값이 사람인 우리들은 숫자로써 혹은 문자로써 의미가 있는지 알고 있지만 컴퓨터는 우리가 시킨대로 숫자 혹은 문자로 저장하기 때문에 숫자가 들어가야하는 자리에 문자 데이터가 들어가면 실행이 안되기 때문이다. 
-&lt;br /&gt;&lt;/p&gt;
+      <content type="html" xml:base="https://jskim1215.github.io/study-1-1">&lt;h2 id=&quot;data-types&quot;&gt;Data Types&lt;/h2&gt;
 
-&lt;p&gt;Javascript에는 크게 4가지의 데이터 종류가 있다.&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;String&lt;/code&gt; = 문자&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Number&lt;/code&gt; = 숫자&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Array&lt;/code&gt;
-&lt;br /&gt; Array는 Array[Index] 형태로 내부에 있는 데이터를 가져올 수 있다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Object&lt;/code&gt;
-&lt;br /&gt; Object는 Object[Key] 형태로 내부에 있는 데이터를 가져올 수 있다.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;프로그래밍 과정에서 사용하는 데이터의 종류. 컴퓨터는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;숫자 3&lt;/code&gt;과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;글자 3&lt;/code&gt;을 다른 것이라고 생각한다. 추후 코드를 짜면서 숫자 자리에 문자가 들어가서 오류가 나거나 반대의 경우도 생길 수 있음.&lt;/p&gt;
 
-&lt;p&gt;얘네들을 구분하는 방법은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;console.log(typeof &quot;여기다가 종류를 알고싶은 변수&quot;)&lt;/code&gt;로 알아낼 수 있다.&lt;/p&gt;
+&lt;h3 id=&quot;string&quot;&gt;String&lt;/h3&gt;
+
+&lt;p&gt;문자형 데이터. “123456789” 이런 데이터도 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;String&lt;/code&gt;으로 받으니 주의할 것&lt;/p&gt;
+
+&lt;h3 id=&quot;number&quot;&gt;Number&lt;/h3&gt;
+
+&lt;p&gt;숫자형 데이터. 순서 같은 내용을 다룰 때, 자주 사용&lt;/p&gt;
+
+&lt;h3 id=&quot;array&quot;&gt;Array&lt;/h3&gt;
+
+&lt;p&gt;한국말로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;배열&lt;/code&gt;인데 단어 그대로 맨 앞부터 순서대로 나열한 묶음 같은 거라고 생각하면 편하다. 다만, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;첫번째 자리&lt;/code&gt;를 컴퓨터는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0번째 자리&lt;/code&gt;라고 한다는 점에서 차이가 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;object&quot;&gt;Object&lt;/h3&gt;
+
+&lt;p&gt;한국말로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;객체&lt;/code&gt;이다. 배열과 유사하나 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;key-value&lt;/code&gt;라는 한 묶음이 여러 개 모인 집합이다. 예를 들어 한 사람의 나이, 성별, 주소 등을 묶어서 저장하고 싶을 경우 사용한다.&lt;/p&gt;
 
 &lt;h2 id=&quot;variable-변수&quot;&gt;Variable (변수)&lt;/h2&gt;
-&lt;p&gt;프로그래밍을 할 때, 우리는 변수라는 것을 만들게 되는데 이 때 방법은 크게 3가지가 있다.&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var&lt;/code&gt;
-&lt;br /&gt; 이 친구는 다른 친구들로 대체할 수 있어서 잘 안쓰인다고 했다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;let&lt;/code&gt;
-&lt;br /&gt; 이 친구의 경우, 내가 변수로 만들고 다음에 이 변수의 수정이 가능하다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;const&lt;/code&gt;
-&lt;br /&gt; 이름에서 보다시피 이 친구는 내가 한 번 변수로 만들면 다른데서 수정이 불가능하다.&lt;/li&gt;
-&lt;/ol&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;y=f(x)&lt;/code&gt; 같은 함수에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x&lt;/code&gt; 역할을 하는 프로그래밍 요소이다. 프로그래밍 과정에서 변수라고 알려주는 코드는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Javascript&lt;/code&gt;에서 크게 3가지가 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;var&quot;&gt;var&lt;/h3&gt;
+
+&lt;p&gt;이 친구는 다른 친구들로 대체할 수 있어서 잘 안쓰인다고 했다.&lt;/p&gt;
+
+&lt;h3 id=&quot;let&quot;&gt;let&lt;/h3&gt;
+
+&lt;p&gt;이 친구의 경우, 내가 변수로 만들고 다음에 이 변수의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;수정이 가능&lt;/code&gt;하다.&lt;/p&gt;
+
+&lt;h3 id=&quot;const&quot;&gt;const&lt;/h3&gt;
+
+&lt;p&gt;이름에서 보다시피 이 친구는 내가 한 번 변수로 만들면 다른데서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;수정이 불가능&lt;/code&gt;하다.&lt;/p&gt;
 
 &lt;h2 id=&quot;function-함수&quot;&gt;Function (함수)&lt;/h2&gt;
-&lt;p&gt;함수의 기본적인 구성은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;function &quot;함수이름&quot; (&quot;인자&quot;) {&quot;실행&quot;}&lt;/code&gt; 이다. 우리가 수학시간에 배웠던 것처럼 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;y=f(x)&lt;/code&gt;에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;인자 = x&lt;/code&gt; 그리고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;실행 = f(x)&lt;/code&gt; 라고 생각하면 편하다. 
+
+&lt;p&gt;함수의 기본적인 구성은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;function &quot;함수이름&quot; (&quot;인자&quot;) {&quot;실행&quot;}&lt;/code&gt; 이다. 우리가 수학시간에 배웠던 것처럼 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;y=f(x)&lt;/code&gt;에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;인자 = x&lt;/code&gt; 그리고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;실행 = f(x)&lt;/code&gt; 라고 생각하면 편하다.
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;이 때, 함수에 x를 입력할 때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;데이터 타입&lt;/code&gt;을 고려해줘야 하는 것을 주의해야한다. 만약 x에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;number&lt;/code&gt;를 넣고 함수를 진행시키는 코드를 만들었는데 실제로 x에 들어간 데이터가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;String&lt;/code&gt;이라면 함수가 제대로 실행되지 않고 오류가 발생한다.&lt;/p&gt;
 
-&lt;h2 id=&quot;return&quot;&gt;Return&lt;/h2&gt;
-&lt;p&gt;이 때, 함수를 실행하고 어떤 값을 다시 반환해서 프로그램을 진행시켜야 하는 경우가 있다. 수학시간을 떠올려보면 합성함수(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;y=g(f(x))&lt;/code&gt;) 같은 경우를 떠올려보면 y=f(x)를 실행시키고 이때 y를 다시 g(x)라는 함수에 넣어주려는 경우를 떠올려보면 쉽다.&lt;/p&gt;
+&lt;h3 id=&quot;return&quot;&gt;Return&lt;/h3&gt;
+
+&lt;p&gt;수학에서 함수는 무조건 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;어떤 결과 값&lt;/code&gt;을 도출해내지만, 프로그래밍에서는 단순히 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;어떤 작업만 하는 경우&lt;/code&gt;도 함수로 만들어서 처리하는 경우가 있다. 따라서 함수를 통해 어떤 결과 값을 받아 다시 사용할 경우 함수 마지막 부분에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;return&lt;/code&gt;을 통해 원하는 element를 반환해주어야 한다.&lt;/p&gt;
 
 &lt;h2 id=&quot;conditionals-조건문&quot;&gt;Conditionals (조건문)&lt;/h2&gt;
-&lt;p&gt;조건문은 영어시간에 if를 떠올려보면 쉽다. 또는 입국심사 같은 거를 하는 친구라고 볼 수 있다. 만약에 특정한 경우에만 어떤 행동을 진행시켜야한다고 할 때 사용된다. 이 때, True / False 의 데이터 타입인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;boolean&lt;/code&gt;이 사용된다. 
+
+&lt;p&gt;조건문은 영어시간에 if를 떠올려보면 쉽다. 또는 입국심사 같은 거를 하는 친구라고 볼 수 있다. 만약에 특정한 경우에만 어떤 행동을 진행시켜야한다고 할 때 사용된다. 이 때, True / False 의 데이터 타입인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;boolean&lt;/code&gt;이 사용된다.
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;조건의 경우 여러가지를 걸수 있는데 이 때, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;And = &amp;amp;&amp;amp;&lt;/code&gt; 그리고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OR = ||&lt;/code&gt;가 사용된다. 겹치는 경우에 결과 값이 어떻게 나오는지를 생각할 때, 아래처럼 생각하면 편하다.&lt;/p&gt;
+
 &lt;ul&gt;
   &lt;li&gt;And는 전부 True여야 True&lt;/li&gt;
   &lt;li&gt;OR 는 하나만 True여도 True&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;필기&quot;&gt;필기&lt;/h2&gt;
-
-&lt;p&gt;다음 내용은 노마드코더 무료강의 중 &lt;a href=&quot;https://nomadcoders.co/courses&quot;&gt;바닐라 JS로 크롬 앱 만들기&lt;/a&gt;를 듣고 정리한 내용입니다.
-&lt;img src=&quot;https://user-images.githubusercontent.com/73425926/128322280-df57fb41-c3d0-4069-9aa5-c43eec32b191.jpg&quot; alt=&quot;studynote-1-1&quot; /&gt;&lt;/p&gt;</content>
+&lt;/ul&gt;</content>
 
       
       
@@ -778,7 +827,7 @@
       
 
       
-        <summary type="html">Data Type 기본적으로 프로그래밍 언어를 배우는데 있어서 데이터들의 타입에 대해 인지하고 있는 것이 중요하다. 왜냐하면 예를 들어, 저장된 값이 사람인 우리들은 숫자로써 혹은 문자로써 의미가 있는지 알고 있지만 컴퓨터는 우리가 시킨대로 숫자 혹은 문자로 저장하기 때문에 숫자가 들어가야하는 자리에 문자 데이터가 들어가면 실행이 안되기 때문이다.</summary>
+        <summary type="html">Data Types</summary>
       
 
       

@@ -11,7 +11,7 @@
 
 
     <title>
-      실전형 React Hooks 10개 (2) - UseEffect
+      바닐라 JS로 크롬 앱 만들기 (2) - Document Object And Event
     </title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -79,26 +79,26 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="우당탕 프로덕트 개발 여정" />
     <link rel="shortcut icon" href="https://jskim1215.github.io/assets/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="https://jskim1215.github.io/study-2-2" />
+    <link rel="canonical" href="https://jskim1215.github.io/study-1-7" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="우당탕 프로덕트 개발 여정" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="실전형 React Hooks 10개 (2) - UseEffect" />
-    <meta property="og:description" content="UseEffect란? useEffect는 function, dependency라는 두 개의 변수를 받는다. 여기서 dependency라는 변수는 말 그대로 해당 element에 변화가 발생하면 function을 발생시키는 친구라고 생각하면 된다. 그래서 보통 useEffect(function, [dependency]) 이런 형태로 사용된다. 주의할 점은 빈 array []의 경우 한 번만 실행되고 어떤 변화에도 재실행되지 않는 경우에 사용한다. 사용 예시 useTitle 구현 기능 :" />
-    <meta property="og:url" content="https://jskim1215.github.io/study-2-2" />
-    <meta property="og:image" content="https://jskim1215.github.io/assets/study/study-2-2.png" />
+    <meta property="og:title" content="바닐라 JS로 크롬 앱 만들기 (2) - Document Object And Event" />
+    <meta property="og:description" content="Document Object Javascript를 사용하면서 우리는 동적인 페이지를 구성할 수 있다. 그러기 위해서 페이지에서 각 부분이 어떻게 컴퓨터가 인식하고 있는지 알고 있어야한다. 이 과정에서 먼저 HTML에 대한 이해도가 기반이 되어야 한다. Class와 Id 정도의 개념을 이해하고 있다면 괜찮다. 우리가 Document에 접근하기 위해서는 크게 2가지 방법을 사용한다. getElementById("타겟 Id") 이 친구의 경우," />
+    <meta property="og:url" content="https://jskim1215.github.io/study-1-7" />
+    <meta property="og:image" content="https://jskim1215.github.io/assets/study/study-1-2.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
     <meta property="article:author" content="https://www.facebook.com/" />
-    <meta property="article:published_time" content="2021-08-08T11:01:01+09:00" />
-    <meta property="article:modified_time" content="2021-08-08T11:01:01+09:00" />
+    <meta property="article:published_time" content="2021-08-05T10:01:02+09:00" />
+    <meta property="article:modified_time" content="2021-08-05T10:01:02+09:00" />
     <meta property="article:tag" content="Study" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="실전형 React Hooks 10개 (2) - UseEffect" />
-    <meta name="twitter:description" content="UseEffect란? useEffect는 function, dependency라는 두 개의 변수를 받는다. 여기서 dependency라는 변수는 말 그대로 해당 element에 변화가 발생하면 function을 발생시키는 친구라고 생각하면 된다. 그래서 보통 useEffect(function, [dependency]) 이런 형태로 사용된다. 주의할 점은 빈 array []의 경우 한 번만 실행되고 어떤 변화에도 재실행되지 않는 경우에 사용한다. 사용 예시 useTitle 구현 기능 :" />
+    <meta name="twitter:title" content="바닐라 JS로 크롬 앱 만들기 (2) - Document Object And Event" />
+    <meta name="twitter:description" content="Document Object Javascript를 사용하면서 우리는 동적인 페이지를 구성할 수 있다. 그러기 위해서 페이지에서 각 부분이 어떻게 컴퓨터가 인식하고 있는지 알고 있어야한다. 이 과정에서 먼저 HTML에 대한 이해도가 기반이 되어야 한다. Class와 Id 정도의 개념을 이해하고 있다면 괜찮다. 우리가 Document에 접근하기 위해서는 크게 2가지 방법을 사용한다. getElementById("타겟 Id") 이 친구의 경우," />
     <meta name="twitter:url" content="https://jskim1215.github.io/" />
-    <meta name="twitter:image" content="https://jskim1215.github.io/assets/study/study-2-2.png" />
+    <meta name="twitter:image" content="https://jskim1215.github.io/assets/study/study-1-2.png" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="우당탕 프로덕트 개발 여정" />
     <meta name="twitter:label2" content="Filed under" />
@@ -117,18 +117,18 @@
         "name": "우당탕 프로덕트 개발 여정",
         "logo": "https://jskim1215.github.io/assets/images/blog-icon-2.png"
     },
-    "url": "https://jskim1215.github.io/study-2-2",
+    "url": "https://jskim1215.github.io/study-1-7",
     "image": {
         "@type": "ImageObject",
-        "url": "https://jskim1215.github.io/assets/study/study-2-2.png",
+        "url": "https://jskim1215.github.io/assets/study/study-1-2.png",
         "width": 2000,
         "height": 666
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://jskim1215.github.io/study-2-2"
+        "@id": "https://jskim1215.github.io/study-1-7"
     },
-    "description": "UseEffect란? useEffect는 function, dependency라는 두 개의 변수를 받는다. 여기서 dependency라는 변수는 말 그대로 해당 element에 변화가 발생하면 function을 발생시키는 친구라고 생각하면 된다. 그래서 보통 useEffect(function, [dependency]) 이런 형태로 사용된다. 주의할 점은 빈 array []의 경우 한 번만 실행되고 어떤 변화에도 재실행되지 않는 경우에 사용한다. 사용 예시 useTitle 구현 기능 :"
+    "description": "Document Object Javascript를 사용하면서 우리는 동적인 페이지를 구성할 수 있다. 그러기 위해서 페이지에서 각 부분이 어떻게 컴퓨터가 인식하고 있는지 알고 있어야한다. 이 과정에서 먼저 HTML에 대한 이해도가 기반이 되어야 한다. Class와 Id 정도의 개념을 이해하고 있다면 괜찮다. 우리가 Document에 접근하기 위해서는 크게 2가지 방법을 사용한다. getElementById("타겟 Id") 이 친구의 경우,"
 }
     </script>
 
@@ -141,7 +141,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="실전형 React Hooks 10개 (2) - UseEffect" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="바닐라 JS로 크롬 앱 만들기 (2) - Document Object And Event" href="/feed.xml" />
 
   </head>
   <body
@@ -199,7 +199,7 @@ into the {body} of the default.hbs template -->
             
             <header class="post-full-header">
                 <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime=" 8 August 2021"> 8 August 2021</time>
+                    <time class="post-full-meta-date" datetime=" 5 August 2021"> 5 August 2021</time>
                     
                         <span class="date-divider">/</span>
                         
@@ -209,11 +209,11 @@ into the {body} of the default.hbs template -->
                         
                     
                 </section>
-                <h1 class="post-full-title">실전형 React Hooks 10개 (2) - UseEffect</h1>
+                <h1 class="post-full-title">바닐라 JS로 크롬 앱 만들기 (2) - Document Object And Event</h1>
             </header>
 
             
-            <figure class="post-full-image" style="background-image: url(/assets/study/study-2-2.png)">
+            <figure class="post-full-image" style="background-image: url(/assets/study/study-1-2.png)">
             </figure>
             
             <section class="post-full-content">
@@ -223,71 +223,40 @@ into the {body} of the default.hbs template -->
                         <div class="toc-container">
                             <div class="toc">
                                 <div class="toc-title">목차</div>
-                                <ul class="inline_toc" id="my_toc"><li><a href="#useeffect란">UseEffect란?</a></li><li><a href="#사용-예시">사용 예시</a><ul class="sub_toc"><li><a href="#usetitle">useTitle</a></li><li><a href="#usescroll">useScroll</a></li></ul></li></ul>
+                                <ul class="inline_toc" id="my_toc"><li><a href="#document-object">Document Object</a></li><li><a href="#event">Event</a></li><li><a href="#필기">필기</a></li></ul>
 
                               </div>
                         </div>
-                        <h2 id="useeffect란">UseEffect란?</h2>
-<p>useEffect는 <code class="language-plaintext highlighter-rouge">function, dependency</code>라는 두 개의 변수를 받는다. 여기서 <code class="language-plaintext highlighter-rouge">dependency</code>라는 변수는 말 그대로 해당 element에 변화가 발생하면 function을 발생시키는 친구라고 생각하면 된다.
-<!--break--></p>
+                        <h2 id="document-object">Document Object</h2>
+<p><code class="language-plaintext highlighter-rouge">Javascript</code>를 사용하면서 우리는 동적인 페이지를 구성할 수 있다. 그러기 위해서 페이지에서 각 부분이 어떻게 컴퓨터가 인식하고 있는지 알고 있어야한다. <!--break-->
+이 과정에서 먼저 HTML에 대한 이해도가 기반이 되어야 한다. Class와 Id 정도의 개념을 이해하고 있다면 괜찮다. 
+<br /></p>
 
-<p>그래서 보통 useEffect(function, [dependency]) 이런 형태로 사용된다. <code class="language-plaintext highlighter-rouge">주의할 점</code>은 빈 array []의 경우 한 번만 실행되고 어떤 변화에도 재실행되지 않는 경우에 사용한다.</p>
-
-<h2 id="사용-예시">사용 예시</h2>
-<h3 id="usetitle">useTitle</h3>
-<p>구현 기능 : 웹페이지의 title을 변경하는 기능</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">useTitle</span> <span class="o">=</span> <span class="p">(</span><span class="nx">initialTitle</span><span class="p">)</span> <span class="o">=&gt;</span><span class="p">{</span>
-    <span class="kd">const</span> <span class="p">[</span><span class="nx">title</span><span class="p">,</span><span class="nx">setTitle</span><span class="p">]</span> <span class="o">=</span><span class="nx">useState</span><span class="p">(</span><span class="nx">initialTitle</span><span class="p">);</span>
-    <span class="kd">const</span> <span class="nx">updateTitle</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="kd">const</span> <span class="nx">htmlTitle</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">title</span><span class="dl">"</span><span class="p">);</span>
-        <span class="nx">htmlTitle</span><span class="p">.</span><span class="nx">innerText</span> <span class="o">=</span> <span class="nx">title</span><span class="p">;</span>
-    <span class="p">};</span>
-    <span class="nx">useEffect</span><span class="p">(</span><span class="nx">updateTitle</span><span class="p">,</span> <span class="p">[</span><span class="nx">title</span><span class="p">]);</span>
-    <span class="k">return</span> <span class="nx">setTitle</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">titleUpdater</span> <span class="o">=</span> <span class="nx">useTitle</span><span class="p">(</span><span class="dl">"</span><span class="s2">Loading...</span><span class="dl">"</span><span class="p">);</span>
-    <span class="nx">setTimeout</span><span class="p">(()</span><span class="o">=&gt;</span><span class="nx">titleUpdater</span><span class="p">(</span><span class="dl">"</span><span class="s2">Home</span><span class="dl">"</span><span class="p">),</span><span class="mi">5000</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>코드 설명</p>
+<p>우리가 Document에 접근하기 위해서는 크게 2가지 방법을 사용한다.</p>
 <ol>
-  <li>useTitle 함수에서 받는 string이 initialTitle</li>
-  <li>updateTitle이 웹의 title 수정</li>
-  <li>titleUpdater에서 useTitle의 initialTitle에 “Loading” 전달</li>
-  <li>titleUpdater에서 5초 후에 “Home” 전달</li>
-  <li>useTitle 함수에서 전달받은 initialTitle이 “Home”이 됬으니까 title이 바뀐 상황</li>
-  <li>useEffect 함수 실행</li>
+  <li><code class="language-plaintext highlighter-rouge">getElementById("타겟 Id")</code> <br />
+이 친구의 경우, 우리는 타겟 Id에 해당하는 모든 HTML element를 가져온다.</li>
+  <li><code class="language-plaintext highlighter-rouge">queryselector("CSS 형식")</code> <br />
+이 친구의 경우, 위와 달리 class나 HTML 요소를 접근 할 수 있다. 다만 먼저 읽힌 1개만 가져오기 때문에 전부 가져오고 싶은 경우 <code class="language-plaintext highlighter-rouge">queryselectorAll</code>을 사용해야한다.</li>
 </ol>
 
-<h3 id="usescroll">useScroll</h3>
-<p>구현 기능 : scroll이 발생했을 때, 특정 범위를 만족하면 함수 실행</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">useScroll</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="p">[</span><span class="nx">state</span><span class="p">,</span> <span class="nx">setState</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">({</span>
-      <span class="na">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="na">y</span><span class="p">:</span> <span class="mi">0</span>
-    <span class="p">});</span>
-    <span class="kd">const</span> <span class="nx">onScroll</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">setState</span><span class="p">({</span> <span class="na">y</span><span class="p">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">scrollY</span><span class="p">,</span> <span class="na">x</span><span class="p">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">screenX</span> <span class="p">});</span>
-    <span class="p">};</span>
-    <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">scroll</span><span class="dl">"</span><span class="p">,</span> <span class="nx">onScroll</span><span class="p">);</span>
-      <span class="k">return</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nb">window</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">scroll</span><span class="dl">"</span><span class="p">,</span> <span class="nx">onScroll</span><span class="p">);</span>
-    <span class="p">},</span> <span class="p">[]);</span>
-    <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
-  <span class="p">};</span>
-</code></pre></div></div>
-<p>코드 설명</p>
+<h2 id="event">Event</h2>
+<p>웹 페이지에서 일어나는 상황을 <code class="language-plaintext highlighter-rouge">Event</code>라고 표현한다. 배운 내용에 한해서는 click, submit, change가 있다. 이 과정에서 우리는 <code class="language-plaintext highlighter-rouge">addEventListener()</code>이라는 함수를 사용한다. 앞서 가져온 Document Object에 변화가 일어나는지를 관찰하는 옵저버 같은 거라고 생각하면 편하다.
+<br /></p>
+
+<p>이 때, <code class="language-plaintext highlighter-rouge">addEventListener()</code> 함수의 경우 2개의 변수를 가진다.</p>
 <ol>
-  <li>window.scrollY를 통해 y 좌표값 측정 후 업데이트</li>
-  <li>addEventListener를 통해 <code class="language-plaintext highlighter-rouge">scroll</code> 이벤트 탐지 후 <code class="language-plaintext highlighter-rouge">onScroll</code> 함수 실행</li>
-  <li>return을 통해 뒷정리</li>
+  <li><code class="language-plaintext highlighter-rouge">event</code> <br />
+아까 언급한 click, submit, change 같은 웹 페이지에서 일어나는 변화를 말한다.</li>
+  <li><code class="language-plaintext highlighter-rouge">function</code> <br />
+해당 이벤트가 발생했을 때, 실행할 함수를 이야기한다.</li>
 </ol>
 
-<p>사실 나는 여기서 <code class="language-plaintext highlighter-rouge">3번</code> 파트가 잘 이해가 되지는 않는다. component가 나타날때 useEffect가 실행되고 이후에 component가 사라질 때, clean-up 함수가( return에 들어가 있는 함수) 실행된다고 한다. 이 과정을 통해 불필요한 리소스 사용을 줄여 사이트 운용에 도움을 준다고 글을 읽은 적이 있으나 아직 그정도 규모의 프로젝트가 아니라서 그런지 체감이 크게 되지는 않는다. 하지만 이 부분에 대해 인지는 하고 있어야하니까 알아두면 좋을 것 같다.</p>
+<h2 id="필기">필기</h2>
+<p>다음 내용은 노마드코더 무료강의 중 <a href="https://nomadcoders.co/courses">바닐라 JS로 크롬 앱 만들기</a>를 듣고 정리한 내용입니다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/73425926/128354783-a14c406b-dcd5-468a-ab27-456e5e7233bc.jpg" alt="studynote-1-2" /></p>
+
 
                       </article>
                 </div>
@@ -404,32 +373,6 @@ into the {body} of the default.hbs template -->
                                 
                                   
                                     
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                
-                                  
-                                
-                                  
-                                
-                                  
-                                    
                                         
                                         
                                     
@@ -443,9 +386,32 @@ into the {body} of the default.hbs template -->
                                   
                                 
                                   
+                                
+                                  
                                     
                                         
                                         
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                  
+                                
+                                  
                                     
                                   
                                 
@@ -475,12 +441,12 @@ into the {body} of the default.hbs template -->
 
     <article class="post-card post-template">
         
-            <a class="post-card-image-link" href="/study-2-3">
-                <div class="post-card-image" style="background-image: url(/assets/study/study-2-3.png)"></div>
+            <a class="post-card-image-link" href="/study-1-3">
+                <div class="post-card-image" style="background-image: url(/assets/study/study-1-3.png)"></div>
             </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="/study-2-3">
+            <a class="post-card-content-link" href="/study-1-3">
                 <header class="post-card-header">
                     
                         
@@ -490,12 +456,13 @@ into the {body} of the default.hbs template -->
                         
                     
 
-                    <h2 class="post-card-title">실전형 React Hooks 10개 (3) - UseRef</h2>
+                    <h2 class="post-card-title">바닐라 JS로 크롬 앱 만들기 (3) - Local Storage And Clock</h2>
                 </header>
                 <section class="post-card-excerpt">
                     
-                        <p>useRef란?
-useRef는 querySelector 또는 getElementById 처럼 HTML element를 catch하는데 사용하는 느낌이다. 
+                        <p>Local Storage
+나는 당연히 모든 데이터는 서버에 저장되고 불러온다고 생각했다.  
+하지만 같은 컴퓨터를 사용한다면, local Storage라는 것을 활용해서 정보를 저장하고 불러오는 기능을 수행할 수 있다. 
 
 </p>
                     
@@ -530,12 +497,12 @@ useRef는 querySelector 또는 getElementById 처럼 HTML element를 catch하는
 
     <article class="post-card post-template">
         
-            <a class="post-card-image-link" href="/study-2-1">
-                <div class="post-card-image" style="background-image: url(/assets/study/study-2-1.png)"></div>
+            <a class="post-card-image-link" href="/study-1-2">
+                <div class="post-card-image" style="background-image: url(/assets/study/study-1-2.png)"></div>
             </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="/study-2-1">
+            <a class="post-card-content-link" href="/study-1-2">
                 <header class="post-card-header">
                     
                         
@@ -545,12 +512,11 @@ useRef는 querySelector 또는 getElementById 처럼 HTML element를 catch하는
                         
                     
 
-                    <h2 class="post-card-title">실전형 React Hooks 10개 (1) - UseState</h2>
+                    <h2 class="post-card-title">바닐라 JS로 크롬 앱 만들기 (2) - Document Object And Event</h2>
                 </header>
                 <section class="post-card-excerpt">
                     
-                        <p>React에서 동적인 데이터를 관리하는 법
-지금까지 class component에서 state 그리고 setState를 통해 데이터를 관리했다. 
+                        <p>Document Object
 
 </p>
                     
@@ -594,18 +560,18 @@ useRef는 querySelector 또는 getElementById 처럼 HTML element를 catch하는
         </a>
     </div>
     <span class="floating-header-divider">&mdash;</span>
-    <div class="floating-header-title">실전형 React Hooks 10개 (2) - UseEffect</div>
+    <div class="floating-header-title">바닐라 JS로 크롬 앱 만들기 (2) - Document Object And Event</div>
     <div class="floating-header-share">
         <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
 </svg>
 </div>
-        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%EC%8B%A4%EC%A0%84%ED%98%95+React+Hooks+10%EA%B0%9C+%282%29+-+UseEffect&amp;url=https://jskim1215.github.iostudy-2-2"
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%EB%B0%94%EB%8B%90%EB%9D%BC+JS%EB%A1%9C+%ED%81%AC%EB%A1%AC+%EC%95%B1+%EB%A7%8C%EB%93%A4%EA%B8%B0+%282%29+-+Document+Object+And+Event&amp;url=https://jskim1215.github.iostudy-1-7"
             onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
 
         </a>
-        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://jskim1215.github.iostudy-2-2"
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://jskim1215.github.iostudy-1-7"
             onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
 

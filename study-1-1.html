@@ -86,7 +86,7 @@
     <meta property="og:site_name" content="우당탕 프로덕트 개발 여정" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="바닐라 JS로 크롬 앱 만들기 (1) - Basic Data Types And Function" />
-    <meta property="og:description" content="Data Type 기본적으로 프로그래밍 언어를 배우는데 있어서 데이터들의 타입에 대해 인지하고 있는 것이 중요하다. 왜냐하면 예를 들어, 저장된 값이 사람인 우리들은 숫자로써 혹은 문자로써 의미가 있는지 알고 있지만 컴퓨터는 우리가 시킨대로 숫자 혹은 문자로 저장하기 때문에 숫자가 들어가야하는 자리에 문자 데이터가 들어가면 실행이 안되기 때문이다. Javascript에는 크게 4가지의 데이터 종류가" />
+    <meta property="og:description" content="Data Types 프로그래밍 과정에서 사용하는 데이터의 종류. 컴퓨터는 숫자 3과 글자 3을 다른 것이라고 생각한다. 추후 코드를 짜면서 숫자 자리에 문자가 들어가서 오류가 나거나 반대의 경우도 생길 수 있음. String 문자형 데이터. “123456789” 이런 데이터도 String으로 받으니 주의할 것 Number 숫자형 데이터. 순서 같은 내용을 다룰 때, 자주 사용 Array" />
     <meta property="og:url" content="https://jskim1215.github.io/study-1-1" />
     <meta property="og:image" content="https://jskim1215.github.io/assets/study/study-1-1.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
@@ -96,7 +96,7 @@
     <meta property="article:tag" content="Study" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="바닐라 JS로 크롬 앱 만들기 (1) - Basic Data Types And Function" />
-    <meta name="twitter:description" content="Data Type 기본적으로 프로그래밍 언어를 배우는데 있어서 데이터들의 타입에 대해 인지하고 있는 것이 중요하다. 왜냐하면 예를 들어, 저장된 값이 사람인 우리들은 숫자로써 혹은 문자로써 의미가 있는지 알고 있지만 컴퓨터는 우리가 시킨대로 숫자 혹은 문자로 저장하기 때문에 숫자가 들어가야하는 자리에 문자 데이터가 들어가면 실행이 안되기 때문이다. Javascript에는 크게 4가지의 데이터 종류가" />
+    <meta name="twitter:description" content="Data Types 프로그래밍 과정에서 사용하는 데이터의 종류. 컴퓨터는 숫자 3과 글자 3을 다른 것이라고 생각한다. 추후 코드를 짜면서 숫자 자리에 문자가 들어가서 오류가 나거나 반대의 경우도 생길 수 있음. String 문자형 데이터. “123456789” 이런 데이터도 String으로 받으니 주의할 것 Number 숫자형 데이터. 순서 같은 내용을 다룰 때, 자주 사용 Array" />
     <meta name="twitter:url" content="https://jskim1215.github.io/" />
     <meta name="twitter:image" content="https://jskim1215.github.io/assets/study/study-1-1.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -128,7 +128,7 @@
         "@type": "WebPage",
         "@id": "https://jskim1215.github.io/study-1-1"
     },
-    "description": "Data Type 기본적으로 프로그래밍 언어를 배우는데 있어서 데이터들의 타입에 대해 인지하고 있는 것이 중요하다. 왜냐하면 예를 들어, 저장된 값이 사람인 우리들은 숫자로써 혹은 문자로써 의미가 있는지 알고 있지만 컴퓨터는 우리가 시킨대로 숫자 혹은 문자로 저장하기 때문에 숫자가 들어가야하는 자리에 문자 데이터가 들어가면 실행이 안되기 때문이다. Javascript에는 크게 4가지의 데이터 종류가"
+    "description": "Data Types 프로그래밍 과정에서 사용하는 데이터의 종류. 컴퓨터는 숫자 3과 글자 3을 다른 것이라고 생각한다. 추후 코드를 짜면서 숫자 자리에 문자가 들어가서 오류가 나거나 반대의 경우도 생길 수 있음. String 문자형 데이터. “123456789” 이런 데이터도 String으로 받으니 주의할 것 Number 숫자형 데이터. 순서 같은 내용을 다룰 때, 자주 사용 Array"
 }
     </script>
 
@@ -223,61 +223,68 @@ into the {body} of the default.hbs template -->
                         <div class="toc-container">
                             <div class="toc">
                                 <div class="toc-title">목차</div>
-                                <ul class="inline_toc" id="my_toc"><li><a href="#data-type">Data Type</a></li><li><a href="#variable-변수">Variable (변수)</a></li><li><a href="#function-함수">Function (함수)</a></li><li><a href="#return">Return</a></li><li><a href="#conditionals-조건문">Conditionals (조건문)</a></li><li><a href="#필기">필기</a></li></ul>
+                                <ul class="inline_toc" id="my_toc"><li><a href="#data-types">Data Types</a><ul class="sub_toc"><li><a href="#string">String</a></li><li><a href="#number">Number</a></li><li><a href="#array">Array</a></li><li><a href="#object">Object</a></li></ul></li><li><a href="#variable-변수">Variable (변수)</a><ul class="sub_toc"><li><a href="#var">var</a></li><li><a href="#let">let</a></li><li><a href="#const">const</a></li></ul></li><li><a href="#function-함수">Function (함수)</a><ul class="sub_toc"><li><a href="#return">Return</a></li></ul></li><li><a href="#conditionals-조건문">Conditionals (조건문)</a></li></ul>
 
                               </div>
                         </div>
-                        <h2 id="data-type">Data Type</h2>
-<p>기본적으로 프로그래밍 언어를 배우는데 있어서 데이터들의 타입에 대해 인지하고 있는 것이 중요하다.  <!--break-->
- 왜냐하면 예를 들어, 저장된 값이 사람인 우리들은 숫자로써 혹은 문자로써 의미가 있는지 알고 있지만 컴퓨터는 우리가 시킨대로 숫자 혹은 문자로 저장하기 때문에 숫자가 들어가야하는 자리에 문자 데이터가 들어가면 실행이 안되기 때문이다. 
-<br /></p>
+                        <h2 id="data-types">Data Types</h2>
 
-<p>Javascript에는 크게 4가지의 데이터 종류가 있다.</p>
-<ol>
-  <li><code class="language-plaintext highlighter-rouge">String</code> = 문자</li>
-  <li><code class="language-plaintext highlighter-rouge">Number</code> = 숫자</li>
-  <li><code class="language-plaintext highlighter-rouge">Array</code>
-<br /> Array는 Array[Index] 형태로 내부에 있는 데이터를 가져올 수 있다.</li>
-  <li><code class="language-plaintext highlighter-rouge">Object</code>
-<br /> Object는 Object[Key] 형태로 내부에 있는 데이터를 가져올 수 있다.</li>
-</ol>
+<p>프로그래밍 과정에서 사용하는 데이터의 종류. 컴퓨터는 <code class="language-plaintext highlighter-rouge">숫자 3</code>과 <code class="language-plaintext highlighter-rouge">글자 3</code>을 다른 것이라고 생각한다. 추후 코드를 짜면서 숫자 자리에 문자가 들어가서 오류가 나거나 반대의 경우도 생길 수 있음.</p>
 
-<p>얘네들을 구분하는 방법은 <code class="language-plaintext highlighter-rouge">console.log(typeof "여기다가 종류를 알고싶은 변수")</code>로 알아낼 수 있다.</p>
+<h3 id="string">String</h3>
+
+<p>문자형 데이터. “123456789” 이런 데이터도 <code class="language-plaintext highlighter-rouge">String</code>으로 받으니 주의할 것</p>
+
+<h3 id="number">Number</h3>
+
+<p>숫자형 데이터. 순서 같은 내용을 다룰 때, 자주 사용</p>
+
+<h3 id="array">Array</h3>
+
+<p>한국말로 <code class="language-plaintext highlighter-rouge">배열</code>인데 단어 그대로 맨 앞부터 순서대로 나열한 묶음 같은 거라고 생각하면 편하다. 다만, <code class="language-plaintext highlighter-rouge">첫번째 자리</code>를 컴퓨터는 <code class="language-plaintext highlighter-rouge">0번째 자리</code>라고 한다는 점에서 차이가 있다.</p>
+
+<h3 id="object">Object</h3>
+
+<p>한국말로 <code class="language-plaintext highlighter-rouge">객체</code>이다. 배열과 유사하나 <code class="language-plaintext highlighter-rouge">key-value</code>라는 한 묶음이 여러 개 모인 집합이다. 예를 들어 한 사람의 나이, 성별, 주소 등을 묶어서 저장하고 싶을 경우 사용한다.</p>
 
 <h2 id="variable-변수">Variable (변수)</h2>
-<p>프로그래밍을 할 때, 우리는 변수라는 것을 만들게 되는데 이 때 방법은 크게 3가지가 있다.</p>
-<ol>
-  <li><code class="language-plaintext highlighter-rouge">var</code>
-<br /> 이 친구는 다른 친구들로 대체할 수 있어서 잘 안쓰인다고 했다.</li>
-  <li><code class="language-plaintext highlighter-rouge">let</code>
-<br /> 이 친구의 경우, 내가 변수로 만들고 다음에 이 변수의 수정이 가능하다.</li>
-  <li><code class="language-plaintext highlighter-rouge">const</code>
-<br /> 이름에서 보다시피 이 친구는 내가 한 번 변수로 만들면 다른데서 수정이 불가능하다.</li>
-</ol>
+
+<p><code class="language-plaintext highlighter-rouge">y=f(x)</code> 같은 함수에서 <code class="language-plaintext highlighter-rouge">x</code> 역할을 하는 프로그래밍 요소이다. 프로그래밍 과정에서 변수라고 알려주는 코드는 <code class="language-plaintext highlighter-rouge">Javascript</code>에서 크게 3가지가 있다.</p>
+
+<h3 id="var">var</h3>
+
+<p>이 친구는 다른 친구들로 대체할 수 있어서 잘 안쓰인다고 했다.</p>
+
+<h3 id="let">let</h3>
+
+<p>이 친구의 경우, 내가 변수로 만들고 다음에 이 변수의 <code class="language-plaintext highlighter-rouge">수정이 가능</code>하다.</p>
+
+<h3 id="const">const</h3>
+
+<p>이름에서 보다시피 이 친구는 내가 한 번 변수로 만들면 다른데서 <code class="language-plaintext highlighter-rouge">수정이 불가능</code>하다.</p>
 
 <h2 id="function-함수">Function (함수)</h2>
-<p>함수의 기본적인 구성은 <code class="language-plaintext highlighter-rouge">function "함수이름" ("인자") {"실행"}</code> 이다. 우리가 수학시간에 배웠던 것처럼 <code class="language-plaintext highlighter-rouge">y=f(x)</code>에서 <code class="language-plaintext highlighter-rouge">인자 = x</code> 그리고 <code class="language-plaintext highlighter-rouge">실행 = f(x)</code> 라고 생각하면 편하다. 
+
+<p>함수의 기본적인 구성은 <code class="language-plaintext highlighter-rouge">function "함수이름" ("인자") {"실행"}</code> 이다. 우리가 수학시간에 배웠던 것처럼 <code class="language-plaintext highlighter-rouge">y=f(x)</code>에서 <code class="language-plaintext highlighter-rouge">인자 = x</code> 그리고 <code class="language-plaintext highlighter-rouge">실행 = f(x)</code> 라고 생각하면 편하다.
 <br /></p>
 
 <p>이 때, 함수에 x를 입력할 때 <code class="language-plaintext highlighter-rouge">데이터 타입</code>을 고려해줘야 하는 것을 주의해야한다. 만약 x에 <code class="language-plaintext highlighter-rouge">number</code>를 넣고 함수를 진행시키는 코드를 만들었는데 실제로 x에 들어간 데이터가 <code class="language-plaintext highlighter-rouge">String</code>이라면 함수가 제대로 실행되지 않고 오류가 발생한다.</p>
 
-<h2 id="return">Return</h2>
-<p>이 때, 함수를 실행하고 어떤 값을 다시 반환해서 프로그램을 진행시켜야 하는 경우가 있다. 수학시간을 떠올려보면 합성함수(<code class="language-plaintext highlighter-rouge">y=g(f(x))</code>) 같은 경우를 떠올려보면 y=f(x)를 실행시키고 이때 y를 다시 g(x)라는 함수에 넣어주려는 경우를 떠올려보면 쉽다.</p>
+<h3 id="return">Return</h3>
+
+<p>수학에서 함수는 무조건 <code class="language-plaintext highlighter-rouge">어떤 결과 값</code>을 도출해내지만, 프로그래밍에서는 단순히 <code class="language-plaintext highlighter-rouge">어떤 작업만 하는 경우</code>도 함수로 만들어서 처리하는 경우가 있다. 따라서 함수를 통해 어떤 결과 값을 받아 다시 사용할 경우 함수 마지막 부분에 <code class="language-plaintext highlighter-rouge">return</code>을 통해 원하는 element를 반환해주어야 한다.</p>
 
 <h2 id="conditionals-조건문">Conditionals (조건문)</h2>
-<p>조건문은 영어시간에 if를 떠올려보면 쉽다. 또는 입국심사 같은 거를 하는 친구라고 볼 수 있다. 만약에 특정한 경우에만 어떤 행동을 진행시켜야한다고 할 때 사용된다. 이 때, True / False 의 데이터 타입인 <code class="language-plaintext highlighter-rouge">boolean</code>이 사용된다. 
+
+<p>조건문은 영어시간에 if를 떠올려보면 쉽다. 또는 입국심사 같은 거를 하는 친구라고 볼 수 있다. 만약에 특정한 경우에만 어떤 행동을 진행시켜야한다고 할 때 사용된다. 이 때, True / False 의 데이터 타입인 <code class="language-plaintext highlighter-rouge">boolean</code>이 사용된다.
 <br /></p>
 
 <p>조건의 경우 여러가지를 걸수 있는데 이 때, <code class="language-plaintext highlighter-rouge">And = &amp;&amp;</code> 그리고 <code class="language-plaintext highlighter-rouge">OR = ||</code>가 사용된다. 겹치는 경우에 결과 값이 어떻게 나오는지를 생각할 때, 아래처럼 생각하면 편하다.</p>
+
 <ul>
   <li>And는 전부 True여야 True</li>
   <li>OR 는 하나만 True여도 True</li>
 </ul>
-
-<h2 id="필기">필기</h2>
-
-<p>다음 내용은 노마드코더 무료강의 중 <a href="https://nomadcoders.co/courses">바닐라 JS로 크롬 앱 만들기</a>를 듣고 정리한 내용입니다.
-<img src="https://user-images.githubusercontent.com/73425926/128322280-df57fb41-c3d0-4069-9aa5-c43eec32b191.jpg" alt="studynote-1-1" /></p>
 
                       </article>
                 </div>
@@ -437,6 +444,13 @@ into the {body} of the default.hbs template -->
                                 
                                   
                                     
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
                                   
                                 
                             </ul>
@@ -444,7 +458,7 @@ into the {body} of the default.hbs template -->
                         <footer class="read-next-card-footer">
                             <a href="/tag/study/">
                                 
-                                    See all 8 posts  →
+                                    See all 9 posts  →
                                 
                             </a>
                         </footer>
@@ -477,7 +491,9 @@ into the {body} of the default.hbs template -->
                 </header>
                 <section class="post-card-excerpt">
                     
-                        <p>Document Object Javascript를 사용하면서 우리는 동적인 페이지를 구성할 수 있다. 그러기 위해서 페이지에서 각 부분이 어떻게 컴퓨터가 인식하고 있는지 알고 있어야한다. 이 과정에서 먼저 HTML에 대한 이해도가 기반이 되어야 한다. Class와 Id 정도의</p>
+                        <p>Document Object
+
+</p>
                     
                 </section>
             </a>

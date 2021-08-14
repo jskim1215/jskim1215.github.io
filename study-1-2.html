@@ -86,7 +86,16 @@
     <meta property="og:site_name" content="우당탕 프로덕트 개발 여정" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="바닐라 JS로 크롬 앱 만들기 (2) - Document Object And Event" />
-    <meta property="og:description" content="Document Object Javascript를 사용하면서 우리는 동적인 페이지를 구성할 수 있다. 그러기 위해서 페이지에서 각 부분이 어떻게 컴퓨터가 인식하고 있는지 알고 있어야한다. 이 과정에서 먼저 HTML에 대한 이해도가 기반이 되어야 한다. Class와 Id 정도의 개념을 이해하고 있다면 괜찮다. 우리가 Document에 접근하기 위해서는 크게 2가지 방법을 사용한다. getElementById("타겟 Id") 이 친구의 경우," />
+    <meta property="og:description" content="Document Object
+
+Javascript를 사용하면서 우리는 동적인 페이지를 구성할 수 있다. 그러기 위해서 페이지에서 각 부분이 어떻게 컴퓨터가 인식하고 있는지 알고 있어야한다. 
+이 과정에서 먼저 HTML에 대한 이해도가 기반이 되어야 한다. Class와 Id 정도의 개념을 이해하고 있다면 괜찮다.
+
+telem;
+
+
+Event
+" />
     <meta property="og:url" content="https://jskim1215.github.io/study-1-2" />
     <meta property="og:image" content="https://jskim1215.github.io/assets/study/study-1-2.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
@@ -96,7 +105,16 @@
     <meta property="article:tag" content="Study" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="바닐라 JS로 크롬 앱 만들기 (2) - Document Object And Event" />
-    <meta name="twitter:description" content="Document Object Javascript를 사용하면서 우리는 동적인 페이지를 구성할 수 있다. 그러기 위해서 페이지에서 각 부분이 어떻게 컴퓨터가 인식하고 있는지 알고 있어야한다. 이 과정에서 먼저 HTML에 대한 이해도가 기반이 되어야 한다. Class와 Id 정도의 개념을 이해하고 있다면 괜찮다. 우리가 Document에 접근하기 위해서는 크게 2가지 방법을 사용한다. getElementById("타겟 Id") 이 친구의 경우," />
+    <meta name="twitter:description" content="Document Object
+
+Javascript를 사용하면서 우리는 동적인 페이지를 구성할 수 있다. 그러기 위해서 페이지에서 각 부분이 어떻게 컴퓨터가 인식하고 있는지 알고 있어야한다. 
+이 과정에서 먼저 HTML에 대한 이해도가 기반이 되어야 한다. Class와 Id 정도의 개념을 이해하고 있다면 괜찮다.
+
+telem;
+
+
+Event
+" />
     <meta name="twitter:url" content="https://jskim1215.github.io/" />
     <meta name="twitter:image" content="https://jskim1215.github.io/assets/study/study-1-2.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -128,7 +146,16 @@
         "@type": "WebPage",
         "@id": "https://jskim1215.github.io/study-1-2"
     },
-    "description": "Document Object Javascript를 사용하면서 우리는 동적인 페이지를 구성할 수 있다. 그러기 위해서 페이지에서 각 부분이 어떻게 컴퓨터가 인식하고 있는지 알고 있어야한다. 이 과정에서 먼저 HTML에 대한 이해도가 기반이 되어야 한다. Class와 Id 정도의 개념을 이해하고 있다면 괜찮다. 우리가 Document에 접근하기 위해서는 크게 2가지 방법을 사용한다. getElementById("타겟 Id") 이 친구의 경우,"
+    "description": "Document Object
+
+Javascript를 사용하면서 우리는 동적인 페이지를 구성할 수 있다. 그러기 위해서 페이지에서 각 부분이 어떻게 컴퓨터가 인식하고 있는지 알고 있어야한다. 
+이 과정에서 먼저 HTML에 대한 이해도가 기반이 되어야 한다. Class와 Id 정도의 개념을 이해하고 있다면 괜찮다.
+
+telem;
+
+
+Event
+"
 }
     </script>
 
@@ -223,40 +250,19 @@ into the {body} of the default.hbs template -->
                         <div class="toc-container">
                             <div class="toc">
                                 <div class="toc-title">목차</div>
-                                <ul class="inline_toc" id="my_toc"><li><a href="#document-object">Document Object</a></li><li><a href="#event">Event</a></li><li><a href="#필기">필기</a></li></ul>
+                                <ul class="inline_toc" id="my_toc"><li><a href="#document-object">Document Object</a></li><li><a href="#event">Event</a></li></ul>
 
                               </div>
                         </div>
                         <h2 id="document-object">Document Object</h2>
-<p><code class="language-plaintext highlighter-rouge">Javascript</code>를 사용하면서 우리는 동적인 페이지를 구성할 수 있다. 그러기 위해서 페이지에서 각 부분이 어떻게 컴퓨터가 인식하고 있는지 알고 있어야한다. <!--break-->
-이 과정에서 먼저 HTML에 대한 이해도가 기반이 되어야 한다. Class와 Id 정도의 개념을 이해하고 있다면 괜찮다. 
-<br /></p>
 
-<p>우리가 Document에 접근하기 위해서는 크게 2가지 방법을 사용한다.</p>
-<ol>
-  <li><code class="language-plaintext highlighter-rouge">getElementById("타겟 Id")</code> <br />
-이 친구의 경우, 우리는 타겟 Id에 해당하는 모든 HTML element를 가져온다.</li>
-  <li><code class="language-plaintext highlighter-rouge">queryselector("CSS 형식")</code> <br />
-이 친구의 경우, 위와 달리 class나 HTML 요소를 접근 할 수 있다. 다만 먼저 읽힌 1개만 가져오기 때문에 전부 가져오고 싶은 경우 <code class="language-plaintext highlighter-rouge">queryselectorAll</code>을 사용해야한다.</li>
-</ol>
+<p><code class="language-plaintext highlighter-rouge">Javascript</code>를 사용하면서 우리는 동적인 페이지를 구성할 수 있다. 그러기 위해서 페이지에서 각 부분이 어떻게 컴퓨터가 인식하고 있는지 알고 있어야한다. <!--break-->
+이 과정에서 먼저 HTML에 대한 이해도가 기반이 되어야 한다. Class와 Id 정도의 개념을 이해하고 있다면 괜찮다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">telem</span><span class="p">;</span>
+</code></pre></div></div>
 
 <h2 id="event">Event</h2>
-<p>웹 페이지에서 일어나는 상황을 <code class="language-plaintext highlighter-rouge">Event</code>라고 표현한다. 배운 내용에 한해서는 click, submit, change가 있다. 이 과정에서 우리는 <code class="language-plaintext highlighter-rouge">addEventListener()</code>이라는 함수를 사용한다. 앞서 가져온 Document Object에 변화가 일어나는지를 관찰하는 옵저버 같은 거라고 생각하면 편하다.
-<br /></p>
-
-<p>이 때, <code class="language-plaintext highlighter-rouge">addEventListener()</code> 함수의 경우 2개의 변수를 가진다.</p>
-<ol>
-  <li><code class="language-plaintext highlighter-rouge">event</code> <br />
-아까 언급한 click, submit, change 같은 웹 페이지에서 일어나는 변화를 말한다.</li>
-  <li><code class="language-plaintext highlighter-rouge">function</code> <br />
-해당 이벤트가 발생했을 때, 실행할 함수를 이야기한다.</li>
-</ol>
-
-<h2 id="필기">필기</h2>
-<p>다음 내용은 노마드코더 무료강의 중 <a href="https://nomadcoders.co/courses">바닐라 JS로 크롬 앱 만들기</a>를 듣고 정리한 내용입니다.</p>
-
-<p><img src="https://user-images.githubusercontent.com/73425926/128354783-a14c406b-dcd5-468a-ab27-456e5e7233bc.jpg" alt="studynote-1-2" /></p>
-
 
                       </article>
                 </div>
@@ -413,6 +419,10 @@ into the {body} of the default.hbs template -->
                                 
                                   
                                     
+                                  
+                                
+                                  
+                                    
                                         
                                         
                                     
@@ -423,7 +433,7 @@ into the {body} of the default.hbs template -->
                         <footer class="read-next-card-footer">
                             <a href="/tag/study/">
                                 
-                                    See all 8 posts  →
+                                    See all 9 posts  →
                                 
                             </a>
                         </footer>
@@ -437,12 +447,12 @@ into the {body} of the default.hbs template -->
 
     <article class="post-card post-template">
         
-            <a class="post-card-image-link" href="/study-1-3">
-                <div class="post-card-image" style="background-image: url(/assets/study/study-1-3.png)"></div>
+            <a class="post-card-image-link" href="/study-1-7">
+                <div class="post-card-image" style="background-image: url(/assets/study/study-1-2.png)"></div>
             </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="/study-1-3">
+            <a class="post-card-content-link" href="/study-1-7">
                 <header class="post-card-header">
                     
                         
@@ -452,15 +462,11 @@ into the {body} of the default.hbs template -->
                         
                     
 
-                    <h2 class="post-card-title">바닐라 JS로 크롬 앱 만들기 (3) - Local Storage And Clock</h2>
+                    <h2 class="post-card-title">바닐라 JS로 크롬 앱 만들기 (2) - Document Object And Event</h2>
                 </header>
                 <section class="post-card-excerpt">
                     
-                        <p>Local Storage
-나는 당연히 모든 데이터는 서버에 저장되고 불러온다고 생각했다.  
-하지만 같은 컴퓨터를 사용한다면, local Storage라는 것을 활용해서 정보를 저장하고 불러오는 기능을 수행할 수 있다. 
-
-</p>
+                        <p>Document Object Javascript를 사용하면서 우리는 동적인 페이지를 구성할 수 있다. 그러기 위해서 페이지에서 각 부분이 어떻게 컴퓨터가 인식하고 있는지 알고 있어야한다. 이 과정에서 먼저 HTML에 대한 이해도가 기반이 되어야 한다. Class와 Id 정도의</p>
                     
                 </section>
             </a>
@@ -512,7 +518,9 @@ into the {body} of the default.hbs template -->
                 </header>
                 <section class="post-card-excerpt">
                     
-                        <p>Data Type 기본적으로 프로그래밍 언어를 배우는데 있어서 데이터들의 타입에 대해 인지하고 있는 것이 중요하다. 왜냐하면 예를 들어, 저장된 값이 사람인 우리들은 숫자로써 혹은 문자로써 의미가 있는지 알고 있지만 컴퓨터는 우리가 시킨대로 숫자 혹은</p>
+                        <p>Data Types
+
+</p>
                     
                 </section>
             </a>
