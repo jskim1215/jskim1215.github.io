@@ -104,7 +104,6 @@
         <title>실전형 React Hooks 10개 (1) - UseState</title>
         
           <description>&lt;h2 id=&quot;react에서-동적인-데이터를-관리하는-법&quot;&gt;React에서 동적인 데이터를 관리하는 법&lt;/h2&gt;
-&lt;p&gt;지금까지 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;class component&lt;/code&gt;에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt; 그리고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setState&lt;/code&gt;를 통해 데이터를 관리했다. &lt;!--break--&gt;&lt;/p&gt;
 
 </description>
         

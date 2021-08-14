@@ -228,6 +228,7 @@ into the {body} of the default.hbs template -->
                               </div>
                         </div>
                         <h2 id="react에서-동적인-데이터를-관리하는-법">React에서 동적인 데이터를 관리하는 법</h2>
+
 <p>지금까지 <code class="language-plaintext highlighter-rouge">class component</code>에서 <code class="language-plaintext highlighter-rouge">state</code> 그리고 <code class="language-plaintext highlighter-rouge">setState</code>를 통해 데이터를 관리했다. <!--break--></p>
 
 <p>하지만 React에서 더 쉽게 동적인 데이터를 관리하는 방법이 있다. 바로 <code class="language-plaintext highlighter-rouge">useState</code>라는 함수이다.<br />
@@ -242,84 +243,112 @@ into the {body} of the default.hbs template -->
     <span class="k">return</span> <span class="p">(</span>
       <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">App</span><span class="dl">"</span><span class="o">&gt;</span>
         <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nb">Number</span> <span class="k">of</span> <span class="nx">item</span> <span class="nx">is</span> <span class="p">{</span><span class="nx">item</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">IncrementElement</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Increment</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">DecrementElement</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Decrement</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>    <span class="p">);</span>
-  <span class="p">}</span>
-  <span class="nx">IncrementElement</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">((</span><span class="nx">state</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="p">{</span>
-        <span class="na">item</span><span class="p">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">item</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="p">};</span>
-    <span class="p">});</span>
-  <span class="p">};</span>
-  <span class="nx">DecrementElement</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">((</span><span class="nx">state</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="p">{</span>
-        <span class="na">item</span><span class="p">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">item</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="p">};</span>
-    <span class="p">});</span>
-  <span class="p">};</span>
-<span class="p">}</span>
+</span>
 </code></pre></div></div>
+
+<!-- ```javascript
+class AppAgly extends React.component {
+  state = {
+    item: 0,
+  };
+  render() {
+    const { item } = this.state;
+    return (
+      <div className="App">
+        <h1>Number of item is {item}</h1>
+        <button onClick={IncrementElement}>Increment</button>
+        <button onClick={DecrementElement}>Decrement</button>
+      </div>
+    );
+  }
+  IncrementElement = () => {
+    this.setState((state) => {
+      return {
+        item: state.item + 1,
+      };
+    });
+  };
+  DecrementElement = () => {
+    this.setState((state) => {
+      return {
+        item: state.item -1 1,
+      };
+    });
+  };
+}
+``` -->
 
 <p><code class="language-plaintext highlighter-rouge">With useState</code> = 14 lines</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<!-- ```javascript
+import { useState } from "react";
 
-<span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">item</span><span class="p">,</span> <span class="nx">setItem</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="nx">Increment</span> <span class="o">=</span> <span class="nx">setItem</span><span class="p">(</span><span class="nx">item</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="nx">Decrement</span> <span class="o">=</span> <span class="nx">setItem</span><span class="p">(</span><span class="nx">item</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">App</span><span class="dl">"</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nb">Number</span> <span class="k">of</span> <span class="nx">item</span> <span class="nx">is</span> <span class="p">{</span><span class="nx">item</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">IncrementElement</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Increment</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">DecrementElement</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Decrement</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">};</span>
-</code></pre></div></div>
+const App = () => {
+  const [item, setItem] = useState(1);
+  const Increment = setItem(item + 1);
+  const Decrement = setItem(item - 1);
+  return (
+    <div className="App">
+      <h1>Number of item is {item}</h1>
+      <button onClick={IncrementElement}>Increment</button>
+      <button onClick={DecrementElement}>Decrement</button>
+    </div>
+  );
+};
+``` -->
 
 <p>단순하게 코드 생김새만 봐도 <code class="language-plaintext highlighter-rouge">useState</code> 함수의 편의성에 대해 인지할 수 있다. 아래 추가적으로 <code class="language-plaintext highlighter-rouge">useState</code>를 활용한 Hooks 몇 개를 소개하며 글을 마무리하겠다.</p>
+
 <h3 id="useinput">useInput</h3>
+
 <p>구현 기능 : Input에 대해 조건 부여하기</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">useInput</span> <span class="o">=</span> <span class="p">(</span><span class="nx">initialValue</span><span class="p">,</span> <span class="nx">validator</span><span class="p">)</span> <span class="o">=&gt;</span><span class="p">{</span>
-<span class="kd">const</span> <span class="p">[</span><span class="nx">value</span><span class="p">,</span> <span class="nx">setValue</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">initialValue</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">onChange</span> <span class="o">=</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span><span class="p">{</span>
-  <span class="kd">const</span> <span class="p">{</span><span class="na">target</span><span class="p">:{</span><span class="nx">value</span><span class="p">}}</span><span class="o">=</span><span class="nx">event</span><span class="p">;</span>
-  <span class="kd">let</span> <span class="nx">willUpdate</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
-  <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">validator</span><span class="o">===</span><span class="dl">"</span><span class="s2">function</span><span class="dl">"</span><span class="p">){</span>
-    <span class="nx">willUpdate</span> <span class="o">=</span> <span class="nx">validator</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">willUpdate</span><span class="p">){</span>
-    <span class="nx">setValue</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-<span class="k">return</span> <span class="p">{</span><span class="nx">value</span><span class="p">,</span><span class="nx">onChange</span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
+
+<!-- ```javascript
+const useInput = (initialValue, validator) => {
+  const [value, setValue] = useState(initialValue);
+  const onChange = (event) => {
+    const {
+      target: { value },
+    } = event;
+    let willUpdate = true;
+    if (typeof validator === "function") {
+      willUpdate = validator(value);
+    }
+    if (willUpdate) {
+      setValue(value);
+    }
+  };
+  return { value, onChange };
+};
+``` -->
+
 <p>코드 진행 순서</p>
+
 <ul>
   <li>willUpdate를 통해 해당 value가 validator를 통해 필터링</li>
   <li>validator의 조건을 만족할 경우 <code class="language-plaintext highlighter-rouge">setValue</code> 함수를 통해 value 수정</li>
 </ul>
 
 <h3 id="usetabs">useTabs</h3>
+
 <p>구현 기능 : 새로운 정보 가져오고 보여주기</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">useTabs</span> <span class="o">=</span> <span class="p">(</span><span class="nx">initialTab</span><span class="p">,</span> <span class="nx">allTabs</span><span class="p">)</span> <span class="o">=&gt;</span><span class="p">{</span>
-  <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">allTaabs</span> <span class="o">||</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">isArray</span><span class="p">(</span><span class="nx">allTabs</span><span class="p">)){</span>
-    <span class="k">return</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">currentIndex</span><span class="p">,</span><span class="nx">setCurrentIndex</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">initialTab</span><span class="p">);</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="na">currentItem</span><span class="p">:</span> <span class="nx">allTabs</span><span class="p">[</span><span class="nx">currentIndex</span><span class="p">],</span>
-    <span class="na">changeItem</span><span class="p">:</span> <span class="nx">setCurrentIndex</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-</code></pre></div></div>
+
+<!--
+```javascript
+const useTabs = (initialTab, allTabs) => {
+  if (!allTaabs || Array.isArray(allTabs)) {
+    return;
+  }
+  const [currentIndex, setCurrentIndex] = useState(initialTab);
+  return {
+    currentItem: allTabs[currentIndex],
+    changeItem: setCurrentIndex,
+  };
+};
+``` -->
+
 <p>코드 설명</p>
+
 <ul>
   <li>allTabs를 1차적으로 if문을 통해 filtering</li>
   <li>event가 일어나면 setCurrentIndex를 통해 Tab에 변화 제공</li>
