@@ -228,29 +228,37 @@ into the {body} of the default.hbs template -->
                               </div>
                         </div>
                         <h2 id="구현-아이디어">구현 아이디어</h2>
+
 <ol>
-  <li>start 버튼 <code class="language-plaintext highlighter-rouge">addEventListener</code>에서 <code class="language-plaintext highlighter-rouge">click Event</code> 발생시 <code class="language-plaintext highlighter-rouge">startTimer()</code> 함수 실행 <br />
-    <ul>
-      <li>이 때, 다른 버튼 비활성화</li>
-      <li>타이머의 경우, <code class="language-plaintext highlighter-rouge">Date.now()</code>를 활용해 mileseconds 값을 Hh:Mm:Ss로 변환</li>
-    </ul>
-  </li>
-  <li>스톱워치 중지 시, Dropdown list에 등록된 할 일 중에 하나를 선택
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">change Event</code> 발생 시, 해당 option의 id를 local storage에 저장</li>
-      <li>추가 버튼 <code class="language-plaintext highlighter-rouge">click Event</code> 발생 시, local storage에서 id 비교 후 공부시간 수정</li>
-    </ul>
-  </li>
-  <li>화면에서 나갈 경우
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">onbeforeunload Event</code>를 통해, 나가는 시간 local storage에 저장</li>
-      <li>웹 켜졌을 경우, 현재 시간과 차이 계산해서 시간 수정 후 화면에 표시
-<!--break--></li>
-    </ul>
-  </li>
+  <li>start 버튼 <code class="language-plaintext highlighter-rouge">addEventListener</code>에서 <code class="language-plaintext highlighter-rouge">click Event</code> 발생시 <code class="language-plaintext highlighter-rouge">startTimer()</code> 함수 실행 <br /></li>
 </ol>
 
+<ul>
+  <li>이 때, 다른 버튼 비활성화</li>
+  <li>타이머의 경우, <code class="language-plaintext highlighter-rouge">Date.now()</code>를 활용해 mileseconds 값을 Hh:Mm:Ss로 변환</li>
+</ul>
+
+<ol>
+  <li>스톱워치 중지 시, Dropdown list에 등록된 할 일 중에 하나를 선택</li>
+</ol>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">change Event</code> 발생 시, 해당 option의 id를 local storage에 저장</li>
+  <li>추가 버튼 <code class="language-plaintext highlighter-rouge">click Event</code> 발생 시, local storage에서 id 비교 후 공부시간 수정</li>
+</ul>
+
+<ol>
+  <li>화면에서 나갈 경우</li>
+</ol>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">onbeforeunload Event</code>를 통해, 나가는 시간 local storage에 저장</li>
+  <li>웹 켜졌을 경우, 현재 시간과 차이 계산해서 시간 수정 후 화면에 표시
+<!--break--></li>
+</ul>
+
 <h2 id="예상-구현-결과">예상 구현 결과</h2>
+
 <ul>
   <li>공부 하는 시간 측정하는 스톱워치</li>
   <li>등록되있는 할 일 중에 선택해서 공부시간 추가하기</li>
@@ -258,28 +266,140 @@ into the {body} of the default.hbs template -->
 </ul>
 
 <h2 id="rate-determining-step-걸림돌">Rate-Determining Step (걸림돌)</h2>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Line</span><span class="p">:</span><span class="mi">54</span>
-<span class="kd">function</span> <span class="nx">totalUsageTimeEdit</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span> <span class="p">};</span>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Line</span><span class="p">:</span> <span class="mi">54</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">totalUsageTimeEdit</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{}</span>
 </code></pre></div></div>
-<p>Dropdown list에서 할 일을 선택하는 순간, 바로 시간이 수정되는 것이 아니라 시간 수정 버튼을 눌렀을 경우에 시간이 수정되어야 된다. 
- 이 때 <code class="language-plaintext highlighter-rouge">dropdown list</code>에서 <code class="language-plaintext highlighter-rouge">submit event</code>가 일어났을 때 정보를 받으려고 하니 list element 전부가 받아와져서 dropdown list에서 option의 id를 가져오는 데 어려움이 있었다. <br />
- <code class="language-plaintext highlighter-rouge">Local Storage</code>에 잠깐 dropdown list element의 id를 저장했다가 submit할 때 받는 형식으로 해결해봤다.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Line</span><span class="p">:</span><span class="mi">54</span>
-<span class="kd">function</span> <span class="nx">totalUsageTimeEdit</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span> <span class="p">};</span>
+<p>Dropdown list에서 할 일을 선택하는 순간, 바로 시간이 수정되는 것이 아니라 시간 수정 버튼을 눌렀을 경우에 시간이 수정되어야 된다.
+이 때 <code class="language-plaintext highlighter-rouge">dropdown list</code>에서 <code class="language-plaintext highlighter-rouge">submit event</code>가 일어났을 때 정보를 받으려고 하니 list element 전부가 받아와져서 dropdown list에서 option의 id를 가져오는 데 어려움이 있었다. <br />
+<code class="language-plaintext highlighter-rouge">Local Storage</code>에 잠깐 dropdown list element의 id를 저장했다가 submit할 때 받는 형식으로 해결해봤다.</p>
 
-<span class="nl">Line</span><span class="p">:</span><span class="mi">77</span>
-<span class="kd">function</span> <span class="nx">totalUsageTimeToSeconds</span><span class="p">(</span><span class="nx">timeData</span><span class="p">)</span> <span class="p">{</span> <span class="p">};</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Line</span><span class="p">:</span> <span class="mi">54</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">totalUsageTimeEdit</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{}</span>
 
-<span class="nl">Line</span><span class="p">:</span><span class="mi">87</span>
-<span class="kd">function</span> <span class="nx">secondsToHhMmSs</span><span class="p">(</span><span class="nx">inputTime</span><span class="p">)</span> <span class="p">{</span> <span class="p">};</span>
+<span class="nl">Line</span><span class="p">:</span> <span class="mi">77</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">totalUsageTimeToSeconds</span><span class="p">(</span><span class="nx">timeData</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="nl">Line</span><span class="p">:</span> <span class="mi">87</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">secondsToHhMmSs</span><span class="p">(</span><span class="nx">inputTime</span><span class="p">)</span> <span class="p">{}</span>
 </code></pre></div></div>
+
 <p>공부 시간을 기존 데이터에서 추가하는 과정에 있어서 <code class="language-plaintext highlighter-rouge">String</code>으로 표현된 시간을 수정하는 과정에서 전부 seconds로 바꿨다가 다시 <code class="language-plaintext highlighter-rouge">string</code>으로 전달하는 과정에서 코드의 실수가 꽤 잦았다.</p>
 
 <h2 id="구현-코드">구현 코드</h2>
-<noscript><pre>400: Invalid request</pre></noscript>
-<script src="https://gist.github.com/1776b5a902e50562af45839e4f7442df.js"> </script>
 
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">timer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">h3#timer</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">startButton</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#start-timer</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">resetButton</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#reset-timer</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">pauseButton</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#pause-timer</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">totalTimeAddButtonInTimer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#timeadd-button</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">timeForm</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#totaltime-submit</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">targetItem_ToAddTime</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#subject-select</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">timeData</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#timer</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="c1">// timer 부터 시작하면 됨</span>
+<span class="kd">let</span> <span class="nx">startTime</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">endTime</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">select_SubjectId</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">toDos_InTimer</span> <span class="o">=</span> <span class="p">[];</span> <span class="c1">// 여기서 매번 초기화를 시키기 때문에 아래에서 다시 데이터를 받아와야함!!</span>
+
+<span class="kd">const</span> <span class="nx">INSTANT_SUBJECTID</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">instantSubjectId</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">TODOS_KEY_TIMEEDIT</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">todos</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">startTimer</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">startButton</span><span class="p">.</span><span class="nx">disabled</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="nx">totalTimeAddButtonInTimer</span><span class="p">.</span><span class="nx">disabled</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="nx">resetButton</span><span class="p">.</span><span class="nx">disabled</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">startTime</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">startTime</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">();</span> <span class="c1">// 처음 시작할 때</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">startTime</span> <span class="o">+=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span> <span class="o">-</span> <span class="nx">endTime</span><span class="p">;</span> <span class="c1">// 재시작할 때</span>
+  <span class="p">}</span>
+  <span class="nx">continueTimer</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">nowTime</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span> <span class="o">-</span> <span class="nx">startTime</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">);</span>
+    <span class="nx">timer</span><span class="p">.</span><span class="nx">innerText</span> <span class="o">=</span> <span class="nx">secondsToHhMmSs</span><span class="p">(</span><span class="nx">nowTime</span><span class="p">);</span>
+  <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">pauseTimer</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">startButton</span><span class="p">.</span><span class="nx">disabled</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="nx">totalTimeAddButtonInTimer</span><span class="p">.</span><span class="nx">disabled</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="nx">resetButton</span><span class="p">.</span><span class="nx">disabled</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">continueTimer</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">clearInterval</span><span class="p">(</span><span class="nx">continueTimer</span><span class="p">);</span>
+    <span class="nx">endTime</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">();</span> <span class="c1">// STOP시점의 시간 저장</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">resetTimer</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">startButton</span><span class="p">.</span><span class="nx">disabled</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="nx">totalTimeAddButtonInTimer</span><span class="p">.</span><span class="nx">disabled</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="nx">timer</span><span class="p">.</span><span class="nx">innerText</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">00:00:00</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nx">startTime</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">totalUsageTimeEdit</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+  <span class="kd">const</span> <span class="nx">targetSubjectId</span> <span class="o">=</span> <span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="nx">INSTANT_SUBJECTID</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">targetSubjectId_toInteger</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">targetSubjectId</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">thisTotalUsageTime</span> <span class="o">=</span> <span class="nx">totalUsageTimeToSeconds</span><span class="p">(</span><span class="nx">timeData</span><span class="p">.</span><span class="nx">innerText</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">toDoData</span> <span class="o">=</span> <span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="nx">TODOS_KEY_TIMEEDIT</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">parsedToDos</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">toDoData</span><span class="p">);</span>
+  <span class="nx">toDos_InTimer</span> <span class="o">=</span> <span class="nx">parsedToDos</span><span class="p">;</span>
+  <span class="nx">parsedToDos</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">targetSubjectId_toInteger</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">beforeEditTime</span> <span class="o">=</span> <span class="nx">totalUsageTimeToSeconds</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">total_usage_time</span><span class="p">);</span>
+      <span class="kd">const</span> <span class="nx">nowEditTime</span> <span class="o">=</span> <span class="nx">totalUsageTimeToSeconds</span><span class="p">(</span><span class="nx">timeData</span><span class="p">.</span><span class="nx">innerText</span><span class="p">);</span>
+      <span class="kd">const</span> <span class="nx">totalEditTime</span> <span class="o">=</span> <span class="nx">beforeEditTime</span> <span class="o">+</span> <span class="nx">nowEditTime</span><span class="p">;</span>
+      <span class="kd">const</span> <span class="nx">calculateTotalEditTime</span> <span class="o">=</span> <span class="nx">secondsToHhMmSs</span><span class="p">(</span><span class="nx">totalEditTime</span><span class="p">);</span>
+      <span class="nx">obj</span><span class="p">.</span><span class="nx">total_usage_time</span> <span class="o">=</span> <span class="nx">calculateTotalEditTime</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+  <span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="nx">TODOS_KEY_TIMEEDIT</span><span class="p">,</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">parsedToDos</span><span class="p">));</span>
+  <span class="nx">timer</span><span class="p">.</span><span class="nx">innerText</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">00:00:00</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nx">startTime</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="c1">//  테이블에 다시 그리기</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">totalUsageTimeToSeconds</span><span class="p">(</span><span class="nx">timeData</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">timeArray</span> <span class="o">=</span> <span class="nx">timeData</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">"</span><span class="s2">:</span><span class="dl">"</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">hh</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">timeArray</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+  <span class="kd">const</span> <span class="nx">mm</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">timeArray</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+  <span class="kd">const</span> <span class="nx">ss</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">timeArray</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+  <span class="kd">let</span> <span class="nx">usageTime_toSeconds</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="nx">usageTime_toSeconds</span> <span class="o">=</span> <span class="nx">hh</span> <span class="o">*</span> <span class="mi">3600</span> <span class="o">+</span> <span class="nx">mm</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="nx">ss</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">usageTime_toSeconds</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">secondsToHhMmSs</span><span class="p">(</span><span class="nx">inputTime</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">hours</span> <span class="o">=</span> <span class="nb">String</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">inputTime</span> <span class="o">/</span> <span class="mi">3600</span><span class="p">)).</span><span class="nx">padStart</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="dl">"</span><span class="s2">0</span><span class="dl">"</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">minutes</span> <span class="o">=</span> <span class="nb">String</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">inputTime</span> <span class="o">-</span> <span class="mi">3600</span> <span class="o">*</span> <span class="nx">hours</span><span class="p">)</span> <span class="o">/</span> <span class="mi">60</span><span class="p">)).</span><span class="nx">padStart</span><span class="p">(</span>
+    <span class="mi">2</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">0</span><span class="dl">"</span>
+  <span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">seconds</span> <span class="o">=</span> <span class="nb">String</span><span class="p">(</span><span class="nx">inputTime</span> <span class="o">-</span> <span class="mi">3600</span> <span class="o">*</span> <span class="nx">hours</span> <span class="o">-</span> <span class="mi">60</span> <span class="o">*</span> <span class="nx">minutes</span><span class="p">).</span><span class="nx">padStart</span><span class="p">(</span>
+    <span class="mi">2</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">0</span><span class="dl">"</span>
+  <span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">HhMmSs</span> <span class="o">=</span> <span class="nx">hours</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">:</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">minutes</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">:</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">seconds</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">HhMmSs</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">saveTargetSubjectId_ToAddTime</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">selectSubjectId</span> <span class="o">=</span>
+    <span class="nx">targetItem_ToAddTime</span><span class="p">.</span><span class="nx">options</span><span class="p">[</span><span class="nx">targetItem_ToAddTime</span><span class="p">.</span><span class="nx">selectedIndex</span><span class="p">].</span><span class="nx">id</span><span class="p">;</span>
+  <span class="nx">select_SubjectId</span> <span class="o">=</span> <span class="nx">selectSubjectId</span><span class="p">;</span>
+  <span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="nx">INSTANT_SUBJECTID</span><span class="p">,</span> <span class="nx">select_SubjectId</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">startButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">startTimer</span><span class="p">);</span>
+<span class="nx">pauseButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">pauseTimer</span><span class="p">);</span>
+<span class="nx">resetButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">resetTimer</span><span class="p">);</span>
+<span class="nx">timeForm</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">submit</span><span class="dl">"</span><span class="p">,</span> <span class="nx">totalUsageTimeEdit</span><span class="p">);</span>
+<span class="nx">targetItem_ToAddTime</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">change</span><span class="dl">"</span><span class="p">,</span> <span class="nx">saveTargetSubjectId_ToAddTime</span><span class="p">);</span>
+</code></pre></div></div>
 
                       </article>
                 </div>
@@ -416,8 +536,6 @@ into the {body} of the default.hbs template -->
                                 
                                   
                                 
-                                  
-                                
                             </ul>
                         </div>
                         <footer class="read-next-card-footer">
@@ -512,10 +630,6 @@ Javascript 수업에서 가장 크게 변화한 부분은 index.html 파일에�
                 <section class="post-card-excerpt">
                     
                         <p>구현 아이디어
-
-  기존 submit에서 input만 추가해서, object에 각각 key 값 설정 후 저장
-  저장한 데이터를 테이블 형태로 표시하기
-
 
 </p>
                     

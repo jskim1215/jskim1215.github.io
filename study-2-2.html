@@ -86,7 +86,7 @@
     <meta property="og:site_name" content="우당탕 프로덕트 개발 여정" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="실전형 React Hooks 10개 (2) - UseEffect" />
-    <meta property="og:description" content="UseEffect란? useEffect는 function, dependency라는 두 개의 변수를 받는다. 여기서 dependency라는 변수는 말 그대로 해당 element에 변화가 발생하면 function을 발생시키는 친구라고 생각하면 된다. 그래서 보통 useEffect(function, [dependency]) 이런 형태로 사용된다. 주의할 점은 빈 array []의 경우 한 번만 실행되고 어떤 변화에도 재실행되지 않는 경우에 사용한다. 사용 예시 useTitle 구현 기능 :" />
+    <meta property="og:description" content="UseEffect 특정 상황에만 함수를 실행시키고 싶은 경우 사용한다. useEffect는 function 그리고 dependency라는 두 개의 변수를 받는다. 여기서 dependency라는 변수는 말 그대로 해당 element에 변화가 발생하면 function을 발생시키는 친구라고 생각하면 된다. 그래서 보통 useEffect(function, [dependency]) 이런 형태로 사용된다. 주의할 점은 빈 array []의 경우 한 번만 실행되고 어떤 변화에도 재실행되지 않는" />
     <meta property="og:url" content="https://jskim1215.github.io/study-2-2" />
     <meta property="og:image" content="https://jskim1215.github.io/assets/study/study-2-2.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
@@ -96,7 +96,7 @@
     <meta property="article:tag" content="Study" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="실전형 React Hooks 10개 (2) - UseEffect" />
-    <meta name="twitter:description" content="UseEffect란? useEffect는 function, dependency라는 두 개의 변수를 받는다. 여기서 dependency라는 변수는 말 그대로 해당 element에 변화가 발생하면 function을 발생시키는 친구라고 생각하면 된다. 그래서 보통 useEffect(function, [dependency]) 이런 형태로 사용된다. 주의할 점은 빈 array []의 경우 한 번만 실행되고 어떤 변화에도 재실행되지 않는 경우에 사용한다. 사용 예시 useTitle 구현 기능 :" />
+    <meta name="twitter:description" content="UseEffect 특정 상황에만 함수를 실행시키고 싶은 경우 사용한다. useEffect는 function 그리고 dependency라는 두 개의 변수를 받는다. 여기서 dependency라는 변수는 말 그대로 해당 element에 변화가 발생하면 function을 발생시키는 친구라고 생각하면 된다. 그래서 보통 useEffect(function, [dependency]) 이런 형태로 사용된다. 주의할 점은 빈 array []의 경우 한 번만 실행되고 어떤 변화에도 재실행되지 않는" />
     <meta name="twitter:url" content="https://jskim1215.github.io/" />
     <meta name="twitter:image" content="https://jskim1215.github.io/assets/study/study-2-2.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -128,7 +128,7 @@
         "@type": "WebPage",
         "@id": "https://jskim1215.github.io/study-2-2"
     },
-    "description": "UseEffect란? useEffect는 function, dependency라는 두 개의 변수를 받는다. 여기서 dependency라는 변수는 말 그대로 해당 element에 변화가 발생하면 function을 발생시키는 친구라고 생각하면 된다. 그래서 보통 useEffect(function, [dependency]) 이런 형태로 사용된다. 주의할 점은 빈 array []의 경우 한 번만 실행되고 어떤 변화에도 재실행되지 않는 경우에 사용한다. 사용 예시 useTitle 구현 기능 :"
+    "description": "UseEffect 특정 상황에만 함수를 실행시키고 싶은 경우 사용한다. useEffect는 function 그리고 dependency라는 두 개의 변수를 받는다. 여기서 dependency라는 변수는 말 그대로 해당 element에 변화가 발생하면 function을 발생시키는 친구라고 생각하면 된다. 그래서 보통 useEffect(function, [dependency]) 이런 형태로 사용된다. 주의할 점은 빈 array []의 경우 한 번만 실행되고 어떤 변화에도 재실행되지 않는"
 }
     </script>
 
@@ -223,71 +223,57 @@ into the {body} of the default.hbs template -->
                         <div class="toc-container">
                             <div class="toc">
                                 <div class="toc-title">목차</div>
-                                <ul class="inline_toc" id="my_toc"><li><a href="#useeffect란">UseEffect란?</a></li><li><a href="#사용-예시">사용 예시</a><ul class="sub_toc"><li><a href="#usetitle">useTitle</a></li><li><a href="#usescroll">useScroll</a></li></ul></li></ul>
+                                <ul class="inline_toc" id="my_toc"><li><a href="#useeffect">UseEffect</a></li><li><a href="#사용-예시">사용 예시</a><ul class="sub_toc"><li><a href="#usetitle">useTitle</a></li><li><a href="#usescroll">useScroll</a></li></ul></li></ul>
 
                               </div>
                         </div>
-                        <h2 id="useeffect란">UseEffect란?</h2>
-<p>useEffect는 <code class="language-plaintext highlighter-rouge">function, dependency</code>라는 두 개의 변수를 받는다. 여기서 <code class="language-plaintext highlighter-rouge">dependency</code>라는 변수는 말 그대로 해당 element에 변화가 발생하면 function을 발생시키는 친구라고 생각하면 된다.
-<!--break--></p>
+                        <h2 id="useeffect">UseEffect</h2>
 
-<p>그래서 보통 useEffect(function, [dependency]) 이런 형태로 사용된다. <code class="language-plaintext highlighter-rouge">주의할 점</code>은 빈 array []의 경우 한 번만 실행되고 어떤 변화에도 재실행되지 않는 경우에 사용한다.</p>
+<p>특정 상황에만 함수를 실행시키고 싶은 경우 사용한다. useEffect는 <code class="language-plaintext highlighter-rouge">function 그리고 dependency</code>라는 두 개의 변수를 받는다. 여기서 <code class="language-plaintext highlighter-rouge">dependency</code>라는 변수는 말 그대로 해당 element에 변화가 발생하면 function을 발생시키는 친구라고 생각하면 된다. <br /></p>
+
+<p>그래서 보통 useEffect(function, [dependency]) 이런 형태로 사용된다. <code class="language-plaintext highlighter-rouge">주의할 점</code>은 <code class="language-plaintext highlighter-rouge">빈 array []</code>의 경우 한 번만 실행되고 어떤 변화에도 재실행되지 않는 경우에 사용한다.</p>
 
 <h2 id="사용-예시">사용 예시</h2>
+
 <h3 id="usetitle">useTitle</h3>
+
 <p>구현 기능 : 웹페이지의 title을 변경하는 기능</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">useTitle</span> <span class="o">=</span> <span class="p">(</span><span class="nx">initialTitle</span><span class="p">)</span> <span class="o">=&gt;</span><span class="p">{</span>
-    <span class="kd">const</span> <span class="p">[</span><span class="nx">title</span><span class="p">,</span><span class="nx">setTitle</span><span class="p">]</span> <span class="o">=</span><span class="nx">useState</span><span class="p">(</span><span class="nx">initialTitle</span><span class="p">);</span>
-    <span class="kd">const</span> <span class="nx">updateTitle</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="kd">const</span> <span class="nx">htmlTitle</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">title</span><span class="dl">"</span><span class="p">);</span>
-        <span class="nx">htmlTitle</span><span class="p">.</span><span class="nx">innerText</span> <span class="o">=</span> <span class="nx">title</span><span class="p">;</span>
-    <span class="p">};</span>
-    <span class="nx">useEffect</span><span class="p">(</span><span class="nx">updateTitle</span><span class="p">,</span> <span class="p">[</span><span class="nx">title</span><span class="p">]);</span>
-    <span class="k">return</span> <span class="nx">setTitle</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">useTitle</span> <span class="o">=</span> <span class="p">(</span><span class="nx">initialTitle</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">title</span><span class="p">,</span> <span class="nx">setTitle</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">initialTitle</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">updateTitle</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">htmlTitle</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">title</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">htmlTitle</span><span class="p">.</span><span class="nx">innerText</span> <span class="o">=</span> <span class="nx">title</span><span class="p">;</span>
+  <span class="p">};</span>
+  <span class="nx">useEffect</span><span class="p">(</span><span class="nx">updateTitle</span><span class="p">,</span> <span class="p">[</span><span class="nx">title</span><span class="p">]);</span>
+  <span class="k">return</span> <span class="nx">setTitle</span><span class="p">;</span>
+<span class="p">};</span>
 
 <span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">titleUpdater</span> <span class="o">=</span> <span class="nx">useTitle</span><span class="p">(</span><span class="dl">"</span><span class="s2">Loading...</span><span class="dl">"</span><span class="p">);</span>
-    <span class="nx">setTimeout</span><span class="p">(()</span><span class="o">=&gt;</span><span class="nx">titleUpdater</span><span class="p">(</span><span class="dl">"</span><span class="s2">Home</span><span class="dl">"</span><span class="p">),</span><span class="mi">5000</span><span class="p">);</span>
-<span class="p">}</span>
+  <span class="kd">const</span> <span class="nx">titleUpdater</span> <span class="o">=</span> <span class="nx">useTitle</span><span class="p">(</span><span class="dl">"</span><span class="s2">Loading...</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">titleUpdater</span><span class="p">(</span><span class="dl">"</span><span class="s2">Home</span><span class="dl">"</span><span class="p">),</span> <span class="mi">5000</span><span class="p">);</span>
+<span class="p">};</span>
 </code></pre></div></div>
-
-<p>코드 설명</p>
-<ol>
-  <li>useTitle 함수에서 받는 string이 initialTitle</li>
-  <li>updateTitle이 웹의 title 수정</li>
-  <li>titleUpdater에서 useTitle의 initialTitle에 “Loading” 전달</li>
-  <li>titleUpdater에서 5초 후에 “Home” 전달</li>
-  <li>useTitle 함수에서 전달받은 initialTitle이 “Home”이 됬으니까 title이 바뀐 상황</li>
-  <li>useEffect 함수 실행</li>
-</ol>
 
 <h3 id="usescroll">useScroll</h3>
-<p>구현 기능 : scroll이 발생했을 때, 특정 범위를 만족하면 함수 실행</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">useScroll</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="p">[</span><span class="nx">state</span><span class="p">,</span> <span class="nx">setState</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">({</span>
-      <span class="na">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="na">y</span><span class="p">:</span> <span class="mi">0</span>
-    <span class="p">});</span>
-    <span class="kd">const</span> <span class="nx">onScroll</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">setState</span><span class="p">({</span> <span class="na">y</span><span class="p">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">scrollY</span><span class="p">,</span> <span class="na">x</span><span class="p">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">screenX</span> <span class="p">});</span>
-    <span class="p">};</span>
-    <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">scroll</span><span class="dl">"</span><span class="p">,</span> <span class="nx">onScroll</span><span class="p">);</span>
-      <span class="k">return</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nb">window</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">scroll</span><span class="dl">"</span><span class="p">,</span> <span class="nx">onScroll</span><span class="p">);</span>
-    <span class="p">},</span> <span class="p">[]);</span>
-    <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
-  <span class="p">};</span>
-</code></pre></div></div>
-<p>코드 설명</p>
-<ol>
-  <li>window.scrollY를 통해 y 좌표값 측정 후 업데이트</li>
-  <li>addEventListener를 통해 <code class="language-plaintext highlighter-rouge">scroll</code> 이벤트 탐지 후 <code class="language-plaintext highlighter-rouge">onScroll</code> 함수 실행</li>
-  <li>return을 통해 뒷정리</li>
-</ol>
 
-<p>사실 나는 여기서 <code class="language-plaintext highlighter-rouge">3번</code> 파트가 잘 이해가 되지는 않는다. component가 나타날때 useEffect가 실행되고 이후에 component가 사라질 때, clean-up 함수가( return에 들어가 있는 함수) 실행된다고 한다. 이 과정을 통해 불필요한 리소스 사용을 줄여 사이트 운용에 도움을 준다고 글을 읽은 적이 있으나 아직 그정도 규모의 프로젝트가 아니라서 그런지 체감이 크게 되지는 않는다. 하지만 이 부분에 대해 인지는 하고 있어야하니까 알아두면 좋을 것 같다.</p>
+<p>구현 기능 : scroll이 발생했을 때, 특정 범위를 만족하면 함수 실행</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">useScroll</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">state</span><span class="p">,</span> <span class="nx">setState</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">({</span>
+    <span class="na">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="na">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="p">});</span>
+  <span class="kd">const</span> <span class="nx">onScroll</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setState</span><span class="p">({</span> <span class="na">y</span><span class="p">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">scrollY</span><span class="p">,</span> <span class="na">x</span><span class="p">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">screenX</span> <span class="p">});</span>
+  <span class="p">};</span>
+  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">scroll</span><span class="dl">"</span><span class="p">,</span> <span class="nx">onScroll</span><span class="p">);</span>
+    <span class="k">return</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nb">window</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">scroll</span><span class="dl">"</span><span class="p">,</span> <span class="nx">onScroll</span><span class="p">);</span>
+  <span class="p">},</span> <span class="p">[]);</span>
+  <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
 
                       </article>
                 </div>
@@ -449,19 +435,12 @@ into the {body} of the default.hbs template -->
                                     
                                   
                                 
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
                             </ul>
                         </div>
                         <footer class="read-next-card-footer">
                             <a href="/tag/study/">
                                 
-                                    See all 9 posts  →
+                                    See all 8 posts  →
                                 
                             </a>
                         </footer>
@@ -495,7 +474,6 @@ into the {body} of the default.hbs template -->
                 <section class="post-card-excerpt">
                     
                         <p>useRef란?
-useRef는 querySelector 또는 getElementById 처럼 HTML element를 catch하는데 사용하는 느낌이다. 
 
 </p>
                     
@@ -549,7 +527,7 @@ useRef는 querySelector 또는 getElementById 처럼 HTML element를 catch하는
                 </header>
                 <section class="post-card-excerpt">
                     
-                        <p>React에서 동적인 데이터를 관리하는 법
+                        <p>기존과 차이
 
 </p>
                     

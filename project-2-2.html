@@ -228,12 +228,14 @@ into the {body} of the default.hbs template -->
                               </div>
                         </div>
                         <h2 id="구현-아이디어">구현 아이디어</h2>
+
 <ol>
   <li>기존 submit에서 input만 추가해서, object에 각각 key 값 설정 후 저장</li>
   <li>저장한 데이터를 테이블 형태로 표시하기</li>
 </ol>
 
 <!--break-->
+
 <h2 id="예상-구현-결과">예상 구현 결과</h2>
 
 <ul>
@@ -252,9 +254,89 @@ into the {body} of the default.hbs template -->
 
 <h2 id="구현-코드">구현 코드</h2>
 
-<noscript><pre>400: Invalid request</pre></noscript>
-<script src="https://gist.github.com/2c4853a5039d2fcfa5f1c821cf47eb72.js"> </script>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">toDoForm</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">todo-form</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">toDoInput</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#work-form</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">subjectInput</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#subject-form</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">formatInput</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#format-form</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">toDoList</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">todo-list</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">worktable</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">work-columns</span><span class="dl">"</span><span class="p">);</span>
 
+<span class="kd">const</span> <span class="nx">TODOS_KEY</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">todos</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">savedToDos</span> <span class="o">=</span> <span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="nx">TODOS_KEY</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">toDos</span> <span class="o">=</span> <span class="p">[];</span>
+
+<span class="kd">function</span> <span class="nx">saveToDos</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="nx">TODOS_KEY</span><span class="p">,</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">toDos</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">deleteTodo</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">tr</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">parentElement</span><span class="p">.</span><span class="nx">parentElement</span><span class="p">;</span>
+  <span class="nx">tr</span><span class="p">.</span><span class="nx">remove</span><span class="p">();</span>
+  <span class="kd">const</span> <span class="nx">deleteTargetSubject</span> <span class="o">=</span> <span class="nx">subjectDropdown</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">`[id="</span><span class="p">${</span><span class="nx">tr</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="s2">"]`</span><span class="p">);</span>
+  <span class="nx">deleteTargetSubject</span><span class="p">.</span><span class="nx">remove</span><span class="p">();</span>
+  <span class="nx">toDos</span> <span class="o">=</span> <span class="nx">toDos</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">targetId</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">targetId</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">tr</span><span class="p">.</span><span class="nx">id</span><span class="p">));</span>
+  <span class="nx">saveToDos</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">paintToDo</span><span class="p">(</span><span class="nx">newToDo</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">tr</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">tr</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nx">tr</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">newToDo</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">th1</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">th</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nx">th1</span><span class="p">.</span><span class="nx">innerText</span> <span class="o">=</span> <span class="nx">newToDo</span><span class="p">.</span><span class="nx">text</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">th2</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">th</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nx">th2</span><span class="p">.</span><span class="nx">innerText</span> <span class="o">=</span> <span class="nx">newToDo</span><span class="p">.</span><span class="nx">subject</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">th3</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">th</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nx">th3</span><span class="p">.</span><span class="nx">innerText</span> <span class="o">=</span> <span class="nx">newToDo</span><span class="p">.</span><span class="nx">format</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">th4</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">th</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nx">th4</span><span class="p">.</span><span class="nx">innerText</span> <span class="o">=</span> <span class="nx">newToDo</span><span class="p">.</span><span class="nx">total_usage_time</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">th5</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">th</span><span class="dl">"</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">button</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">button</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nx">button</span><span class="p">.</span><span class="nx">innerText</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">❌</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nx">th5</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">button</span><span class="p">);</span>
+  <span class="nx">tr</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">th1</span><span class="p">);</span>
+  <span class="nx">tr</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">th2</span><span class="p">);</span>
+  <span class="nx">tr</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">th3</span><span class="p">);</span>
+  <span class="nx">tr</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">th4</span><span class="p">);</span>
+  <span class="nx">tr</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">th5</span><span class="p">);</span>
+  <span class="nx">worktable</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">tr</span><span class="p">);</span>
+  <span class="nx">button</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">deleteTodo</span><span class="p">);</span>
+
+  <span class="kd">const</span> <span class="nx">option</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">option</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nx">option</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">newToDo</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
+  <span class="nx">option</span><span class="p">.</span><span class="nx">innerText</span> <span class="o">=</span> <span class="nx">newToDo</span><span class="p">.</span><span class="nx">text</span><span class="p">;</span>
+  <span class="nx">subjectDropdown</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">option</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">handleToDoSubmit</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+  <span class="kd">const</span> <span class="nx">newToDo</span> <span class="o">=</span> <span class="nx">toDoInput</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">newSubject</span> <span class="o">=</span> <span class="nx">subjectInput</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">newFormat</span> <span class="o">=</span> <span class="nx">formatInput</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+  <span class="nx">toDoInput</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+  <span class="nx">subjectInput</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+  <span class="nx">formatInput</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">newTodoObj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">text</span><span class="p">:</span> <span class="nx">newToDo</span><span class="p">,</span>
+    <span class="na">subject</span><span class="p">:</span> <span class="nx">newSubject</span><span class="p">,</span>
+    <span class="na">format</span><span class="p">:</span> <span class="nx">newFormat</span><span class="p">,</span>
+    <span class="na">id</span><span class="p">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">(),</span>
+    <span class="na">total_usage_time</span><span class="p">:</span> <span class="dl">"</span><span class="s2">00:00:00</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">};</span>
+  <span class="nx">toDos</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">newTodoObj</span><span class="p">);</span>
+  <span class="nx">paintToDo</span><span class="p">(</span><span class="nx">newTodoObj</span><span class="p">);</span>
+  <span class="nx">saveToDos</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="nx">toDoForm</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">submit</span><span class="dl">"</span><span class="p">,</span> <span class="nx">handleToDoSubmit</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">savedToDos</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">parsedToDos</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">savedToDos</span><span class="p">);</span>
+  <span class="nx">toDos</span> <span class="o">=</span> <span class="nx">parsedToDos</span><span class="p">;</span>
+  <span class="nx">parsedToDos</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">paintToDo</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
                       </article>
                 </div>
@@ -391,8 +473,6 @@ into the {body} of the default.hbs template -->
                                 
                                   
                                 
-                                  
-                                
                             </ul>
                         </div>
                         <footer class="read-next-card-footer">
@@ -431,7 +511,9 @@ into the {body} of the default.hbs template -->
                 </header>
                 <section class="post-card-excerpt">
                     
-                        <p>구현 아이디어 start 버튼 addEventListener에서 click Event 발생시 startTimer() 함수 실행 이 때, 다른 버튼 비활성화 타이머의 경우, Date.now()를 활용해 mileseconds 값을 Hh:Mm:Ss로 변환 스톱워치 중지 시, Dropdown list에 등록된 할 일 중에</p>
+                        <p>구현 아이디어
+
+</p>
                     
                 </section>
             </a>
@@ -449,7 +531,7 @@ into the {body} of the default.hbs template -->
                 <span class="reading-time">
                     
                     
-                      1 min read
+                      2 min read
                     
                 </span>
             </footer>

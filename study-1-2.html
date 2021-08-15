@@ -86,16 +86,7 @@
     <meta property="og:site_name" content="우당탕 프로덕트 개발 여정" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="바닐라 JS로 크롬 앱 만들기 (2) - Document Object And Event" />
-    <meta property="og:description" content="Document Object
-
-Javascript를 사용하면서 우리는 동적인 페이지를 구성할 수 있다. 그러기 위해서 페이지에서 각 부분이 어떻게 컴퓨터가 인식하고 있는지 알고 있어야한다. 
-이 과정에서 먼저 HTML에 대한 이해도가 기반이 되어야 한다. Class와 Id 정도의 개념을 이해하고 있다면 괜찮다.
-
-telem;
-
-
-Event
-" />
+    <meta property="og:description" content="Document Object Document Object는 HTML Element라고 생각하면 편하다. 이 때,Javascript가 HTML 문서의 요소에 접근할 수 있는 방법들이 2가지 존재한다. 따라서 먼저 HTML Element에 대한 이해가 필요하다. getElementById( ) (Function) 이 함수의 경우, 변수에 선택할 HTML Element의 Id를 입력해야한다. queryselector( ) (Function) 이 함수의 경우, 변수에 선택할 HTML Element를 CSS Selector" />
     <meta property="og:url" content="https://jskim1215.github.io/study-1-2" />
     <meta property="og:image" content="https://jskim1215.github.io/assets/study/study-1-2.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
@@ -105,16 +96,7 @@ Event
     <meta property="article:tag" content="Study" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="바닐라 JS로 크롬 앱 만들기 (2) - Document Object And Event" />
-    <meta name="twitter:description" content="Document Object
-
-Javascript를 사용하면서 우리는 동적인 페이지를 구성할 수 있다. 그러기 위해서 페이지에서 각 부분이 어떻게 컴퓨터가 인식하고 있는지 알고 있어야한다. 
-이 과정에서 먼저 HTML에 대한 이해도가 기반이 되어야 한다. Class와 Id 정도의 개념을 이해하고 있다면 괜찮다.
-
-telem;
-
-
-Event
-" />
+    <meta name="twitter:description" content="Document Object Document Object는 HTML Element라고 생각하면 편하다. 이 때,Javascript가 HTML 문서의 요소에 접근할 수 있는 방법들이 2가지 존재한다. 따라서 먼저 HTML Element에 대한 이해가 필요하다. getElementById( ) (Function) 이 함수의 경우, 변수에 선택할 HTML Element의 Id를 입력해야한다. queryselector( ) (Function) 이 함수의 경우, 변수에 선택할 HTML Element를 CSS Selector" />
     <meta name="twitter:url" content="https://jskim1215.github.io/" />
     <meta name="twitter:image" content="https://jskim1215.github.io/assets/study/study-1-2.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -146,16 +128,7 @@ Event
         "@type": "WebPage",
         "@id": "https://jskim1215.github.io/study-1-2"
     },
-    "description": "Document Object
-
-Javascript를 사용하면서 우리는 동적인 페이지를 구성할 수 있다. 그러기 위해서 페이지에서 각 부분이 어떻게 컴퓨터가 인식하고 있는지 알고 있어야한다. 
-이 과정에서 먼저 HTML에 대한 이해도가 기반이 되어야 한다. Class와 Id 정도의 개념을 이해하고 있다면 괜찮다.
-
-telem;
-
-
-Event
-"
+    "description": "Document Object Document Object는 HTML Element라고 생각하면 편하다. 이 때,Javascript가 HTML 문서의 요소에 접근할 수 있는 방법들이 2가지 존재한다. 따라서 먼저 HTML Element에 대한 이해가 필요하다. getElementById( ) (Function) 이 함수의 경우, 변수에 선택할 HTML Element의 Id를 입력해야한다. queryselector( ) (Function) 이 함수의 경우, 변수에 선택할 HTML Element를 CSS Selector"
 }
     </script>
 
@@ -250,19 +223,37 @@ into the {body} of the default.hbs template -->
                         <div class="toc-container">
                             <div class="toc">
                                 <div class="toc-title">목차</div>
-                                <ul class="inline_toc" id="my_toc"><li><a href="#document-object">Document Object</a></li><li><a href="#event">Event</a></li></ul>
+                                <ul class="inline_toc" id="my_toc"><li><a href="#document-object">Document Object</a></li><li><a href="#event">Event</a><ul class="sub_toc"><li><a href="#addeventlistener">addEventListener()</a></li></ul></li></ul>
 
                               </div>
                         </div>
                         <h2 id="document-object">Document Object</h2>
 
-<p><code class="language-plaintext highlighter-rouge">Javascript</code>를 사용하면서 우리는 동적인 페이지를 구성할 수 있다. 그러기 위해서 페이지에서 각 부분이 어떻게 컴퓨터가 인식하고 있는지 알고 있어야한다. <!--break-->
-이 과정에서 먼저 HTML에 대한 이해도가 기반이 되어야 한다. Class와 Id 정도의 개념을 이해하고 있다면 괜찮다.</p>
+<p>Document Object는 HTML Element라고 생각하면 편하다. 이 때,<code class="language-plaintext highlighter-rouge">Javascript</code>가 HTML 문서의 요소에 접근할 수 있는 방법들이 2가지 존재한다. 따라서 먼저 HTML Element에 대한 이해가 필요하다.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">telem</span><span class="p">;</span>
-</code></pre></div></div>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">getElementById( )</code> (Function)<br />
+이 함수의 경우, 변수에 선택할 HTML Element의 <code class="language-plaintext highlighter-rouge">Id</code>를 입력해야한다.</li>
+  <li><code class="language-plaintext highlighter-rouge">queryselector( )</code> (Function) <br />
+이 함수의 경우, 변수에 선택할 HTML Element를 <code class="language-plaintext highlighter-rouge">CSS Selector</code> 형식으로 입력해야한다.</li>
+</ol>
 
 <h2 id="event">Event</h2>
+
+<p>웹 페이지에서 일어나는 상황이다. Click, Submit, Change 등 웹 페이지 상에서 우리가 하는 모든 행동들을 <code class="language-plaintext highlighter-rouge">event</code>라고 생각하면 편하다. <code class="language-plaintext highlighter-rouge">Javascript</code>에서 이러한 <code class="language-plaintext highlighter-rouge">event</code>들이 일어나는지 확인할 수 있는 방법이 존재한다.</p>
+
+<h3 id="addeventlistener">addEventListener()</h3>
+
+<p>이 함수의 경우, 앞에 어떤 HTML Element의 일어나는 <code class="language-plaintext highlighter-rouge">event</code>를 관찰할 것인가에 대한 내용이 필요하다. 그래서 앞서 <code class="language-plaintext highlighter-rouge">Document Object</code>에서 HTML Element에 접근하여 <code class="language-plaintext highlighter-rouge">addEventListener()</code>을 통해서 <code class="language-plaintext highlighter-rouge">event</code>를 관찰한다. <br /></p>
+
+<p><code class="language-plaintext highlighter-rouge">addEventListener( )</code>의 경우, 2가지의 입력 변수를 받는다.</p>
+
+<ol>
+  <li>event</li>
+  <li>function</li>
+</ol>
+
+<p>해당 HTML Element에 <code class="language-plaintext highlighter-rouge">event</code>가 발생하면 <code class="language-plaintext highlighter-rouge">function</code>을 실행하는 기능을 구현하고 싶을 때 사용하면 된다.</p>
 
                       </article>
                 </div>
@@ -419,10 +410,6 @@ into the {body} of the default.hbs template -->
                                 
                                   
                                     
-                                  
-                                
-                                  
-                                    
                                         
                                         
                                     
@@ -433,7 +420,7 @@ into the {body} of the default.hbs template -->
                         <footer class="read-next-card-footer">
                             <a href="/tag/study/">
                                 
-                                    See all 9 posts  →
+                                    See all 8 posts  →
                                 
                             </a>
                         </footer>
@@ -447,12 +434,12 @@ into the {body} of the default.hbs template -->
 
     <article class="post-card post-template">
         
-            <a class="post-card-image-link" href="/study-1-7">
-                <div class="post-card-image" style="background-image: url(/assets/study/study-1-2.png)"></div>
+            <a class="post-card-image-link" href="/study-1-3">
+                <div class="post-card-image" style="background-image: url(/assets/study/study-1-3.png)"></div>
             </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="/study-1-7">
+            <a class="post-card-content-link" href="/study-1-3">
                 <header class="post-card-header">
                     
                         
@@ -462,11 +449,13 @@ into the {body} of the default.hbs template -->
                         
                     
 
-                    <h2 class="post-card-title">바닐라 JS로 크롬 앱 만들기 (2) - Document Object And Event</h2>
+                    <h2 class="post-card-title">바닐라 JS로 크롬 앱 만들기 (3) - Local Storage And Clock</h2>
                 </header>
                 <section class="post-card-excerpt">
                     
-                        <p>Document Object Javascript를 사용하면서 우리는 동적인 페이지를 구성할 수 있다. 그러기 위해서 페이지에서 각 부분이 어떻게 컴퓨터가 인식하고 있는지 알고 있어야한다. 이 과정에서 먼저 HTML에 대한 이해도가 기반이 되어야 한다. Class와 Id 정도의</p>
+                        <p>Local Storage
+
+</p>
                     
                 </section>
             </a>

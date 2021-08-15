@@ -86,7 +86,7 @@
     <meta property="og:site_name" content="우당탕 프로덕트 개발 여정" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="실전형 React Hooks 10개 (3) - UseRef" />
-    <meta property="og:description" content="useRef란? useRef는 querySelector 또는 getElementById 처럼 HTML element를 catch하는데 사용하는 느낌이다. 사실 프로젝트를 진행하면서 useRef를 사용해보지는 않아서 잘 모르는 부분이 있다. 여기 부분과 관련해서는 코드 예시를 하나 보면서 진행하겠다. 우클릭 후 새탭에서 이미지 열기 하면 보기 쉽다. const Element = useRef(); return Element ref={"Hook Function"} 위 세 개의 코드를 통해" />
+    <meta property="og:description" content="useRef란? useRef는 querySelector 또는 getElementById 처럼 HTML element를 catch하는데 사용하는 느낌이다. const Element = useRef(); return Element ref={"Hook Function"} 위 세 개의 코드를 통해 HTML Element 중 내가 원하는 element를 불러온다. 간단하게 useClick 함수가 실행되면서 useRef()를 통해 element를 불러오고 그 다음에 함수 처리를 한다음 element를 돌려준다. HTML Code에서는 useClick()을 통해" />
     <meta property="og:url" content="https://jskim1215.github.io/study-2-3" />
     <meta property="og:image" content="https://jskim1215.github.io/assets/study/study-2-3.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
@@ -96,7 +96,7 @@
     <meta property="article:tag" content="Study" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="실전형 React Hooks 10개 (3) - UseRef" />
-    <meta name="twitter:description" content="useRef란? useRef는 querySelector 또는 getElementById 처럼 HTML element를 catch하는데 사용하는 느낌이다. 사실 프로젝트를 진행하면서 useRef를 사용해보지는 않아서 잘 모르는 부분이 있다. 여기 부분과 관련해서는 코드 예시를 하나 보면서 진행하겠다. 우클릭 후 새탭에서 이미지 열기 하면 보기 쉽다. const Element = useRef(); return Element ref={"Hook Function"} 위 세 개의 코드를 통해" />
+    <meta name="twitter:description" content="useRef란? useRef는 querySelector 또는 getElementById 처럼 HTML element를 catch하는데 사용하는 느낌이다. const Element = useRef(); return Element ref={"Hook Function"} 위 세 개의 코드를 통해 HTML Element 중 내가 원하는 element를 불러온다. 간단하게 useClick 함수가 실행되면서 useRef()를 통해 element를 불러오고 그 다음에 함수 처리를 한다음 element를 돌려준다. HTML Code에서는 useClick()을 통해" />
     <meta name="twitter:url" content="https://jskim1215.github.io/" />
     <meta name="twitter:image" content="https://jskim1215.github.io/assets/study/study-2-3.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -128,7 +128,7 @@
         "@type": "WebPage",
         "@id": "https://jskim1215.github.io/study-2-3"
     },
-    "description": "useRef란? useRef는 querySelector 또는 getElementById 처럼 HTML element를 catch하는데 사용하는 느낌이다. 사실 프로젝트를 진행하면서 useRef를 사용해보지는 않아서 잘 모르는 부분이 있다. 여기 부분과 관련해서는 코드 예시를 하나 보면서 진행하겠다. 우클릭 후 새탭에서 이미지 열기 하면 보기 쉽다. const Element = useRef(); return Element ref={"Hook Function"} 위 세 개의 코드를 통해"
+    "description": "useRef란? useRef는 querySelector 또는 getElementById 처럼 HTML element를 catch하는데 사용하는 느낌이다. const Element = useRef(); return Element ref={"Hook Function"} 위 세 개의 코드를 통해 HTML Element 중 내가 원하는 element를 불러온다. 간단하게 useClick 함수가 실행되면서 useRef()를 통해 element를 불러오고 그 다음에 함수 처리를 한다음 element를 돌려준다. HTML Code에서는 useClick()을 통해"
 }
     </script>
 
@@ -228,19 +228,23 @@ into the {body} of the default.hbs template -->
                               </div>
                         </div>
                         <h2 id="useref란">useRef란?</h2>
-<p><code class="language-plaintext highlighter-rouge">useRef</code>는 <code class="language-plaintext highlighter-rouge">querySelector</code> 또는 <code class="language-plaintext highlighter-rouge">getElementById</code> 처럼 HTML element를 catch하는데 사용하는 느낌이다. <!--break--></p>
 
-<p>사실 프로젝트를 진행하면서 <code class="language-plaintext highlighter-rouge">useRef</code>를 사용해보지는 않아서 잘 모르는 부분이 있다. 여기 부분과 관련해서는 코드 예시를 하나 보면서 진행하겠다. <code class="language-plaintext highlighter-rouge">우클릭 후 새탭에서 이미지 열기</code> 하면 보기 쉽다.
-<img src="https://user-images.githubusercontent.com/73425926/129316318-333bb1b6-67b2-4fd0-8a7d-158fc3cfab49.jpg" alt="p-useref-1" /></p>
+<p><code class="language-plaintext highlighter-rouge">useRef</code>는 <code class="language-plaintext highlighter-rouge">querySelector</code> 또는 <code class="language-plaintext highlighter-rouge">getElementById</code> 처럼 HTML element를 catch하는데 사용하는 느낌이다. <!--break--></p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">Element</span> <span class="o">=</span> <span class="nx">useRef</span><span class="p">();</span>
 <span class="k">return</span> <span class="nx">Element</span>
 
 <span class="nx">ref</span><span class="o">=</span><span class="p">{</span><span class="dl">"</span><span class="s2">Hook Function</span><span class="dl">"</span><span class="p">}</span>
 </code></pre></div></div>
+
 <p>위 세 개의 코드를 통해 HTML Element 중 내가 원하는 element를 불러온다. 간단하게 <code class="language-plaintext highlighter-rouge">useClick</code> 함수가 실행되면서 <code class="language-plaintext highlighter-rouge">useRef()</code>를 통해 element를 불러오고 그 다음에 함수 처리를 한다음 element를 돌려준다. HTML Code에서는 <code class="language-plaintext highlighter-rouge">useClick()</code>을 통해 element를 함수 처리한다. <br /></p>
 
-<p>사실 적으면서도 <code class="language-plaintext highlighter-rouge">useRef()</code>의 감 정도 잡은 것 같다. 실제 코드에 적용하는 것과는 아예 다르니 한 번 queryselector를 적용했던 코드들을 바꿔보는 것이 좋을 것 같다.</p>
+<p>사실 적으면서도 <code class="language-plaintext highlighter-rouge">useRef()</code>의 감 정도 잡은 것 같다. 실제 코드에 적용하는 것과는 아예 다르니 한 번 queryselector를 적용했던 코드들을 바꿔보는 것이 좋을 것 같다.
+<br /></p>
+
+<p>사실 프로젝트를 진행하면서 <code class="language-plaintext highlighter-rouge">useRef</code>를 사용해보지는 않아서 잘 모르는 부분이 있다. 여기 부분과 관련해서는 코드 예시를 하나 보면서 진행하겠다. <code class="language-plaintext highlighter-rouge">우클릭 후 새탭에서 이미지 열기</code> 하면 보기 쉽다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/73425926/129316318-333bb1b6-67b2-4fd0-8a7d-158fc3cfab49.jpg" alt="p-useref-1" /></p>
 
                       </article>
                 </div>
@@ -402,19 +406,12 @@ into the {body} of the default.hbs template -->
                                     
                                   
                                 
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
                             </ul>
                         </div>
                         <footer class="read-next-card-footer">
                             <a href="/tag/study/">
                                 
-                                    See all 9 posts  →
+                                    See all 8 posts  →
                                 
                             </a>
                         </footer>
@@ -502,9 +499,7 @@ into the {body} of the default.hbs template -->
                 </header>
                 <section class="post-card-excerpt">
                     
-                        <p>UseEffect란?
-useEffect는 function, dependency라는 두 개의 변수를 받는다. 여기서 dependency라는 변수는 말 그대로 해당 element에 변화가 발생하면 function을 발생시키는 친구라고 생각하면 된다.
-
+                        <p>UseEffect
 
 </p>
                     
