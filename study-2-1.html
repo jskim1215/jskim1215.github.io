@@ -86,7 +86,7 @@
     <meta property="og:site_name" content="우당탕 프로덕트 개발 여정" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="실전형 React Hooks 10개 (1) - UseState" />
-    <meta property="og:description" content="기존과 차이 Without useState() 지금까지 class component에서 state 그리고 setState를 통해 데이터를 관리했다. class AppAgly extends React.component { state = { item: 0, }; render() { const { item } = this.state; return ( &lt;div className="App"&gt; &lt;h1&gt;Number of item is {item}&lt;/h1&gt; &lt;button onClick={IncrementElement}&gt;Increment&lt;/button&gt; &lt;button onClick={DecrementElement}&gt;Decrement&lt;/button&gt; &lt;/div&gt; ); } IncrementElement =" />
+    <meta property="og:description" content="useState() useState()는 변수를 생성하고 제어하는 과정을 한 줄의 코드로 구현할 수 있는 도구다. const [item, setItem] = useState("initial item"); 위 한 줄의 코드로 item이라는 변수를 생성하고, setItem을 통해 item이라는 변수의 변화를 제어할 수 있다. 프로젝트를 진행하면서 가장 많이 사용한 코드 중에 하나로, 지금까지의 경험으로 봤을 때는 가장 사용량이 많은 도구라고" />
     <meta property="og:url" content="https://jskim1215.github.io/study-2-1" />
     <meta property="og:image" content="https://jskim1215.github.io/assets/study/study-2-1.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
@@ -96,7 +96,7 @@
     <meta property="article:tag" content="Study" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="실전형 React Hooks 10개 (1) - UseState" />
-    <meta name="twitter:description" content="기존과 차이 Without useState() 지금까지 class component에서 state 그리고 setState를 통해 데이터를 관리했다. class AppAgly extends React.component { state = { item: 0, }; render() { const { item } = this.state; return ( &lt;div className="App"&gt; &lt;h1&gt;Number of item is {item}&lt;/h1&gt; &lt;button onClick={IncrementElement}&gt;Increment&lt;/button&gt; &lt;button onClick={DecrementElement}&gt;Decrement&lt;/button&gt; &lt;/div&gt; ); } IncrementElement =" />
+    <meta name="twitter:description" content="useState() useState()는 변수를 생성하고 제어하는 과정을 한 줄의 코드로 구현할 수 있는 도구다. const [item, setItem] = useState("initial item"); 위 한 줄의 코드로 item이라는 변수를 생성하고, setItem을 통해 item이라는 변수의 변화를 제어할 수 있다. 프로젝트를 진행하면서 가장 많이 사용한 코드 중에 하나로, 지금까지의 경험으로 봤을 때는 가장 사용량이 많은 도구라고" />
     <meta name="twitter:url" content="https://jskim1215.github.io/" />
     <meta name="twitter:image" content="https://jskim1215.github.io/assets/study/study-2-1.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -128,7 +128,7 @@
         "@type": "WebPage",
         "@id": "https://jskim1215.github.io/study-2-1"
     },
-    "description": "기존과 차이 Without useState() 지금까지 class component에서 state 그리고 setState를 통해 데이터를 관리했다. class AppAgly extends React.component { state = { item: 0, }; render() { const { item } = this.state; return ( &lt;div className="App"&gt; &lt;h1&gt;Number of item is {item}&lt;/h1&gt; &lt;button onClick={IncrementElement}&gt;Increment&lt;/button&gt; &lt;button onClick={DecrementElement}&gt;Decrement&lt;/button&gt; &lt;/div&gt; ); } IncrementElement ="
+    "description": "useState() useState()는 변수를 생성하고 제어하는 과정을 한 줄의 코드로 구현할 수 있는 도구다. const [item, setItem] = useState("initial item"); 위 한 줄의 코드로 item이라는 변수를 생성하고, setItem을 통해 item이라는 변수의 변화를 제어할 수 있다. 프로젝트를 진행하면서 가장 많이 사용한 코드 중에 하나로, 지금까지의 경험으로 봤을 때는 가장 사용량이 많은 도구라고"
 }
     </script>
 
@@ -223,11 +223,20 @@ into the {body} of the default.hbs template -->
                         <div class="toc-container">
                             <div class="toc">
                                 <div class="toc-title">목차</div>
-                                <ul class="inline_toc" id="my_toc"><li><a href="#기존과-차이">기존과 차이</a><ul class="sub_toc"><li><a href="#without-usestate">Without useState()</a></li><li><a href="#with-usestate">With useState()</a></li></ul></li><li><a href="#적용-예시">적용 예시</a><ul class="sub_toc"><li><a href="#useinput">useInput</a></li><li><a href="#usetabs">useTabs</a></li></ul></li></ul>
+                                <ul class="inline_toc" id="my_toc"><li><a href="#usestate">useState()</a></li><li><a href="#기존과-차이">기존과 차이</a><ul class="sub_toc"><li><a href="#without-usestate">Without useState()</a></li><li><a href="#with-usestate">With useState()</a></li></ul></li><li><a href="#적용-예시">적용 예시</a><ul class="sub_toc"><li><a href="#useinput">useInput</a></li><li><a href="#usetabs">useTabs</a></li></ul></li></ul>
 
                               </div>
                         </div>
-                        <h2 id="기존과-차이">기존과 차이</h2>
+                        <h2 id="usestate">useState()</h2>
+
+<p><code class="language-plaintext highlighter-rouge">useState()</code>는 변수를 생성하고 제어하는 과정을 한 줄의 코드로 구현할 수 있는 도구다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">item</span><span class="p">,</span> <span class="nx">setItem</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">"</span><span class="s2">initial item</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>위 한 줄의 코드로 <code class="language-plaintext highlighter-rouge">item</code>이라는 변수를 생성하고, <code class="language-plaintext highlighter-rouge">setItem</code>을 통해 <code class="language-plaintext highlighter-rouge">item</code>이라는 변수의 변화를 제어할 수 있다. 프로젝트를 진행하면서 가장 많이 사용한 코드 중에 하나로, 지금까지의 경험으로 봤을 때는 가장 사용량이 많은 도구라고 생각하기 때문에 아래 <code class="language-plaintext highlighter-rouge">useState</code> 전후 코드를 통해 <code class="language-plaintext highlighter-rouge">useState</code>의 기능에 대해 이해하는 것이 가장 중요하다고 생각한다.</p>
+
+<h2 id="기존과-차이">기존과 차이</h2>
 
 <h3 id="without-usestate">Without useState()</h3>
 
@@ -409,12 +418,10 @@ into the {body} of the default.hbs template -->
                                   
                                 
                                   
-                                
-                                  
                                     
                                         
                                         
-                                            <li><a href="/study-3-2">트위터 클론 코딩 (2) - React Review</a></li>
+                                            <li><a href="/study-3-2">트위터 클론 코딩 (2) - Authentication</a></li>
                                         
                                     
                                   
@@ -458,6 +465,13 @@ into the {body} of the default.hbs template -->
                                   
                                 
                                   
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
                                 
                                   
                                 
@@ -489,7 +503,7 @@ into the {body} of the default.hbs template -->
                         <footer class="read-next-card-footer">
                             <a href="/tag/study/">
                                 
-                                    See all 8 posts  →
+                                    See all 9 posts  →
                                 
                             </a>
                         </footer>
@@ -576,7 +590,9 @@ into the {body} of the default.hbs template -->
                 </header>
                 <section class="post-card-excerpt">
                     
-                        <p>나의 블로그 경험 깃허브 페이지 + Jekyll을 활용해서 블로그를 처음 만들어 본 것은 아니였어요. 과거에도 비슷한 목적을 가지고 블로그를 작성하려고 했었던 적이 있었는데 지금처럼 프로그래밍을 학습하면서 나의 학습기록을 기록하고 정리하는 용도로 사용하려 했었죠.</p>
+                        <p>나의 블로그 경험
+
+</p>
                     
                 </section>
             </a>

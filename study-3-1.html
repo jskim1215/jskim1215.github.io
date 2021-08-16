@@ -223,7 +223,7 @@ into the {body} of the default.hbs template -->
                         <div class="toc-container">
                             <div class="toc">
                                 <div class="toc-title">목차</div>
-                                <ul class="inline_toc" id="my_toc"><li><a href="#firebase란">FireBase란?</a></li><li><a href="#firebase-사용하는-방법">FireBase 사용하는 방법</a></li><li><a href="#router-setup">Router Setup</a></li></ul>
+                                <ul class="inline_toc" id="my_toc"><li><a href="#firebase란">FireBase란?</a></li><li><a href="#firebase-사용하는-방법">FireBase 사용하는 방법</a><ul class="sub_toc"><li><a href="#react-application-세팅하기">React Application 세팅하기</a></li><li><a href="#firebase-연결하기">FireBase 연결하기</a></li></ul></li><li><a href="#router-setup">Router Setup</a><ul class="sub_toc"><li><a href="#auth">Auth</a></li><li><a href="#home">Home</a></li><li><a href="#profile">Profile</a></li></ul></li></ul>
 
                               </div>
                         </div>
@@ -231,27 +231,32 @@ into the {body} of the default.hbs template -->
 <br /></p>
 
 <h2 id="firebase란">FireBase란?</h2>
+
 <p><code class="language-plaintext highlighter-rouge">FireBase</code>는 백엔드 프로그램이라고 말할 수 있다. 그렇기 때문에 백엔드에 대한 큰 공부 없이 <code class="language-plaintext highlighter-rouge">로그인 기능</code>, <code class="language-plaintext highlighter-rouge">데이터베이스</code>, <code class="language-plaintext highlighter-rouge">저장공간</code>을 사용할 수 있다. <br /></p>
 
 <p>하지만 이렇게 쉽게 사용할 수 있기 때문에 앞서 내가 서비스를 런칭해서 사용자의 피드백을 듣는 정도로 사용할 수 있는 것이다. 이후에 서비스를 계속해서 유지하는데 있어서 직접 서버를 운영해야하는 것은 틀림없다. 말그대로 <code class="language-plaintext highlighter-rouge">아이디어를 테스트</code>하는 정도로 사용해야한다는 것이다.</p>
 
 <h2 id="firebase-사용하는-방법">FireBase 사용하는 방법</h2>
+
 <p>수업을 듣거나 이 블로그를 보는 경우, 다음의 과정을 통해 기본 세팅을 해주면 된다.</p>
 
+<h3 id="react-application-세팅하기">React Application 세팅하기</h3>
+
 <ol>
-  <li><code class="language-plaintext highlighter-rouge">React Application 세팅하기</code>
-    <ol>
-      <li><code class="language-plaintext highlighter-rouge">npx create-react-app "folder"</code></li>
-      <li><u>index.js</u> / <u>App.js</u>빼고 정리하기</li>
-    </ol>
-  </li>
-  <li>FireBase 연결하기
-    <ol>
-      <li><a href="https://firebase.google.com/">FireBase 페이지</a> 접속하기</li>
-      <li><code class="language-plaintext highlighter-rouge">npm install --save firebase</code></li>
-      <li><u>fbase.js</u> 파일 생성하고 아래 코드 입력하기 (index.js 파일 있는 위치)
-        <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">import</span> <span class="nx">firebase</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">firebase/app</span><span class="dl">"</span><span class="p">;</span>
- <span class="kd">const</span> <span class="nx">firebaseConfig</span> <span class="o">=</span> <span class="p">{</span>
+  <li><code class="language-plaintext highlighter-rouge">npx create-react-app "폴더 명"</code></li>
+  <li><u>index.js</u> / <u>App.js</u>빼고 정리하기</li>
+</ol>
+
+<h3 id="firebase-연결하기">FireBase 연결하기</h3>
+
+<ol>
+  <li><a href="https://firebase.google.com/">FireBase 페이지</a> 접속하기</li>
+  <li><code class="language-plaintext highlighter-rouge">npm install --save firebase</code></li>
+  <li><u>fbase.js</u> 파일 생성하고 아래 코드 입력하기 (index.js 파일 있는 위치)</li>
+</ol>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">firebase</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">firebase/app</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">firebaseConfig</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">apiKey</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
   <span class="na">authDomain</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
   <span class="na">projectId</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
@@ -260,25 +265,28 @@ into the {body} of the default.hbs template -->
   <span class="na">appId</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
 <span class="p">};</span>
 <span class="nx">firebase</span><span class="p">.</span><span class="nx">initializeApp</span><span class="p">(</span><span class="nx">firebaseConfig</span><span class="p">);</span>
-</code></pre></div>        </div>
-      </li>
-    </ol>
-  </li>
-</ol>
+</code></pre></div></div>
 
 <h2 id="router-setup">Router Setup</h2>
-<p>이 과정은 전체적인 서비스의 뼈대를 구축하는 과정이라고 생각하면 된다. 기획을 하는 입장이라면 스토리보드 같은 것이다. 
-다른 비유를 하자면 <code class="language-plaintext highlighter-rouge">코딩</code>이 <code class="language-plaintext highlighter-rouge">구슬 꿰기 과정</code>라면 <code class="language-plaintext highlighter-rouge">Router Setup</code>은 <code class="language-plaintext highlighter-rouge">구슬과 실을 소분</code>하는 과정이다. <br /></p>
+
+<p>이 과정은 전체적인 서비스의 뼈대를 구축하는 과정이라고 생각하면 된다. 기획을 하는 입장이라면 스토리보드 같은 것이다.
+다른 비유를 하자면 <code class="language-plaintext highlighter-rouge">코딩</code>이 <code class="language-plaintext highlighter-rouge">구슬 꿰기 과정</code>라면 <code class="language-plaintext highlighter-rouge">Router Setup</code>은 <code class="language-plaintext highlighter-rouge">구슬과 실을 소분하는 과정</code>이다. <br /></p>
 
 <p>트위터 클론코딩에 있어 크게 4가지 페이지를 구축할 예정이다.</p>
-<ol>
-  <li>Auth</li>
-  <li>Home</li>
-  <li>Profile</li>
-  <li>EditProfile</li>
-</ol>
 
-<p><code class="language-plaintext highlighter-rouge">Router</code>에 대해 잘 모른다면 <a href="">React로 웹 앱 만들기</a>를 먼저 공부하고 진행해야한다.</p>
+<h3 id="auth">Auth</h3>
+
+<p>회원가입과 로그인을 위한 페이지.</p>
+
+<h3 id="home">Home</h3>
+
+<p>기본 랜딩페이지</p>
+
+<h3 id="profile">Profile</h3>
+
+<p>개인 페이지.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Router</code>에 대해 잘 모른다면 <a href="https://jskim1215.github.io/study-4-2">React로 웹 앱 만들기</a>를 먼저 공부하고 진행해야한다.</p>
 
                       </article>
                 </div>
@@ -365,12 +373,10 @@ into the {body} of the default.hbs template -->
                                   
                                 
                                   
-                                
-                                  
                                     
                                         
                                         
-                                            <li><a href="/study-3-2">트위터 클론 코딩 (2) - React Review</a></li>
+                                            <li><a href="/study-3-2">트위터 클론 코딩 (2) - Authentication</a></li>
                                         
                                     
                                   
@@ -414,6 +420,13 @@ into the {body} of the default.hbs template -->
                                   
                                 
                                   
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
                                 
                                   
                                 
@@ -445,7 +458,7 @@ into the {body} of the default.hbs template -->
                         <footer class="read-next-card-footer">
                             <a href="/tag/study/">
                                 
-                                    See all 8 posts  →
+                                    See all 9 posts  →
                                 
                             </a>
                         </footer>
@@ -474,11 +487,11 @@ into the {body} of the default.hbs template -->
                         
                     
 
-                    <h2 class="post-card-title">트위터 클론 코딩 (2) - React Review</h2>
+                    <h2 class="post-card-title">트위터 클론 코딩 (2) - Authentication</h2>
                 </header>
                 <section class="post-card-excerpt">
                     
-                        <p>테스트??
+                        <p>시작에 앞서
 
 </p>
                     

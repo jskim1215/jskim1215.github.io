@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://jskim1215.github.io/tag/study/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://jskim1215.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-08-15T11:57:55+09:00</updated>
+  <updated>2021-08-16T10:35:27+09:00</updated>
   <id>https://jskim1215.github.io/tag/study/feed.xml</id>
 
   
@@ -32,30 +32,14 @@
 
   
     <entry>
-      <title type="html">트위터 클론 코딩 (2) - React Review</title>
-      <link href="https://jskim1215.github.io/study-3-2" rel="alternate" type="text/html" title="트위터 클론 코딩 (2) - React Review" />
+      <title type="html">트위터 클론 코딩 (2) - Authentication</title>
+      <link href="https://jskim1215.github.io/study-3-2" rel="alternate" type="text/html" title="트위터 클론 코딩 (2) - Authentication" />
       <published>2021-08-12T13:01:01+09:00</published>
       <updated>2021-08-12T13:01:01+09:00</updated>
       <id>https://jskim1215.github.io/study-3-2</id>
-      <content type="html" xml:base="https://jskim1215.github.io/study-3-2">&lt;p&gt;테스트??&lt;/p&gt;
+      <content type="html" xml:base="https://jskim1215.github.io/study-3-2">&lt;h2 id=&quot;시작에-앞서&quot;&gt;시작에 앞서&lt;/h2&gt;
 
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getNweets&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dbNweets&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dbService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;collection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;nweets&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;dbNweets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nweetObject&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;setNweets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;nweetObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;useEffect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;getNweets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;dbService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;collection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;nweets&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onSnapshot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;snapshot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;something happen&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;},[])&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
+&lt;p&gt;만약 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Router&lt;/code&gt; 대해 충분히 이해하지 못했다면 &lt;a href=&quot;https://nomadcoders.co/courses&quot;&gt;React JS로 영화 웹 서비스 만들기&lt;/a&gt; 무료 강의를 먼저 수강하시기를 추천드립니다. 추가로 간단하게 정리본을 보고 싶다면 &lt;a href=&quot;https://jskim1215.github.io/study-4-2&quot;&gt;해당 블로그&lt;/a&gt;를 참고하시면 됩니다.&lt;/p&gt;</content>
 
       
       
@@ -76,7 +60,7 @@
       
 
       
-        <summary type="html">테스트??</summary>
+        <summary type="html">시작에 앞서</summary>
       
 
       
@@ -93,27 +77,32 @@
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;firebase란&quot;&gt;FireBase란?&lt;/h2&gt;
+
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FireBase&lt;/code&gt;는 백엔드 프로그램이라고 말할 수 있다. 그렇기 때문에 백엔드에 대한 큰 공부 없이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;로그인 기능&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;데이터베이스&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;저장공간&lt;/code&gt;을 사용할 수 있다. &lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;하지만 이렇게 쉽게 사용할 수 있기 때문에 앞서 내가 서비스를 런칭해서 사용자의 피드백을 듣는 정도로 사용할 수 있는 것이다. 이후에 서비스를 계속해서 유지하는데 있어서 직접 서버를 운영해야하는 것은 틀림없다. 말그대로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;아이디어를 테스트&lt;/code&gt;하는 정도로 사용해야한다는 것이다.&lt;/p&gt;
 
 &lt;h2 id=&quot;firebase-사용하는-방법&quot;&gt;FireBase 사용하는 방법&lt;/h2&gt;
+
 &lt;p&gt;수업을 듣거나 이 블로그를 보는 경우, 다음의 과정을 통해 기본 세팅을 해주면 된다.&lt;/p&gt;
 
+&lt;h3 id=&quot;react-application-세팅하기&quot;&gt;React Application 세팅하기&lt;/h3&gt;
+
 &lt;ol&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;React Application 세팅하기&lt;/code&gt;
-    &lt;ol&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npx create-react-app &quot;folder&quot;&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;u&gt;index.js&lt;/u&gt; / &lt;u&gt;App.js&lt;/u&gt;빼고 정리하기&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;FireBase 연결하기
-    &lt;ol&gt;
-      &lt;li&gt;&lt;a href=&quot;https://firebase.google.com/&quot;&gt;FireBase 페이지&lt;/a&gt; 접속하기&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm install --save firebase&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;u&gt;fbase.js&lt;/u&gt; 파일 생성하고 아래 코드 입력하기 (index.js 파일 있는 위치)
-        &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;firebase&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;firebase/app&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
- &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;firebaseConfig&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npx create-react-app &quot;폴더 명&quot;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;index.js&lt;/u&gt; / &lt;u&gt;App.js&lt;/u&gt;빼고 정리하기&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;firebase-연결하기&quot;&gt;FireBase 연결하기&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://firebase.google.com/&quot;&gt;FireBase 페이지&lt;/a&gt; 접속하기&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm install --save firebase&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;fbase.js&lt;/u&gt; 파일 생성하고 아래 코드 입력하기 (index.js 파일 있는 위치)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;firebase&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;firebase/app&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;firebaseConfig&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;apiKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;authDomain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;projectId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -122,25 +111,28 @@
   &lt;span class=&quot;na&quot;&gt;appId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;firebase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;initializeApp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;firebaseConfig&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;router-setup&quot;&gt;Router Setup&lt;/h2&gt;
-&lt;p&gt;이 과정은 전체적인 서비스의 뼈대를 구축하는 과정이라고 생각하면 된다. 기획을 하는 입장이라면 스토리보드 같은 것이다. 
-다른 비유를 하자면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;코딩&lt;/code&gt;이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;구슬 꿰기 과정&lt;/code&gt;라면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Router Setup&lt;/code&gt;은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;구슬과 실을 소분&lt;/code&gt;하는 과정이다. &lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이 과정은 전체적인 서비스의 뼈대를 구축하는 과정이라고 생각하면 된다. 기획을 하는 입장이라면 스토리보드 같은 것이다.
+다른 비유를 하자면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;코딩&lt;/code&gt;이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;구슬 꿰기 과정&lt;/code&gt;라면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Router Setup&lt;/code&gt;은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;구슬과 실을 소분하는 과정&lt;/code&gt;이다. &lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;트위터 클론코딩에 있어 크게 4가지 페이지를 구축할 예정이다.&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Auth&lt;/li&gt;
-  &lt;li&gt;Home&lt;/li&gt;
-  &lt;li&gt;Profile&lt;/li&gt;
-  &lt;li&gt;EditProfile&lt;/li&gt;
-&lt;/ol&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Router&lt;/code&gt;에 대해 잘 모른다면 &lt;a href=&quot;&quot;&gt;React로 웹 앱 만들기&lt;/a&gt;를 먼저 공부하고 진행해야한다.&lt;/p&gt;</content>
+&lt;h3 id=&quot;auth&quot;&gt;Auth&lt;/h3&gt;
+
+&lt;p&gt;회원가입과 로그인을 위한 페이지.&lt;/p&gt;
+
+&lt;h3 id=&quot;home&quot;&gt;Home&lt;/h3&gt;
+
+&lt;p&gt;기본 랜딩페이지&lt;/p&gt;
+
+&lt;h3 id=&quot;profile&quot;&gt;Profile&lt;/h3&gt;
+
+&lt;p&gt;개인 페이지.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Router&lt;/code&gt;에 대해 잘 모른다면 &lt;a href=&quot;https://jskim1215.github.io/study-4-2&quot;&gt;React로 웹 앱 만들기&lt;/a&gt;를 먼저 공부하고 진행해야한다.&lt;/p&gt;</content>
 
       
       
@@ -305,7 +297,16 @@
       <published>2021-08-08T10:01:01+09:00</published>
       <updated>2021-08-08T10:01:01+09:00</updated>
       <id>https://jskim1215.github.io/study-2-1</id>
-      <content type="html" xml:base="https://jskim1215.github.io/study-2-1">&lt;h2 id=&quot;기존과-차이&quot;&gt;기존과 차이&lt;/h2&gt;
+      <content type="html" xml:base="https://jskim1215.github.io/study-2-1">&lt;h2 id=&quot;usestate&quot;&gt;useState()&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;useState()&lt;/code&gt;는 변수를 생성하고 제어하는 과정을 한 줄의 코드로 구현할 수 있는 도구다.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;initial item&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위 한 줄의 코드로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;item&lt;/code&gt;이라는 변수를 생성하고, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setItem&lt;/code&gt;을 통해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;item&lt;/code&gt;이라는 변수의 변화를 제어할 수 있다. 프로젝트를 진행하면서 가장 많이 사용한 코드 중에 하나로, 지금까지의 경험으로 봤을 때는 가장 사용량이 많은 도구라고 생각하기 때문에 아래 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;useState&lt;/code&gt; 전후 코드를 통해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;useState&lt;/code&gt;의 기능에 대해 이해하는 것이 가장 중요하다고 생각한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;기존과-차이&quot;&gt;기존과 차이&lt;/h2&gt;
 
 &lt;h3 id=&quot;without-usestate&quot;&gt;Without useState()&lt;/h3&gt;
 
@@ -421,7 +422,7 @@
       
 
       
-        <summary type="html">기존과 차이</summary>
+        <summary type="html">useState()</summary>
       
 
       
@@ -429,12 +430,139 @@
     </entry>
   
     <entry>
-      <title type="html">React로 웹 앱 만들기 (1) - React란?</title>
-      <link href="https://jskim1215.github.io/study-4-1" rel="alternate" type="text/html" title="React로 웹 앱 만들기 (1) - React란?" />
+      <title type="html">React로 웹 앱 만들기 - Router</title>
+      <link href="https://jskim1215.github.io/study-4-2" rel="alternate" type="text/html" title="React로 웹 앱 만들기 - Router" />
+      <published>2021-08-06T12:01:02+09:00</published>
+      <updated>2021-08-06T12:01:02+09:00</updated>
+      <id>https://jskim1215.github.io/study-4-2</id>
+      <content type="html" xml:base="https://jskim1215.github.io/study-4-2">&lt;h2 id=&quot;router&quot;&gt;Router?&lt;/h2&gt;
+
+&lt;p&gt;앞서 React가 가지는 장점은 페이지를 실행하는데 있어서 필요한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Component&lt;/code&gt;들만 불러와서 보여준다는 점에서 찾을 수 있다. 여기서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Router&lt;/code&gt;는 어떤 Component를 불러와야하는지 일종의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;이정표 기능&lt;/code&gt;을 담당하는 친구이다. 다시 말해 페이지의 URL에 따라 어떤 Component를 실행시킬지 알려주는 기능을 하고 있다고 생각하면 된다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;indedx.js -&amp;gt; App.js -&amp;gt; Router.js -&amp;gt; Component Render&lt;/code&gt;의 구조로 프로그램이 진행되면서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Route.js&lt;/code&gt;에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;URL과 Component&lt;/code&gt;를 연결해주면 된다. 그림으로 보면 아래 그림처럼 생각하면 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/73425926/129499596-f74cb734-3e35-44f0-b610-bb1209159ba8.png&quot; alt=&quot;4-2-1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;여기서 URL을 구분함에 있어서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;exact={true}&lt;/code&gt;가 없다면 입력받은 URL에 동일하지 않고 포함 되기만 하더라도 실행하기 때문에 주의해야 한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;HashRouter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Navigation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Route&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;exact&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Home&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Route&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/about&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;About&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Route&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/movie-detail&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Detail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/HashRouter&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;사용하는-방법&quot;&gt;사용하는 방법&lt;/h2&gt;
+
+&lt;h3 id=&quot;npm-install-react-router-dom&quot;&gt;npm install react-router-dom&lt;/h3&gt;
+
+&lt;p&gt;우선 터미널에서 설치를 진행해야한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;폴더-정리&quot;&gt;폴더 정리&lt;/h3&gt;
+
+&lt;p&gt;components 그리고 routes라는 폴더를 생성해준다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;routes&lt;/code&gt; : 큰 페이지 카테고리에 해당되는 요소들을 넣어두는 폴더&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;내 프로젝트의 Route.js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;AppRouter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;({&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;modeObj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;refreshUser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;isLoggedIn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;userObj&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Router&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Switch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isLoggedIn&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+          &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Route&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;exact&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+              &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Home&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;userObj&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;userObj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;refreshUser&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;refreshUser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;            &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/Route&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;            &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Redirect&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;        &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+          &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Route&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;exact&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Auth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/Route&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;        &lt;span class=&quot;p&quot;&gt;)}&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/Switch&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/Router&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;components&lt;/code&gt; : 하나의 페이지에서 실행될 조그마한 요소들을 넣어두는 폴더&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;위의 코드에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Home&lt;/code&gt; 또는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Auth&lt;/code&gt; 같이 실행할 Component를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;components 폴더&lt;/code&gt;에 정리해두었다.&lt;/p&gt;
+
+&lt;h3 id=&quot;파일-간-연결해주기&quot;&gt;파일 간 연결해주기&lt;/h3&gt;
+
+&lt;p&gt;상위 파일에 해당 코드를 입력해 파일들을 연결해주면 기본 세팅은 완료!&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;index.js -&amp;gt; App.js&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;ReactDOM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;StrictMode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;App&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/React.StrictMode&amp;gt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,
+&lt;/span&gt;  &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;App.js -&amp;gt; router.js&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;AppRouter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Initalizing...&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/div&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>CodePurple</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="study" />
+      
+
+      
+        <summary type="html">Router?</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">React로 웹 앱 만들기 - React 개론</title>
+      <link href="https://jskim1215.github.io/study-4-1" rel="alternate" type="text/html" title="React로 웹 앱 만들기 - React 개론" />
       <published>2021-08-06T12:01:01+09:00</published>
       <updated>2021-08-06T12:01:01+09:00</updated>
       <id>https://jskim1215.github.io/study-4-1</id>
       <content type="html" xml:base="https://jskim1215.github.io/study-4-1">&lt;h2 id=&quot;내가-느낀-react&quot;&gt;내가 느낀 React&lt;/h2&gt;
+
 &lt;p&gt;Javascript 수업에서 가장 크게 변화한 부분은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.html&lt;/code&gt; 파일에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.js&lt;/code&gt; 파일로 변화했다는 점이다. &lt;!--break--&gt;&lt;/p&gt;
 
 &lt;table&gt;
@@ -473,7 +601,9 @@
 &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;u&gt;index.js&lt;/u&gt; 파일에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;App /&amp;gt;&lt;/code&gt;으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;component&lt;/code&gt;를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;render&lt;/code&gt;하는 구조로 변화한거를 볼 수 있다.&lt;/p&gt;
+&lt;h3 id=&quot;가장-큰-차이점&quot;&gt;가장 큰 차이점&lt;/h3&gt;
+
+&lt;p&gt;&lt;u&gt;index.js&lt;/u&gt; 파일에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;App /&amp;gt;&lt;/code&gt;으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;component&lt;/code&gt;를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;render&lt;/code&gt;하는 구조로 변화한거를 볼 수 있다. 체감하는 차이점은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Javascript&lt;/code&gt;를 활용했던 경우는 HTML 파일에 풀로 덕지덕지 합쳐놓은 느낌이라면, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;React&lt;/code&gt;는 레고를 결합하는 방식으로 웹 사이트를 만드는 느낌이라고 할 수 있다.&lt;/p&gt;
 
 &lt;h2 id=&quot;props&quot;&gt;Props&lt;/h2&gt;
 
@@ -482,7 +612,7 @@
 
 &lt;h2 id=&quot;state&quot;&gt;State&lt;/h2&gt;
 
-&lt;p&gt;변화하는 데이터를 사용하기 위해 사용하는 것이라고 생각한다. &lt;u&gt;App.js&lt;/u&gt; 파일에서 class component를 통해 사용한다.&lt;/p&gt;
+&lt;p&gt;변화하는 데이터를 사용하기 위해 사용하는 것이다. &lt;u&gt;App.js&lt;/u&gt; 파일에서 class component를 통해 사용한다.&lt;/p&gt;
 
 &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;App&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -505,31 +635,39 @@
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;p&gt;위 예시는 버튼을 누르면 자동적으로 화면의 숫자가 변화하는 기능을 구현해놓은 코드다.&lt;/p&gt;
 
 &lt;h2 id=&quot;life-cycle-method&quot;&gt;Life Cycle Method&lt;/h2&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Mounting &lt;br /&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Component&lt;/code&gt;가 생성되는 것을 이야기한다. 프로그램의 진행 순서를 이해하면 편하다.
-    &lt;ul&gt;
-      &lt;li&gt;class를 생성하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;constructor&lt;/code&gt;가 제일 먼저 실행&lt;/li&gt;
-      &lt;li&gt;이후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;React&lt;/code&gt;의  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;render&lt;/code&gt; 실행. 이때, component가 만들어짐 &lt;br /&gt; 
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Component&lt;/code&gt;가 생성되는 것을 이야기한다. 프로그램의 진행 순서를 이해하면 편하다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;class를 생성하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;constructor&lt;/code&gt;가 제일 먼저 실행&lt;/li&gt;
+  &lt;li&gt;이후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;React&lt;/code&gt;의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;render&lt;/code&gt; 실행. 이때, component가 만들어짐 &lt;br /&gt;
 이걸 바로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;componentDidMount&lt;/code&gt;를 통해 확인할 수 있다. &lt;br /&gt;
 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setState&lt;/code&gt; 함수가 실행 됬을 경우에는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;componentDidUpdate&lt;/code&gt;가 실행된다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
   &lt;li&gt;Unmounting &lt;br /&gt;
 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Component&lt;/code&gt;가 죽는 것을 이야기한다. 아직 정확히 어떤 느낌인지 파악하지는 못했다.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;추가로&quot;&gt;추가로&lt;/h2&gt;
+&lt;h2 id=&quot;map&quot;&gt;map()&lt;/h2&gt;
+
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;map()&lt;/code&gt;이라는 함수가 있다.&lt;/p&gt;
+
 &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;p&gt;Array의 각각 element에 대해 function을 반복해서 실행한다. 반복문에 대한 느낌만 가지고 있다면 쉽게 응용할 수 있다. 가끔 Array안에 Object가 있는 경우, 헷갈리기는 한다.&lt;/p&gt;
 
 &lt;h2 id=&quot;자세한-것은&quot;&gt;자세한 것은…&lt;/h2&gt;
+
 &lt;p&gt;다음 내용들은 노마드코더 무료강의 중 &lt;a href=&quot;https://nomadcoders.co/courses&quot;&gt;React로 웹 앱 만들기&lt;/a&gt;를 듣고 정리한 내용입니다.&lt;/p&gt;</content>
 
       
@@ -551,7 +689,7 @@
       
 
       
-        <summary type="html">내가 느낀 React Javascript 수업에서 가장 크게 변화한 부분은 index.html 파일에서 index.js 파일로 변화했다는 점이다.</summary>
+        <summary type="html">내가 느낀 React</summary>
       
 
       
@@ -613,11 +751,11 @@
 
 &lt;h3 id=&quot;setinterval&quot;&gt;setInterval&lt;/h3&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setInterval (function, time)&lt;/code&gt;의 형태로 해당 함수를 시간 간격마다 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;반복 실행&lt;/code&gt;할 경우 사용한다&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setInterval (function, time)&lt;/code&gt;의 형태로 해당 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;function&lt;/code&gt;을 시간 간격마다 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;반복 실행&lt;/code&gt;할 경우 사용한다&lt;/p&gt;
 
-&lt;h3 id=&quot;settimeout-function-time&quot;&gt;setTimeout (function, time)&lt;/h3&gt;
+&lt;h3 id=&quot;settimeout&quot;&gt;setTimeout&lt;/h3&gt;
 
-&lt;p&gt;해당 함수를 time 시간 이후 실행할 경우 사용한다.&lt;/p&gt;</content>
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setTimeout (function, time)&lt;/code&gt;의 형태로 해당 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;function&lt;/code&gt;을 time &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;특정 시간 이후&lt;/code&gt; 실행할 경우 사용한다.&lt;/p&gt;</content>
 
       
       

@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://jskim1215.github.io/tag/project/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://jskim1215.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-08-15T11:57:55+09:00</updated>
+  <updated>2021-08-16T10:35:27+09:00</updated>
   <id>https://jskim1215.github.io/tag/project/feed.xml</id>
 
   
@@ -37,7 +37,61 @@
       <published>2021-08-12T13:01:06+09:00</published>
       <updated>2021-08-12T13:01:06+09:00</updated>
       <id>https://jskim1215.github.io/project-2-4</id>
-      <content type="html" xml:base="https://jskim1215.github.io/project-2-4">&lt;p&gt;테스트&lt;/p&gt;</content>
+      <content type="html" xml:base="https://jskim1215.github.io/project-2-4">&lt;h2 id=&quot;시작에-앞서&quot;&gt;시작에 앞서&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nomadcoders.co/nwitter&quot;&gt;Firebase 수업&lt;/a&gt;까지 듣고나니 React로 프로젝트를 진행해야겠다는 생각을 했다. 따라서 기존의 구현했던 기능들을 전부 React 파일로 옮겨서 진행하기로 결정했다.&lt;/p&gt;
+
+&lt;h2 id=&quot;페이지-설계&quot;&gt;페이지 설계&lt;/h2&gt;
+
+&lt;p&gt;우선 기본적으로 로그인 페이지와 메인 랜딩 페이지 두 개로 구분해서 페이지를 설계했다. 추후에 기능을 추가할 경우 페이지를 추가해서 사용할 예정이다.&lt;/p&gt;
+
+&lt;h3 id=&quot;로그인-페이지&quot;&gt;로그인 페이지&lt;/h3&gt;
+
+&lt;p&gt;로그인 페이지의 경우 기존의 수업에서 사용했던 코드를 대부분 가져와서 사용했다. CSS만 조금 변경했다.&lt;/p&gt;
+
+&lt;h3 id=&quot;메인-페이지&quot;&gt;메인 페이지&lt;/h3&gt;
+
+&lt;p&gt;메인 페이지에 크게 4가지 Component를 담기로 결정했다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;개인정보 페이지&lt;/code&gt; &lt;br /&gt;
+간단하게 환영인사와 할 일을 입력할 수 있는 박스를 오른쪽 상단에 위치 시키기로 했다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;할 일 목록 페이지&lt;/code&gt;&lt;br /&gt;
+입력한 할 일들의 데이터를 왼쪽 상단에서 확인할 수 있도록 테이블 리스트 형식으로 구현할 예정이다. 추가적으로 할 일 카테고리 기준으로 filtering이 가능한 기능을 구현할 것이다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;타이머 페이지&lt;/code&gt;&lt;br /&gt;
+공부를 얼마나 했는지 추후에 data Tracking이 가능하도록 하기 위해 공부 시간 측정용 스톱워치 기능을 오른쪽 하단에 구현할 예정이다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;개인 PR 페이지&lt;/code&gt;&lt;br /&gt;
+페이지의 구글 광고를 넣어 사용자 경험을 해치기보다는 프로젝트 제작 타임랩스, 블로그, 그리고 팀원 모집 글을 왼쪽 하단에 구현할 예정이다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;폴더-구성&quot;&gt;폴더 구성&lt;/h2&gt;
+
+&lt;p&gt;React의 Router 기능을 활용해서 구현할 예정이다. Router 관련 설명은 &lt;a href=&quot;&quot;&gt;Router 관련 포스팅&lt;/a&gt;에서 확인할 수 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;routes&quot;&gt;Routes&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Home.js&lt;/li&gt;
+  &lt;li&gt;Auth.js&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;components&quot;&gt;Components&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Profile.js&lt;/li&gt;
+  &lt;li&gt;TodoAssign.js&lt;/li&gt;
+  &lt;li&gt;TodoTable.js&lt;/li&gt;
+  &lt;li&gt;Timer.js&lt;/li&gt;
+  &lt;li&gt;SelfPR.js&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;추가-예정-사항&quot;&gt;추가 예정 사항&lt;/h2&gt;
+
+&lt;h3 id=&quot;개인-시간-관리-히스토리-기능&quot;&gt;개인 시간 관리 히스토리 기능&lt;/h3&gt;
+
+&lt;h3 id=&quot;스터디서프-모드&quot;&gt;스터디/서프 모드&lt;/h3&gt;
+
+&lt;h3 id=&quot;마감일-기준-sorting&quot;&gt;마감일 기준 Sorting&lt;/h3&gt;</content>
 
       
       
@@ -58,7 +112,7 @@
       
 
       
-        <summary type="html">테스트</summary>
+        <summary type="html">시작에 앞서</summary>
       
 
       
@@ -421,6 +475,7 @@
       <updated>2021-08-05T10:01:04+09:00</updated>
       <id>https://jskim1215.github.io/project-2-1</id>
       <content type="html" xml:base="https://jskim1215.github.io/project-2-1">&lt;h2 id=&quot;기획의도&quot;&gt;기획의도&lt;/h2&gt;
+
 &lt;p&gt;대학교 학습 지원 프로그램에서 과제나 일정을 확인하는데 과정이 번거롭다고 생각했다. &lt;!--break--&gt;
 그래서 크롬 익스텐션을 활용해서 매번 탭을 열 때마다 확인가능한 투두리스트 프로그램이 있다면 일정을 관리하는데 도움이 되지 않을까라는 아이디어에서 시작했다.
 특히 타겟 사용자인 대학생의 경우, 노트북이나 컴퓨터를 활용하는 경우가 많기 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Local Storage&lt;/code&gt;를 활용하는 데 어려움이 없을 것이라고 생각했다. &lt;br /&gt;&lt;/p&gt;
@@ -429,30 +484,33 @@
 
 &lt;h2 id=&quot;최소-구현-기능&quot;&gt;최소 구현 기능&lt;/h2&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;할 일 데이터 등록하고 보여주기&lt;/code&gt; &lt;br /&gt;
-과제의 형식이 다양하기 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;할 일(이름), 해당 과목(주제), 마감일 그리고 형식&lt;/code&gt;을 데이터로 받기로 선택했다. &lt;br /&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;예상 구현 아이디어&lt;/code&gt; &lt;br /&gt;
+&lt;h3 id=&quot;할-일-데이터-등록하고-보여주기&quot;&gt;할 일 데이터 등록하고 보여주기&lt;/h3&gt;
+
+&lt;p&gt;과제의 형식이 다양하기 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;할 일(이름), 해당 과목(주제), 마감일 그리고 형식&lt;/code&gt;을 데이터로 받기로 선택했다. &lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;예상 구현 아이디어&lt;/code&gt; &lt;br /&gt;
 &lt;a href=&quot;https://jskim1215.github.io/study-1-3&quot;&gt;바닐라 JS로 크롬 앱 만들기&lt;/a&gt;에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Local Storage&lt;/code&gt;에 Input을 추가해서 Submit 할 수 있도록 해서 구현해볼 예정이다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;학습용 타이머&lt;/code&gt; &lt;br /&gt;
-해당 과제를 하는 데 사용한 시간을 측정하고 등록된 할 일에 추가할 수 있는 기능을 만들었다. 매번 학습용 타이머를 사용하지만 어떤 할 일에 얼마나 시간을 사용했는지 알기 쉽도록 하기 위해 기능을 생각해봤다. &lt;br /&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;예상 구현 아이디어&lt;/code&gt; &lt;br /&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;학습용-타이머&quot;&gt;학습용 타이머&lt;/h3&gt;
+
+&lt;p&gt;해당 과제를 하는 데 사용한 시간을 측정하고 등록된 할 일에 추가할 수 있는 기능을 만들었다. 매번 학습용 타이머를 사용하지만 어떤 할 일에 얼마나 시간을 사용했는지 알기 쉽도록 하기 위해 기능을 생각해봤다. &lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;예상 구현 아이디어&lt;/code&gt; &lt;br /&gt;
 &lt;a href=&quot;https://jskim1215.github.io/study-1-3&quot;&gt;바닐라 JS로 크롬 앱 만들기&lt;/a&gt;에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Date&lt;/code&gt; 기능을 활용해서 시간 차이를 기록한 후, Hh:Mm:Ss로 변환해서 화면에 띄울 예정이다.
 해당 사이트를 닫혔을 경우, 닫힌 시간을 저장해서 닫혀있는 기간에도 스톱워치가 유지된 것처럼 보이게 해볼 예정이다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Sort By Subject&lt;/code&gt; &lt;br /&gt;
-할 일 목록을 주제에 따라 분류할 수 있도록해서 공부를 넘어 일상생활의 데이터도 활용 가능하도록 구상했다.
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;예상 구현 아이디어&lt;/code&gt; &lt;br /&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;sort-by-subject&quot;&gt;Sort By Subject&lt;/h3&gt;
+
+&lt;p&gt;할 일 목록을 주제에 따라 분류할 수 있도록해서 공부를 넘어 일상생활의 데이터도 활용 가능하도록 구상했다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;예상 구현 아이디어&lt;/code&gt; &lt;br /&gt;
 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;addEventListener()&lt;/code&gt;에서 Click을 할 경우, 해당 Subject에 해당하는 정보를 local Storage에서 가져와서 보여주는 함수를 실행하면 될 것 같다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;</content>
+&lt;/ul&gt;</content>
 
       
       
@@ -473,7 +531,7 @@
       
 
       
-        <summary type="html">기획의도 대학교 학습 지원 프로그램에서 과제나 일정을 확인하는데 과정이 번거롭다고 생각했다. 그래서 크롬 익스텐션을 활용해서 매번 탭을 열 때마다 확인가능한 투두리스트 프로그램이 있다면 일정을 관리하는데 도움이 되지 않을까라는 아이디어에서 시작했다. 특히 타겟 사용자인 대학생의 경우, 노트북이나 컴퓨터를 활용하는 경우가 많기 때문에 Local Storage를 활용하는 데 어려움이 없을 것이라고 생각했다.</summary>
+        <summary type="html">기획의도</summary>
       
 
       

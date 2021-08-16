@@ -8,24 +8,10 @@
     
       
       <item>
-        <title>글 형식 블로그의 가독성에 관하여</title>
-        
-          <description>&lt;h2 id=&quot;글의-한계&quot;&gt;글의 한계&lt;/h2&gt;
-
-</description>
-        
-        <pubDate>Thu, 12 Aug 2021 22:01:01 +0900</pubDate>
-        <link>
-        https://jskim1215.github.io/diary-2</link>
-        <guid isPermaLink="true">https://jskim1215.github.io/diary-2</guid>
-      </item>
-      
-    
-      
-      <item>
         <title>투두리스트 Chrome Extension (4) - JS to React</title>
         
-          <description>&lt;p&gt;테스트&lt;/p&gt;
+          <description>&lt;h2 id=&quot;시작에-앞서&quot;&gt;시작에 앞서&lt;/h2&gt;
+
 </description>
         
         <pubDate>Thu, 12 Aug 2021 13:01:06 +0900</pubDate>
@@ -37,9 +23,9 @@
     
       
       <item>
-        <title>트위터 클론 코딩 (2) - React Review</title>
+        <title>트위터 클론 코딩 (2) - Authentication</title>
         
-          <description>&lt;p&gt;테스트??&lt;/p&gt;
+          <description>&lt;h2 id=&quot;시작에-앞서&quot;&gt;시작에 앞서&lt;/h2&gt;
 
 </description>
         
@@ -100,7 +86,7 @@
       <item>
         <title>실전형 React Hooks 10개 (1) - UseState</title>
         
-          <description>&lt;h2 id=&quot;기존과-차이&quot;&gt;기존과 차이&lt;/h2&gt;
+          <description>&lt;h2 id=&quot;usestate&quot;&gt;useState()&lt;/h2&gt;
 
 </description>
         
@@ -116,9 +102,6 @@
         <title>개발 블로그를 시작하려는 여러분들께</title>
         
           <description>&lt;h2 id=&quot;나의-블로그-경험&quot;&gt;나의 블로그 경험&lt;/h2&gt;
-&lt;p&gt;깃허브 페이지 + Jekyll을 활용해서 블로그를 처음 만들어 본 것은 아니였어요.
-과거에도 비슷한 목적을 가지고 블로그를 작성하려고 했었던 적이 있었는데 지금처럼 프로그래밍을 학습하면서 나의 학습기록을 기록하고 정리하는 용도로 사용하려 했었죠.
-&lt;!--break--&gt;&lt;/p&gt;
 
 </description>
         
@@ -131,10 +114,24 @@
     
       
       <item>
-        <title>React로 웹 앱 만들기 (1) - React란?</title>
+        <title>React로 웹 앱 만들기 - Router</title>
+        
+          <description>&lt;h2 id=&quot;router&quot;&gt;Router?&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 06 Aug 2021 12:01:02 +0900</pubDate>
+        <link>
+        https://jskim1215.github.io/study-4-2</link>
+        <guid isPermaLink="true">https://jskim1215.github.io/study-4-2</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>React로 웹 앱 만들기 - React 개론</title>
         
           <description>&lt;h2 id=&quot;내가-느낀-react&quot;&gt;내가 느낀 React&lt;/h2&gt;
-&lt;p&gt;Javascript 수업에서 가장 크게 변화한 부분은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.html&lt;/code&gt; 파일에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.js&lt;/code&gt; 파일로 변화했다는 점이다. &lt;!--break--&gt;&lt;/p&gt;
 
 </description>
         
@@ -180,9 +177,6 @@
         <title>투두리스트 Chrome Extension (1) - 기획하기</title>
         
           <description>&lt;h2 id=&quot;기획의도&quot;&gt;기획의도&lt;/h2&gt;
-&lt;p&gt;대학교 학습 지원 프로그램에서 과제나 일정을 확인하는데 과정이 번거롭다고 생각했다. &lt;!--break--&gt;
-그래서 크롬 익스텐션을 활용해서 매번 탭을 열 때마다 확인가능한 투두리스트 프로그램이 있다면 일정을 관리하는데 도움이 되지 않을까라는 아이디어에서 시작했다.
-특히 타겟 사용자인 대학생의 경우, 노트북이나 컴퓨터를 활용하는 경우가 많기 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Local Storage&lt;/code&gt;를 활용하는 데 어려움이 없을 것이라고 생각했다. &lt;br /&gt;&lt;/p&gt;
 
 </description>
         

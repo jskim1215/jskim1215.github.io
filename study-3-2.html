@@ -11,7 +11,7 @@
 
 
     <title>
-      트위터 클론 코딩 (2) - React Review
+      트위터 클론 코딩 (2) - Authentication
     </title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -85,26 +85,10 @@
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="우당탕 프로덕트 개발 여정" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="트위터 클론 코딩 (2) - React Review" />
-    <meta property="og:description" content="테스트??
+    <meta property="og:title" content="트위터 클론 코딩 (2) - Authentication" />
+    <meta property="og:description" content="시작에 앞서
 
-  const getNweets = async () =&gt; {
-    const dbNweets = await dbService.collection("nweets").get();
-    dbNweets.forEach((document) =&gt; {
-      const nweetObject = {
-        ...document.data(),
-        id: document.id,
-      }
-      setNweets((prev) =&gt; [nweetObject, ...prev]);
-    });
-  };
-  useEffect(() =&gt; {
-    getNweets();
-    dbService.collection("nweets").onSnapshot((snapshot) =&gt; {
-      console.log("something happen");
-    })
-  },[])
-
+만약 Router 대해 충분히 이해하지 못했다면 React JS로 영화 웹 서비스 만들기 무료 강의를 먼저 수강하시기를 추천드립니다. 추가로 간단하게 정리본을 보고 싶다면 해당 블로그를 참고하시면 됩니다.
 " />
     <meta property="og:url" content="https://jskim1215.github.io/study-3-2" />
     <meta property="og:image" content="https://jskim1215.github.io/assets/study/study-3-2.png" />
@@ -114,26 +98,10 @@
     <meta property="article:modified_time" content="2021-08-12T13:01:01+09:00" />
     <meta property="article:tag" content="Study" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="트위터 클론 코딩 (2) - React Review" />
-    <meta name="twitter:description" content="테스트??
+    <meta name="twitter:title" content="트위터 클론 코딩 (2) - Authentication" />
+    <meta name="twitter:description" content="시작에 앞서
 
-  const getNweets = async () =&gt; {
-    const dbNweets = await dbService.collection("nweets").get();
-    dbNweets.forEach((document) =&gt; {
-      const nweetObject = {
-        ...document.data(),
-        id: document.id,
-      }
-      setNweets((prev) =&gt; [nweetObject, ...prev]);
-    });
-  };
-  useEffect(() =&gt; {
-    getNweets();
-    dbService.collection("nweets").onSnapshot((snapshot) =&gt; {
-      console.log("something happen");
-    })
-  },[])
-
+만약 Router 대해 충분히 이해하지 못했다면 React JS로 영화 웹 서비스 만들기 무료 강의를 먼저 수강하시기를 추천드립니다. 추가로 간단하게 정리본을 보고 싶다면 해당 블로그를 참고하시면 됩니다.
 " />
     <meta name="twitter:url" content="https://jskim1215.github.io/" />
     <meta name="twitter:image" content="https://jskim1215.github.io/assets/study/study-3-2.png" />
@@ -166,25 +134,9 @@
         "@type": "WebPage",
         "@id": "https://jskim1215.github.io/study-3-2"
     },
-    "description": "테스트??
+    "description": "시작에 앞서
 
-  const getNweets = async () =&gt; {
-    const dbNweets = await dbService.collection("nweets").get();
-    dbNweets.forEach((document) =&gt; {
-      const nweetObject = {
-        ...document.data(),
-        id: document.id,
-      }
-      setNweets((prev) =&gt; [nweetObject, ...prev]);
-    });
-  };
-  useEffect(() =&gt; {
-    getNweets();
-    dbService.collection("nweets").onSnapshot((snapshot) =&gt; {
-      console.log("something happen");
-    })
-  },[])
-
+만약 Router 대해 충분히 이해하지 못했다면 React JS로 영화 웹 서비스 만들기 무료 강의를 먼저 수강하시기를 추천드립니다. 추가로 간단하게 정리본을 보고 싶다면 해당 블로그를 참고하시면 됩니다.
 "
 }
     </script>
@@ -198,7 +150,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="트위터 클론 코딩 (2) - React Review" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="트위터 클론 코딩 (2) - Authentication" href="/feed.xml" />
 
   </head>
   <body
@@ -266,7 +218,7 @@ into the {body} of the default.hbs template -->
                         
                     
                 </section>
-                <h1 class="post-full-title">트위터 클론 코딩 (2) - React Review</h1>
+                <h1 class="post-full-title">트위터 클론 코딩 (2) - Authentication</h1>
             </header>
 
             
@@ -280,29 +232,13 @@ into the {body} of the default.hbs template -->
                         <div class="toc-container">
                             <div class="toc">
                                 <div class="toc-title">목차</div>
-                                
+                                <ul class="inline_toc" id="my_toc"><li><a href="#시작에-앞서">시작에 앞서</a></li></ul>
 
                               </div>
                         </div>
-                        <p>테스트??</p>
+                        <h2 id="시작에-앞서">시작에 앞서</h2>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">const</span> <span class="nx">getNweets</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">dbNweets</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">dbService</span><span class="p">.</span><span class="nx">collection</span><span class="p">(</span><span class="dl">"</span><span class="s2">nweets</span><span class="dl">"</span><span class="p">).</span><span class="kd">get</span><span class="p">();</span>
-    <span class="nx">dbNweets</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nb">document</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kd">const</span> <span class="nx">nweetObject</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="p">...</span><span class="nb">document</span><span class="p">.</span><span class="nx">data</span><span class="p">(),</span>
-        <span class="na">id</span><span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
-      <span class="p">}</span>
-      <span class="nx">setNweets</span><span class="p">((</span><span class="nx">prev</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">nweetObject</span><span class="p">,</span> <span class="p">...</span><span class="nx">prev</span><span class="p">]);</span>
-    <span class="p">});</span>
-  <span class="p">};</span>
-  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">getNweets</span><span class="p">();</span>
-    <span class="nx">dbService</span><span class="p">.</span><span class="nx">collection</span><span class="p">(</span><span class="dl">"</span><span class="s2">nweets</span><span class="dl">"</span><span class="p">).</span><span class="nx">onSnapshot</span><span class="p">((</span><span class="nx">snapshot</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">something happen</span><span class="dl">"</span><span class="p">);</span>
-    <span class="p">})</span>
-  <span class="p">},[])</span>
-</code></pre></div></div>
+<p>만약 <code class="language-plaintext highlighter-rouge">Router</code> 대해 충분히 이해하지 못했다면 <a href="https://nomadcoders.co/courses">React JS로 영화 웹 서비스 만들기</a> 무료 강의를 먼저 수강하시기를 추천드립니다. 추가로 간단하게 정리본을 보고 싶다면 <a href="https://jskim1215.github.io/study-4-2">해당 블로그</a>를 참고하시면 됩니다.</p>
 
                       </article>
                 </div>
@@ -389,8 +325,6 @@ into the {body} of the default.hbs template -->
                                   
                                 
                                   
-                                
-                                  
                                     
                                   
                                 
@@ -438,6 +372,13 @@ into the {body} of the default.hbs template -->
                                   
                                 
                                   
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
                                 
                                   
                                 
@@ -469,7 +410,7 @@ into the {body} of the default.hbs template -->
                         <footer class="read-next-card-footer">
                             <a href="/tag/study/">
                                 
-                                    See all 8 posts  →
+                                    See all 9 posts  →
                                 
                             </a>
                         </footer>
@@ -502,7 +443,8 @@ into the {body} of the default.hbs template -->
                 </header>
                 <section class="post-card-excerpt">
                     
-                        <p>테스트
+                        <p>시작에 앞서
+
 </p>
                     
                 </section>
@@ -600,13 +542,13 @@ into the {body} of the default.hbs template -->
         </a>
     </div>
     <span class="floating-header-divider">&mdash;</span>
-    <div class="floating-header-title">트위터 클론 코딩 (2) - React Review</div>
+    <div class="floating-header-title">트위터 클론 코딩 (2) - Authentication</div>
     <div class="floating-header-share">
         <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
 </svg>
 </div>
-        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%ED%8A%B8%EC%9C%84%ED%84%B0+%ED%81%B4%EB%A1%A0+%EC%BD%94%EB%94%A9+%282%29+-+React+Review&amp;url=https://jskim1215.github.iostudy-3-2"
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%ED%8A%B8%EC%9C%84%ED%84%B0+%ED%81%B4%EB%A1%A0+%EC%BD%94%EB%94%A9+%282%29+-+Authentication&amp;url=https://jskim1215.github.iostudy-3-2"
             onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
 
