@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://jskim1215.github.io/tag/study/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://jskim1215.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-08-16T10:35:27+09:00</updated>
+  <updated>2021-08-18T11:17:02+09:00</updated>
   <id>https://jskim1215.github.io/tag/study/feed.xml</id>
 
   
@@ -32,6 +32,79 @@
 
   
     <entry>
+      <title type="html">(React with Firebase) - Chrome Extension 프로젝트시 주의해야할 점</title>
+      <link href="https://jskim1215.github.io/study-0-1" rel="alternate" type="text/html" title="(React with Firebase) - Chrome Extension 프로젝트시 주의해야할 점" />
+      <published>2021-08-17T10:01:01+09:00</published>
+      <updated>2021-08-17T10:01:01+09:00</updated>
+      <id>https://jskim1215.github.io/study-0-1</id>
+      <content type="html" xml:base="https://jskim1215.github.io/study-0-1">&lt;h2 id=&quot;react-router-dom-사용-불가&quot;&gt;React-Router-DOM 사용 불가&lt;/h2&gt;
+
+&lt;p&gt;우선 기존의 프로젝트를 만드는 과정에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Router&lt;/code&gt;을 활용해 프로젝트 구조를 만들어 놓았다. 이렇게 만든 사이트를 크롬에서 새로운 탭을 생성했을 경우 자동적으로 해당 사이트가 펼쳐지도록 하면 될 줄 알았으나 Chrome Extension과 일반적인 React Project가 100퍼센트 똑같은 방법으로 진행되지는 않는 것 같다고 느꼈다.&lt;/p&gt;
+
+&lt;p&gt;가장 큰 차이점으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Router&lt;/code&gt;를 사용해서 프로젝트 구조를 만들었던 것을 변경했어야했다. 그래서 기존의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Route.js&lt;/code&gt; 파일 대신 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Main.js&lt;/code&gt;라는 파일을 만들어 비슷한 기능을 하도록 구현했다. &lt;a href=&quot;https://github.com/kelsonpw/react-chrome-extension-router&quot;&gt;react-chrome-extension-router&lt;/a&gt;라는 라이브러리가 존재하는데, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;switch&lt;/code&gt; 기능을 어떻게 해결할지를 모르겠어가지고 일단은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;router&lt;/code&gt; 기능 없이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;추가 Javascript File&lt;/code&gt;을 만들어서 비슷한 결과를 만들어내는데 성공은 했다.&lt;/p&gt;
+
+&lt;h2 id=&quot;social-login-사용시-주의-사항&quot;&gt;Social Login 사용시 주의 사항&lt;/h2&gt;
+
+&lt;p&gt;Chrome Extension에서 Firebase를 사용하는데 몇가지 설정해야하는 내용이 있다. 설정을 하지 않을 경우, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Social Login Popup 창&lt;/code&gt;이 등장하지 않기 때문에 아래 설정들을 해줘야한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;firebase-상의-문제&quot;&gt;Firebase 상의 문제&lt;/h3&gt;
+
+&lt;p&gt;일단 Firebase에서 승인된 도메인이 아니면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Popup 창&lt;/code&gt;이 자동적으로 닫히게 된다. 일반적인 경우, &lt;a href=&quot;https://developers-kr.googleblog.com/2016/08/how-to-use-firebase-in-chrome-extension.html&quot;&gt;구글 문서&lt;/a&gt;를 따라하면 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Create-React-App&lt;/code&gt;을 활용한 프로젝트 때문이라고 생각되는데 기존의 방식으로 프로젝트의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Javascript File&lt;/code&gt;을 추가하고 HTML File에 업로드하는 것이 하라는 대로 되지 않아서 개인적으로 내린 결론이니 정석적인 방법은 아닌 점 참고해주세요.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Firebase Auth 페이지에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Sign-in method -&amp;gt; 승인된 도메인&lt;/code&gt;에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;chrome-extension:// 자기 아이디 &lt;/code&gt;를 추가한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;csp&quot;&gt;CSP&lt;/h3&gt;
+
+&lt;p&gt;이렇게 해도 chrome extension에 오류라고 뜨는 내용이 있다. 계속해서 Content-Security-Policy 때문에 해당 URL에 접근할 수 없다는 내용이 오류로 발생한다. &lt;a href=&quot;https://developer.chrome.com/docs/apps/contentSecurityPolicy/&quot;&gt;크롬 문서&lt;/a&gt;에서 별다른 내용을 얻을 수가 없어서 수차례 실패했다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/73425926/129825541-1fd935ee-8265-48a1-a923-39d3c76c24fa.png&quot; alt=&quot;0-1-1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;결국 아까 위의 &lt;a href=&quot;https://developers-kr.googleblog.com/2016/08/how-to-use-firebase-in-chrome-extension.html&quot;&gt;구글 문서&lt;/a&gt;에서 다음과 같은 내용을 찾았다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;프로젝트 폴더에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;public -&amp;gt; manifest.json&lt;/code&gt;에서 CSP에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://apis.google.com&lt;/code&gt;를 추가한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;정리&quot;&gt;정리&lt;/h3&gt;
+
+&lt;p&gt;Social Login 기능을 Chrome Extension에서 구현하는데 자동적으로 팝업 창이 닫힌다면 2가지를 추가하면 된다. 추가적으로 발생하는 오류의 경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;F12&lt;/code&gt;를 통해 오류를 확인하거나 크롬 익스텐션 오류 로그를 구글링하다보면 해결할 수 있다고 생각한다. 본인의 경우, 해당 팝업 문제를 해결하는데 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2시간 정도 소요&lt;/code&gt;되었다…&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Firebase Auth 페이지에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Sign-in method -&amp;gt; 승인된 도메인&lt;/code&gt;에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;chrome-extension:// 자기 아이디 &lt;/code&gt;를 추가한다.&lt;/li&gt;
+  &lt;li&gt;프로젝트 폴더에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;public -&amp;gt; manifest.json&lt;/code&gt;에서 CSP에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://apis.google.com&lt;/code&gt;를 추가한다.&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>CodePurple</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="study" />
+      
+
+      
+        <summary type="html">React-Router-DOM 사용 불가</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
       <title type="html">트위터 클론 코딩 (2) - Authentication</title>
       <link href="https://jskim1215.github.io/study-3-2" rel="alternate" type="text/html" title="트위터 클론 코딩 (2) - Authentication" />
       <published>2021-08-12T13:01:01+09:00</published>
@@ -39,7 +112,115 @@
       <id>https://jskim1215.github.io/study-3-2</id>
       <content type="html" xml:base="https://jskim1215.github.io/study-3-2">&lt;h2 id=&quot;시작에-앞서&quot;&gt;시작에 앞서&lt;/h2&gt;
 
-&lt;p&gt;만약 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Router&lt;/code&gt; 대해 충분히 이해하지 못했다면 &lt;a href=&quot;https://nomadcoders.co/courses&quot;&gt;React JS로 영화 웹 서비스 만들기&lt;/a&gt; 무료 강의를 먼저 수강하시기를 추천드립니다. 추가로 간단하게 정리본을 보고 싶다면 &lt;a href=&quot;https://jskim1215.github.io/study-4-2&quot;&gt;해당 블로그&lt;/a&gt;를 참고하시면 됩니다.&lt;/p&gt;</content>
+&lt;p&gt;만약 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Router&lt;/code&gt; 대해 충분히 이해하지 못했다면 &lt;a href=&quot;https://nomadcoders.co/courses&quot;&gt;React JS로 영화 웹 서비스 만들기&lt;/a&gt; 무료 강의를 먼저 수강하시기를 추천드립니다. 추가로 간단하게 정리본을 보고 싶다면 &lt;a href=&quot;https://jskim1215.github.io/study-4-2&quot;&gt;해당 블로그&lt;/a&gt;를 참고하시면 됩니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;authentication이란&quot;&gt;Authentication이란?&lt;/h2&gt;
+
+&lt;p&gt;Auth, OAuth, Authentication 모두 인증 기능과 관련있다. Firebase를 활용하면 코드 몇 줄로 쉽게 인증 기능을 구현할 수 있고, 추가적으로 다른 소셜 플랫폼의 로그인 기능을 이용할 수 있게 된다.&lt;/p&gt;
+
+&lt;h2 id=&quot;일반-login-기능-구현하기&quot;&gt;일반 Login 기능 구현하기&lt;/h2&gt;
+
+&lt;h3 id=&quot;firebase-설정하기&quot;&gt;Firebase 설정하기&lt;/h3&gt;
+
+&lt;p&gt;우선 미리 Firebase 페이지에서 App을 생성했다는 가정하에 Authentication 페이지에 들어가서 Auth 페이지에서 로그인 설정을 해줘야한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/73425926/129816526-a995a2d7-06b2-4fd2-bc13-f282969115ff.png&quot; alt=&quot;3-2-1&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;구현-코드&quot;&gt;구현 코드&lt;/h3&gt;
+
+&lt;p&gt;먼저 input에서 이메일, 비밀번호를 입력받고 회원정보 여부에 따라 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Create Account&lt;/code&gt; OR &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Sign In&lt;/code&gt;를 통해 회원여부를 판단한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;파이어베이스.js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;authService&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;firebase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;auth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;로그인.js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;onChange&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;setEmail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;setPassword&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;onSubmit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;preventDefault&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;newAccount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;authService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createUserWithEmailAndPassword&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;authService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;signInWithEmailAndPassword&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;setError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;social-login-기능-구현하기&quot;&gt;Social Login 기능 구현하기&lt;/h2&gt;
+
+&lt;h3 id=&quot;firebase-설정&quot;&gt;Firebase 설정&lt;/h3&gt;
+
+&lt;p&gt;일반 로그인 경우와 마찬가지로 사용하고자하는 소셜 로그인 기능을 미리 활성화 해놓아야한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;구현-코드-1&quot;&gt;구현 코드&lt;/h3&gt;
+
+&lt;p&gt;Firebase와 Auth javascript file에 다음과 같은 코드들을 추가해줘야한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;파이어베이스.js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;firebaseInstance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;firebase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;로그인.js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;provider&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;google&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;provider&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;firebaseInstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;auth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;GoogleAuthProvider&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;provider&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;firebaseInstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;auth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;GithubAuthProvider&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;authService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;signInWithPopup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;provider&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;유저-정보-불러오기&quot;&gt;유저 정보 불러오기&lt;/h2&gt;
+
+&lt;p&gt;이전까지는 회원인지 아닌지 구분해주는 수문장의 기능을 담당했다. 하지만 실제로 필요한 것은 이 유저가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A유저&lt;/code&gt;인지 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;B유저&lt;/code&gt;인지와 같이 유저 정보이다.&lt;/p&gt;
+
+&lt;h3 id=&quot;코드-구조&quot;&gt;코드 구조&lt;/h3&gt;
+
+&lt;p&gt;앞서 Router를 활용해 사이트 구조를 미리 설계했다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;App.js -&amp;gt; Route.js -&amp;gt; Components&lt;/code&gt; 구조로 코드가 Render될 예정이다. 회원 정보는 Component들이 필요할 가능성이 높기 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;상위 코드&lt;/code&gt;에서 불러오는 것이 좋을 것이라고 생각된다.&lt;/p&gt;
+
+&lt;p&gt;실제로 해당 수업의 경우, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;App.js&lt;/code&gt;에서 User 정보를 불러와서 아래 Component에 뿌려주는 식으로 코드를 작성했다.&lt;/p&gt;
+
+&lt;h3 id=&quot;구현-코드-2&quot;&gt;구현 코드&lt;/h3&gt;
+
+&lt;p&gt;useEffect를 활용해 페이지가 실행될 때마다 매번 user의 data를 불러와서 Object로 저장해서 아래 component들에 전달할 수 있도록 구현했다.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;useEffect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;authService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onAuthStateChanged&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;setUserObj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;displayName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;displayName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;uid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;uid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;updateProfile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;updateProfile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;setUserObj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;setInit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;주의사항&quot;&gt;주의사항&lt;/h3&gt;
+
+&lt;p&gt;firebase에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;user&lt;/code&gt;와 관련해서 전달하는 정보는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;이름, uid, 프로필 사진&lt;/code&gt; 정도밖에 되지 않는다. 추가적인 정보를 저장하려면 database를 활용해서 저장하는 방법으로 구현해야한다.&lt;/p&gt;</content>
 
       
       
@@ -837,97 +1018,6 @@
 
       
         <summary type="html">Document Object</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">바닐라 JS로 크롬 앱 만들기 (1) - Basic Data Types And Function</title>
-      <link href="https://jskim1215.github.io/study-1-1" rel="alternate" type="text/html" title="바닐라 JS로 크롬 앱 만들기 (1) - Basic Data Types And Function" />
-      <published>2021-08-05T10:01:01+09:00</published>
-      <updated>2021-08-05T10:01:01+09:00</updated>
-      <id>https://jskim1215.github.io/study-1-1</id>
-      <content type="html" xml:base="https://jskim1215.github.io/study-1-1">&lt;h2 id=&quot;data-types&quot;&gt;Data Types&lt;/h2&gt;
-
-&lt;p&gt;프로그래밍 과정에서 사용하는 데이터의 종류. 컴퓨터는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;숫자 3&lt;/code&gt;과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;글자 3&lt;/code&gt;을 다른 것이라고 생각한다. 추후 코드를 짜면서 숫자 자리에 문자가 들어가서 오류가 나거나 반대의 경우도 생길 수 있음.&lt;/p&gt;
-
-&lt;h3 id=&quot;string&quot;&gt;String&lt;/h3&gt;
-
-&lt;p&gt;문자형 데이터. “123456789” 이런 데이터도 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;String&lt;/code&gt;으로 받으니 주의할 것&lt;/p&gt;
-
-&lt;h3 id=&quot;number&quot;&gt;Number&lt;/h3&gt;
-
-&lt;p&gt;숫자형 데이터. 순서 같은 내용을 다룰 때, 자주 사용&lt;/p&gt;
-
-&lt;h3 id=&quot;array&quot;&gt;Array&lt;/h3&gt;
-
-&lt;p&gt;한국말로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;배열&lt;/code&gt;인데 단어 그대로 맨 앞부터 순서대로 나열한 묶음 같은 거라고 생각하면 편하다. 다만, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;첫번째 자리&lt;/code&gt;를 컴퓨터는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0번째 자리&lt;/code&gt;라고 한다는 점에서 차이가 있다.&lt;/p&gt;
-
-&lt;h3 id=&quot;object&quot;&gt;Object&lt;/h3&gt;
-
-&lt;p&gt;한국말로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;객체&lt;/code&gt;이다. 배열과 유사하나 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;key-value&lt;/code&gt;라는 한 묶음이 여러 개 모인 집합이다. 예를 들어 한 사람의 나이, 성별, 주소 등을 묶어서 저장하고 싶을 경우 사용한다.&lt;/p&gt;
-
-&lt;h2 id=&quot;variable-변수&quot;&gt;Variable (변수)&lt;/h2&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;y=f(x)&lt;/code&gt; 같은 함수에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x&lt;/code&gt; 역할을 하는 프로그래밍 요소이다. 프로그래밍 과정에서 변수라고 알려주는 코드는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Javascript&lt;/code&gt;에서 크게 3가지가 있다.&lt;/p&gt;
-
-&lt;h3 id=&quot;var&quot;&gt;var&lt;/h3&gt;
-
-&lt;p&gt;이 친구는 다른 친구들로 대체할 수 있어서 잘 안쓰인다고 했다.&lt;/p&gt;
-
-&lt;h3 id=&quot;let&quot;&gt;let&lt;/h3&gt;
-
-&lt;p&gt;이 친구의 경우, 내가 변수로 만들고 다음에 이 변수의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;수정이 가능&lt;/code&gt;하다.&lt;/p&gt;
-
-&lt;h3 id=&quot;const&quot;&gt;const&lt;/h3&gt;
-
-&lt;p&gt;이름에서 보다시피 이 친구는 내가 한 번 변수로 만들면 다른데서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;수정이 불가능&lt;/code&gt;하다.&lt;/p&gt;
-
-&lt;h2 id=&quot;function-함수&quot;&gt;Function (함수)&lt;/h2&gt;
-
-&lt;p&gt;함수의 기본적인 구성은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;function &quot;함수이름&quot; (&quot;인자&quot;) {&quot;실행&quot;}&lt;/code&gt; 이다. 우리가 수학시간에 배웠던 것처럼 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;y=f(x)&lt;/code&gt;에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;인자 = x&lt;/code&gt; 그리고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;실행 = f(x)&lt;/code&gt; 라고 생각하면 편하다.
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;이 때, 함수에 x를 입력할 때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;데이터 타입&lt;/code&gt;을 고려해줘야 하는 것을 주의해야한다. 만약 x에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;number&lt;/code&gt;를 넣고 함수를 진행시키는 코드를 만들었는데 실제로 x에 들어간 데이터가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;String&lt;/code&gt;이라면 함수가 제대로 실행되지 않고 오류가 발생한다.&lt;/p&gt;
-
-&lt;h3 id=&quot;return&quot;&gt;Return&lt;/h3&gt;
-
-&lt;p&gt;수학에서 함수는 무조건 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;어떤 결과 값&lt;/code&gt;을 도출해내지만, 프로그래밍에서는 단순히 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;어떤 작업만 하는 경우&lt;/code&gt;도 함수로 만들어서 처리하는 경우가 있다. 따라서 함수를 통해 어떤 결과 값을 받아 다시 사용할 경우 함수 마지막 부분에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;return&lt;/code&gt;을 통해 원하는 element를 반환해주어야 한다.&lt;/p&gt;
-
-&lt;h2 id=&quot;conditionals-조건문&quot;&gt;Conditionals (조건문)&lt;/h2&gt;
-
-&lt;p&gt;조건문은 영어시간에 if를 떠올려보면 쉽다. 또는 입국심사 같은 거를 하는 친구라고 볼 수 있다. 만약에 특정한 경우에만 어떤 행동을 진행시켜야한다고 할 때 사용된다. 이 때, True / False 의 데이터 타입인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;boolean&lt;/code&gt;이 사용된다.
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;조건의 경우 여러가지를 걸수 있는데 이 때, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;And = &amp;amp;&amp;amp;&lt;/code&gt; 그리고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OR = ||&lt;/code&gt;가 사용된다. 겹치는 경우에 결과 값이 어떻게 나오는지를 생각할 때, 아래처럼 생각하면 편하다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;And는 전부 True여야 True&lt;/li&gt;
-  &lt;li&gt;OR 는 하나만 True여도 True&lt;/li&gt;
-&lt;/ul&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>CodePurple</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="study" />
-      
-
-      
-        <summary type="html">Data Types</summary>
       
 
       

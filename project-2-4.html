@@ -223,7 +223,7 @@ into the {body} of the default.hbs template -->
                         <div class="toc-container">
                             <div class="toc">
                                 <div class="toc-title">목차</div>
-                                <ul class="inline_toc" id="my_toc"><li><a href="#시작에-앞서">시작에 앞서</a></li><li><a href="#페이지-설계">페이지 설계</a><ul class="sub_toc"><li><a href="#로그인-페이지">로그인 페이지</a></li><li><a href="#메인-페이지">메인 페이지</a></li></ul></li><li><a href="#폴더-구성">폴더 구성</a><ul class="sub_toc"><li><a href="#routes">Routes</a></li><li><a href="#components">Components</a></li></ul></li><li><a href="#추가-예정-사항">추가 예정 사항</a><ul class="sub_toc"><li><a href="#개인-시간-관리-히스토리-기능">개인 시간 관리 히스토리 기능</a></li><li><a href="#스터디서프-모드">스터디/서프 모드</a></li><li><a href="#마감일-기준-sorting">마감일 기준 Sorting</a></li></ul></li></ul>
+                                <ul class="inline_toc" id="my_toc"><li><a href="#시작에-앞서">시작에 앞서</a></li><li><a href="#페이지-설계">페이지 설계</a><ul class="sub_toc"><li><a href="#로그인-페이지">로그인 페이지</a></li><li><a href="#메인-페이지">메인 페이지</a></li></ul></li><li><a href="#폴더-구성">폴더 구성</a><ul class="sub_toc"><li><a href="#routes">Routes</a></li><li><a href="#components">Components</a></li></ul></li><li><a href="#변화하는-점">변화하는 점</a><ul class="sub_toc"><li><a href="#local-storage---firebase">Local Storage -&gt; Firebase</a></li><li><a href="#react-component">React Component</a></li></ul></li><li><a href="#추가-예정-사항">추가 예정 사항</a><ul class="sub_toc"><li><a href="#개인-시간-관리-히스토리-기능">개인 시간 관리 히스토리 기능</a></li><li><a href="#스터디서프-모드">스터디/서프 모드</a></li><li><a href="#마감일-기준-sorting">마감일 기준 Sorting</a></li></ul></li></ul>
 
                               </div>
                         </div>
@@ -256,7 +256,7 @@ into the {body} of the default.hbs template -->
 
 <h2 id="폴더-구성">폴더 구성</h2>
 
-<p>React의 Router 기능을 활용해서 구현할 예정이다. Router 관련 설명은 <a href="">Router 관련 포스팅</a>에서 확인할 수 있다.</p>
+<p>React의 Router 기능을 활용해서 구현할 예정이다. Router 관련 설명은 <a href="https://jskim1215.github.io/study-4-2">Router 관련 포스팅</a>에서 확인할 수 있다.</p>
 
 <h3 id="routes">Routes</h3>
 
@@ -272,16 +272,33 @@ into the {body} of the default.hbs template -->
   <li>TodoAssign.js</li>
   <li>TodoTable.js</li>
   <li>Timer.js</li>
-  <li>SelfPR.js</li>
+  <li>Notice.js</li>
 </ul>
+
+<h2 id="변화하는-점">변화하는 점</h2>
+
+<h3 id="local-storage---firebase">Local Storage -&gt; Firebase</h3>
+
+<p>Auth 기능을 통해 유저 정보를 토대로 각자 database를 만들어서 사용자들의 할 일 데이터들을 다양한 기기에서 확인할 수 있도록 한다. Local Storage의 경우, 하나의 컴퓨터에서 밖에 사용이 안된다는 점을 보완할 수 있다.</p>
+
+<h3 id="react-component">React Component</h3>
+
+<p>하나의 Html, Javascript 파일로 구현했던 프로젝트를 React Component를 활용해 <code class="language-plaintext highlighter-rouge">2개의 페이지</code>로 구성된 프로젝트로 구현할 예정이다.
+<img src="https://user-images.githubusercontent.com/73425926/129823400-31114b3a-a26b-448a-beb7-6edb1165f117.png" alt="1-2" /></p>
 
 <h2 id="추가-예정-사항">추가 예정 사항</h2>
 
 <h3 id="개인-시간-관리-히스토리-기능">개인 시간 관리 히스토리 기능</h3>
 
+<p>할 일 완료시 데이터들을 수집해서 전체 소요시간 및 카테고리별 소요시간 등 할 일 관련 데이터 분석한 내용을 보여주는 페이지이다.</p>
+
 <h3 id="스터디서프-모드">스터디/서프 모드</h3>
 
+<p>매번 타이머를 키지 못할 사용자들을 위해서 스터디모드일 경우, 타이머가 켜지지 않은 경우 사용자가 페이지를 떠날 경우 알람을 받을 수 있는 기능이다.</p>
+
 <h3 id="마감일-기준-sorting">마감일 기준 Sorting</h3>
+
+<p>마감일이 얼마 남지 않은 순으로 보여주는 기능이다.</p>
 
                       </article>
                 </div>
@@ -366,6 +383,8 @@ into the {body} of the default.hbs template -->
                                 
                                 
                                   
+                                
+                                  
                                     
                                   
                                 
@@ -432,6 +451,57 @@ into the {body} of the default.hbs template -->
             
 
             <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/study-0-1">
+                <div class="post-card-image" style="background-image: url(/assets/study/study-0-1.png)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/study-0-1">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Study</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">(React with Firebase) - Chrome Extension 프로젝트시 주의해야할 점</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p>React-Router-DOM 사용 불가
+
+</p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/images/author-logo.png" alt="CodePurple" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/CodePurple/">CodePurple</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      1 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
             
 
             <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->

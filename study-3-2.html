@@ -86,10 +86,7 @@
     <meta property="og:site_name" content="우당탕 프로덕트 개발 여정" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="트위터 클론 코딩 (2) - Authentication" />
-    <meta property="og:description" content="시작에 앞서
-
-만약 Router 대해 충분히 이해하지 못했다면 React JS로 영화 웹 서비스 만들기 무료 강의를 먼저 수강하시기를 추천드립니다. 추가로 간단하게 정리본을 보고 싶다면 해당 블로그를 참고하시면 됩니다.
-" />
+    <meta property="og:description" content="시작에 앞서 만약 Router 대해 충분히 이해하지 못했다면 React JS로 영화 웹 서비스 만들기 무료 강의를 먼저 수강하시기를 추천드립니다. 추가로 간단하게 정리본을 보고 싶다면 해당 블로그를 참고하시면 됩니다. Authentication이란? Auth, OAuth, Authentication 모두 인증 기능과 관련있다. Firebase를 활용하면 코드 몇 줄로 쉽게 인증 기능을 구현할 수 있고, 추가적으로 다른 소셜" />
     <meta property="og:url" content="https://jskim1215.github.io/study-3-2" />
     <meta property="og:image" content="https://jskim1215.github.io/assets/study/study-3-2.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
@@ -99,10 +96,7 @@
     <meta property="article:tag" content="Study" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="트위터 클론 코딩 (2) - Authentication" />
-    <meta name="twitter:description" content="시작에 앞서
-
-만약 Router 대해 충분히 이해하지 못했다면 React JS로 영화 웹 서비스 만들기 무료 강의를 먼저 수강하시기를 추천드립니다. 추가로 간단하게 정리본을 보고 싶다면 해당 블로그를 참고하시면 됩니다.
-" />
+    <meta name="twitter:description" content="시작에 앞서 만약 Router 대해 충분히 이해하지 못했다면 React JS로 영화 웹 서비스 만들기 무료 강의를 먼저 수강하시기를 추천드립니다. 추가로 간단하게 정리본을 보고 싶다면 해당 블로그를 참고하시면 됩니다. Authentication이란? Auth, OAuth, Authentication 모두 인증 기능과 관련있다. Firebase를 활용하면 코드 몇 줄로 쉽게 인증 기능을 구현할 수 있고, 추가적으로 다른 소셜" />
     <meta name="twitter:url" content="https://jskim1215.github.io/" />
     <meta name="twitter:image" content="https://jskim1215.github.io/assets/study/study-3-2.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -134,10 +128,7 @@
         "@type": "WebPage",
         "@id": "https://jskim1215.github.io/study-3-2"
     },
-    "description": "시작에 앞서
-
-만약 Router 대해 충분히 이해하지 못했다면 React JS로 영화 웹 서비스 만들기 무료 강의를 먼저 수강하시기를 추천드립니다. 추가로 간단하게 정리본을 보고 싶다면 해당 블로그를 참고하시면 됩니다.
-"
+    "description": "시작에 앞서 만약 Router 대해 충분히 이해하지 못했다면 React JS로 영화 웹 서비스 만들기 무료 강의를 먼저 수강하시기를 추천드립니다. 추가로 간단하게 정리본을 보고 싶다면 해당 블로그를 참고하시면 됩니다. Authentication이란? Auth, OAuth, Authentication 모두 인증 기능과 관련있다. Firebase를 활용하면 코드 몇 줄로 쉽게 인증 기능을 구현할 수 있고, 추가적으로 다른 소셜"
 }
     </script>
 
@@ -232,13 +223,121 @@ into the {body} of the default.hbs template -->
                         <div class="toc-container">
                             <div class="toc">
                                 <div class="toc-title">목차</div>
-                                <ul class="inline_toc" id="my_toc"><li><a href="#시작에-앞서">시작에 앞서</a></li></ul>
+                                <ul class="inline_toc" id="my_toc"><li><a href="#시작에-앞서">시작에 앞서</a></li><li><a href="#authentication이란">Authentication이란?</a></li><li><a href="#일반-login-기능-구현하기">일반 Login 기능 구현하기</a><ul class="sub_toc"><li><a href="#firebase-설정하기">Firebase 설정하기</a></li><li><a href="#구현-코드">구현 코드</a></li></ul></li><li><a href="#social-login-기능-구현하기">Social Login 기능 구현하기</a><ul class="sub_toc"><li><a href="#firebase-설정">Firebase 설정</a></li><li><a href="#구현-코드-1">구현 코드</a></li></ul></li><li><a href="#유저-정보-불러오기">유저 정보 불러오기</a><ul class="sub_toc"><li><a href="#코드-구조">코드 구조</a></li><li><a href="#구현-코드-2">구현 코드</a></li><li><a href="#주의사항">주의사항</a></li></ul></li></ul>
 
                               </div>
                         </div>
                         <h2 id="시작에-앞서">시작에 앞서</h2>
 
 <p>만약 <code class="language-plaintext highlighter-rouge">Router</code> 대해 충분히 이해하지 못했다면 <a href="https://nomadcoders.co/courses">React JS로 영화 웹 서비스 만들기</a> 무료 강의를 먼저 수강하시기를 추천드립니다. 추가로 간단하게 정리본을 보고 싶다면 <a href="https://jskim1215.github.io/study-4-2">해당 블로그</a>를 참고하시면 됩니다.</p>
+
+<h2 id="authentication이란">Authentication이란?</h2>
+
+<p>Auth, OAuth, Authentication 모두 인증 기능과 관련있다. Firebase를 활용하면 코드 몇 줄로 쉽게 인증 기능을 구현할 수 있고, 추가적으로 다른 소셜 플랫폼의 로그인 기능을 이용할 수 있게 된다.</p>
+
+<h2 id="일반-login-기능-구현하기">일반 Login 기능 구현하기</h2>
+
+<h3 id="firebase-설정하기">Firebase 설정하기</h3>
+
+<p>우선 미리 Firebase 페이지에서 App을 생성했다는 가정하에 Authentication 페이지에 들어가서 Auth 페이지에서 로그인 설정을 해줘야한다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/73425926/129816526-a995a2d7-06b2-4fd2-bc13-f282969115ff.png" alt="3-2-1" /></p>
+
+<h3 id="구현-코드">구현 코드</h3>
+
+<p>먼저 input에서 이메일, 비밀번호를 입력받고 회원정보 여부에 따라 <code class="language-plaintext highlighter-rouge">Create Account</code> OR <code class="language-plaintext highlighter-rouge">Sign In</code>를 통해 회원여부를 판단한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">파이어베이스.js</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">authService</span> <span class="o">=</span> <span class="nx">firebase</span><span class="p">.</span><span class="nx">auth</span><span class="p">();</span>
+
+<span class="p">(</span><span class="dl">"</span><span class="s2">로그인.js</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">onChange</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span>
+    <span class="na">target</span><span class="p">:</span> <span class="p">{</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">value</span> <span class="p">},</span>
+  <span class="p">}</span> <span class="o">=</span> <span class="nx">event</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">setEmail</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">password</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">setPassword</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">onSubmit</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">data</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">newAccount</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">authService</span><span class="p">.</span><span class="nx">createUserWithEmailAndPassword</span><span class="p">(</span><span class="nx">email</span><span class="p">,</span> <span class="nx">password</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">authService</span><span class="p">.</span><span class="nx">signInWithEmailAndPassword</span><span class="p">(</span><span class="nx">email</span><span class="p">,</span> <span class="nx">password</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">setError</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="social-login-기능-구현하기">Social Login 기능 구현하기</h2>
+
+<h3 id="firebase-설정">Firebase 설정</h3>
+
+<p>일반 로그인 경우와 마찬가지로 사용하고자하는 소셜 로그인 기능을 미리 활성화 해놓아야한다.</p>
+
+<h3 id="구현-코드-1">구현 코드</h3>
+
+<p>Firebase와 Auth javascript file에 다음과 같은 코드들을 추가해줘야한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">파이어베이스.js</span><span class="dl">"</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">firebaseInstance</span> <span class="o">=</span> <span class="nx">firebase</span><span class="p">;</span>
+
+<span class="dl">"</span><span class="s2">로그인.js</span><span class="dl">"</span>
+<span class="kd">const</span> <span class="p">{</span>
+      <span class="na">target</span><span class="p">:</span> <span class="p">{</span> <span class="nx">name</span> <span class="p">},</span>
+    <span class="p">}</span> <span class="o">=</span> <span class="nx">event</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">provider</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">google</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">provider</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">firebaseInstance</span><span class="p">.</span><span class="nx">auth</span><span class="p">.</span><span class="nx">GoogleAuthProvider</span><span class="p">();</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">github</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">provider</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">firebaseInstance</span><span class="p">.</span><span class="nx">auth</span><span class="p">.</span><span class="nx">GithubAuthProvider</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">await</span> <span class="nx">authService</span><span class="p">.</span><span class="nx">signInWithPopup</span><span class="p">(</span><span class="nx">provider</span><span class="p">);</span>
+  <span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="유저-정보-불러오기">유저 정보 불러오기</h2>
+
+<p>이전까지는 회원인지 아닌지 구분해주는 수문장의 기능을 담당했다. 하지만 실제로 필요한 것은 이 유저가 <code class="language-plaintext highlighter-rouge">A유저</code>인지 <code class="language-plaintext highlighter-rouge">B유저</code>인지와 같이 유저 정보이다.</p>
+
+<h3 id="코드-구조">코드 구조</h3>
+
+<p>앞서 Router를 활용해 사이트 구조를 미리 설계했다. <code class="language-plaintext highlighter-rouge">App.js -&gt; Route.js -&gt; Components</code> 구조로 코드가 Render될 예정이다. 회원 정보는 Component들이 필요할 가능성이 높기 때문에 <code class="language-plaintext highlighter-rouge">상위 코드</code>에서 불러오는 것이 좋을 것이라고 생각된다.</p>
+
+<p>실제로 해당 수업의 경우, <code class="language-plaintext highlighter-rouge">App.js</code>에서 User 정보를 불러와서 아래 Component에 뿌려주는 식으로 코드를 작성했다.</p>
+
+<h3 id="구현-코드-2">구현 코드</h3>
+
+<p>useEffect를 활용해 페이지가 실행될 때마다 매번 user의 data를 불러와서 Object로 저장해서 아래 component들에 전달할 수 있도록 구현했다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">authService</span><span class="p">.</span><span class="nx">onAuthStateChanged</span><span class="p">((</span><span class="nx">user</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">setUserObj</span><span class="p">({</span>
+        <span class="na">displayName</span><span class="p">:</span> <span class="nx">user</span><span class="p">.</span><span class="nx">displayName</span><span class="p">,</span>
+        <span class="na">uid</span><span class="p">:</span> <span class="nx">user</span><span class="p">.</span><span class="nx">uid</span><span class="p">,</span>
+        <span class="na">updateProfile</span><span class="p">:</span> <span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">user</span><span class="p">.</span><span class="nx">updateProfile</span><span class="p">(</span><span class="nx">args</span><span class="p">),</span>
+      <span class="p">});</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">setUserObj</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nx">setInit</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">},</span> <span class="p">[]);</span>
+</code></pre></div></div>
+
+<h3 id="주의사항">주의사항</h3>
+
+<p>firebase에서 <code class="language-plaintext highlighter-rouge">user</code>와 관련해서 전달하는 정보는 <code class="language-plaintext highlighter-rouge">이름, uid, 프로필 사진</code> 정도밖에 되지 않는다. 추가적인 정보를 저장하려면 database를 활용해서 저장하는 방법으로 구현해야한다.</p>
 
                       </article>
                 </div>
@@ -323,6 +422,15 @@ into the {body} of the default.hbs template -->
                                 
                                 
                                   
+                                    
+                                        
+                                        
+                                            <li><a href="/study-0-1">(React with Firebase) - Chrome Extension 프로젝트시 주의해야할 점</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
                                 
                                   
                                     
@@ -349,8 +457,6 @@ into the {body} of the default.hbs template -->
                                   
                                     
                                         
-                                        
-                                            <li><a href="/study-2-2">실전형 React Hooks 10개 (2) - UseEffect</a></li>
                                         
                                     
                                   
@@ -410,7 +516,7 @@ into the {body} of the default.hbs template -->
                         <footer class="read-next-card-footer">
                             <a href="/tag/study/">
                                 
-                                    See all 9 posts  →
+                                    See all 10 posts  →
                                 
                             </a>
                         </footer>

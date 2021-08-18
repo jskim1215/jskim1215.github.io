@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://jskim1215.github.io/tag/project/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://jskim1215.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-08-16T10:35:27+09:00</updated>
+  <updated>2021-08-18T11:17:02+09:00</updated>
   <id>https://jskim1215.github.io/tag/project/feed.xml</id>
 
   
@@ -66,7 +66,7 @@
 
 &lt;h2 id=&quot;폴더-구성&quot;&gt;폴더 구성&lt;/h2&gt;
 
-&lt;p&gt;React의 Router 기능을 활용해서 구현할 예정이다. Router 관련 설명은 &lt;a href=&quot;&quot;&gt;Router 관련 포스팅&lt;/a&gt;에서 확인할 수 있다.&lt;/p&gt;
+&lt;p&gt;React의 Router 기능을 활용해서 구현할 예정이다. Router 관련 설명은 &lt;a href=&quot;https://jskim1215.github.io/study-4-2&quot;&gt;Router 관련 포스팅&lt;/a&gt;에서 확인할 수 있다.&lt;/p&gt;
 
 &lt;h3 id=&quot;routes&quot;&gt;Routes&lt;/h3&gt;
 
@@ -82,16 +82,33 @@
   &lt;li&gt;TodoAssign.js&lt;/li&gt;
   &lt;li&gt;TodoTable.js&lt;/li&gt;
   &lt;li&gt;Timer.js&lt;/li&gt;
-  &lt;li&gt;SelfPR.js&lt;/li&gt;
+  &lt;li&gt;Notice.js&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id=&quot;변화하는-점&quot;&gt;변화하는 점&lt;/h2&gt;
+
+&lt;h3 id=&quot;local-storage---firebase&quot;&gt;Local Storage -&amp;gt; Firebase&lt;/h3&gt;
+
+&lt;p&gt;Auth 기능을 통해 유저 정보를 토대로 각자 database를 만들어서 사용자들의 할 일 데이터들을 다양한 기기에서 확인할 수 있도록 한다. Local Storage의 경우, 하나의 컴퓨터에서 밖에 사용이 안된다는 점을 보완할 수 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;react-component&quot;&gt;React Component&lt;/h3&gt;
+
+&lt;p&gt;하나의 Html, Javascript 파일로 구현했던 프로젝트를 React Component를 활용해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2개의 페이지&lt;/code&gt;로 구성된 프로젝트로 구현할 예정이다.
+&lt;img src=&quot;https://user-images.githubusercontent.com/73425926/129823400-31114b3a-a26b-448a-beb7-6edb1165f117.png&quot; alt=&quot;1-2&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;추가-예정-사항&quot;&gt;추가 예정 사항&lt;/h2&gt;
 
 &lt;h3 id=&quot;개인-시간-관리-히스토리-기능&quot;&gt;개인 시간 관리 히스토리 기능&lt;/h3&gt;
 
+&lt;p&gt;할 일 완료시 데이터들을 수집해서 전체 소요시간 및 카테고리별 소요시간 등 할 일 관련 데이터 분석한 내용을 보여주는 페이지이다.&lt;/p&gt;
+
 &lt;h3 id=&quot;스터디서프-모드&quot;&gt;스터디/서프 모드&lt;/h3&gt;
 
-&lt;h3 id=&quot;마감일-기준-sorting&quot;&gt;마감일 기준 Sorting&lt;/h3&gt;</content>
+&lt;p&gt;매번 타이머를 키지 못할 사용자들을 위해서 스터디모드일 경우, 타이머가 켜지지 않은 경우 사용자가 페이지를 떠날 경우 알람을 받을 수 있는 기능이다.&lt;/p&gt;
+
+&lt;h3 id=&quot;마감일-기준-sorting&quot;&gt;마감일 기준 Sorting&lt;/h3&gt;
+
+&lt;p&gt;마감일이 얼마 남지 않은 순으로 보여주는 기능이다.&lt;/p&gt;</content>
 
       
       
