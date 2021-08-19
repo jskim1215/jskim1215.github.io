@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://jskim1215.github.io/tag/study/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://jskim1215.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-08-18T11:17:02+09:00</updated>
+  <updated>2021-08-19T11:12:55+09:00</updated>
   <id>https://jskim1215.github.io/tag/study/feed.xml</id>
 
   
@@ -30,6 +30,154 @@
   
   
 
+  
+    <entry>
+      <title type="html">Array 관련 함수 정리 (Sort, Reduce)</title>
+      <link href="https://jskim1215.github.io/study-0-2" rel="alternate" type="text/html" title="Array 관련 함수 정리 (Sort, Reduce)" />
+      <published>2021-08-18T10:01:01+09:00</published>
+      <updated>2021-08-18T10:01:01+09:00</updated>
+      <id>https://jskim1215.github.io/study-0-2</id>
+      <content type="html" xml:base="https://jskim1215.github.io/study-0-2">&lt;h2 id=&quot;sort&quot;&gt;Sort&lt;/h2&gt;
+
+&lt;p&gt;Array를 정렬해주는 기능을 한다. &lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/sort&quot;&gt;MDN 문서&lt;/a&gt;에서 자세한 내용을 확인할 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;기본적인 형태는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Array.sort(&quot;function&quot;)&lt;/code&gt;이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;오름차순-내림차순&quot;&gt;오름차순, 내림차순&lt;/h3&gt;
+
+&lt;p&gt;이게 단어가 오름차순, 내림차순이라고 말하면 순간 헷갈리게 된다. 그래서 계속해서 보고 완전히 외워놓는 것이 좋다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;오름차순&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;내림차순&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;원리&quot;&gt;원리&lt;/h3&gt;
+
+&lt;p&gt;우선 그냥 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.sort()&lt;/code&gt;로 실행할 경우, 문자열의 유니코드 코드 포인트에 따라서 정렬된다. 코드로 직접 보면 무슨 말인지 이해할 수 있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;months&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;March&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Jan&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Feb&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Dec&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;months&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;months&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// expected output: Array [&quot;Dec&quot;, &quot;Feb&quot;, &quot;Jan&quot;, &quot;March&quot;]&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;21&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;array1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;array1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// expected output: Array [1, 100000, 21, 30, 4]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;대부분의 경우, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Sort Function&lt;/code&gt;을 통해 원하는 정렬 기능을 구현할 것이다. 간단하게 원리는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Sort Function&lt;/code&gt;이 Array Elemnet에서 2개의 args를 받는다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;f(a,b) &amp;lt; 0 : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a&lt;/code&gt;가 앞으로&lt;/li&gt;
+  &lt;li&gt;f(a,b) &amp;gt; 0 : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;b&lt;/code&gt;가 앞으로&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;f = (a-b)&lt;/code&gt;의 경우, b가 작은 경우 계속 앞으로 가게 되므로 오름차순으로 정렬될 것이다.&lt;/p&gt;
+
+&lt;h3 id=&quot;실전-예시&quot;&gt;실전 예시&lt;/h3&gt;
+
+&lt;p&gt;프로젝트에서 마감일 순으로 할 일들을 분류해야할 때 사용한 코드이다.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;date_ascending&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dateA&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;duedate&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dateB&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;duedate&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dateA&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dateB&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;filteredTodoLists&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;date_ascending&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a의 duedate&lt;/code&gt;가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;b의 duedate&lt;/code&gt;보다 클 경우, 1을 return하기 때문에 작은 duedate Elemnet들이 앞으로 정렬될 것이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;reduce&quot;&gt;Reduce&lt;/h2&gt;
+
+&lt;p&gt;reduce 함수는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;map&lt;/code&gt;처럼 Array를 반복하면서 코드를 진행시킨다. &lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce&quot;&gt;MDN 문서&lt;/a&gt;에서 자세한 내용을 확인할 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;기본적인 형태는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;array.reduce(reducer(=함수), initialValue)&lt;/code&gt;이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;reducer-함수&quot;&gt;reducer 함수&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;reducer 함수&lt;/code&gt;는 4가지 인자를 받는다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;accumulator&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;함수가 실행될 때마다 Return한 값. 즉 매 함수가 연산될 때마다 반환되는 결과 값이다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;currentvalue&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;반복을 실행했을 때, 이번 회차에서 처리할 값.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;currentIndex&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;이번 회차가 몇번째인지에 대한 정보&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;array&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;반복이 진행되는 원래 배열에 대한 정보&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;원리-1&quot;&gt;원리&lt;/h3&gt;
+
+&lt;p&gt;accumulator에 initialValue가 존재한다면 initialValue가 들어가고, 아니면 Array[0]가 들어간다.&lt;/p&gt;
+
+&lt;p&gt;이후에 Array의 다음 요소에서 또 reducer함수를 실행시킬텐데 이 때, Array[1]이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;currentvalue&lt;/code&gt;가 되는 것이다. 이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;currentvalue&lt;/code&gt;에 어떠한 처리를 해서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;accumulator에 추가할지&lt;/code&gt;를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;reducer 함수&lt;/code&gt;에서 구현하면 된다.&lt;/p&gt;
+
+&lt;h3 id=&quot;실전-예시-1&quot;&gt;실전 예시&lt;/h3&gt;
+
+&lt;p&gt;프로젝트에서 완료한 할 일들의 카테고리별 시간 합산 데이터를 구하기 위해 사용한 코드이다.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reducer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;acc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;subject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;acc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;acc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;studyTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;acc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;studyTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;acc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;counted&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;todoLists&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reducer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;할 일 목록은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;객체로 구성된 배열&lt;/code&gt;이라서 map 함수를 활용해서 subject가 있는지 판단하고 있다면 시간을 더하는 연산을 하기 위해서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;빈 배열&lt;/code&gt;을 하나 선언한 다음 그것을 활용해서 구현해야 될 것 같다는 생각이 들었는데, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;reduce&lt;/code&gt;를 활용하면 더 쉽게 구현할 수 있는 것 같았다.&lt;/p&gt;
+
+&lt;p&gt;구현 과정은 단순하게 이미 subject가 있으면 존재하는 subject의 studyTime에다가 더하고 없다면 subject key값에 현재 studyTime을 추가해서 전달하기. 이런 방식을 통해 전체 완료한 할 일 목록을 정리할 수 있었다.&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>CodePurple</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="study" />
+      
+
+      
+        <summary type="html">Sort</summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">(React with Firebase) - Chrome Extension 프로젝트시 주의해야할 점</title>
@@ -958,66 +1106,6 @@
 
       
         <summary type="html">Local Storage</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">바닐라 JS로 크롬 앱 만들기 (2) - Document Object And Event</title>
-      <link href="https://jskim1215.github.io/study-1-2" rel="alternate" type="text/html" title="바닐라 JS로 크롬 앱 만들기 (2) - Document Object And Event" />
-      <published>2021-08-05T10:01:02+09:00</published>
-      <updated>2021-08-05T10:01:02+09:00</updated>
-      <id>https://jskim1215.github.io/study-1-2</id>
-      <content type="html" xml:base="https://jskim1215.github.io/study-1-2">&lt;h2 id=&quot;document-object&quot;&gt;Document Object&lt;/h2&gt;
-
-&lt;p&gt;Document Object는 HTML Element라고 생각하면 편하다. 이 때,&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Javascript&lt;/code&gt;가 HTML 문서의 요소에 접근할 수 있는 방법들이 2가지 존재한다. 따라서 먼저 HTML Element에 대한 이해가 필요하다.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getElementById( )&lt;/code&gt; (Function)&lt;br /&gt;
-이 함수의 경우, 변수에 선택할 HTML Element의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Id&lt;/code&gt;를 입력해야한다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;queryselector( )&lt;/code&gt; (Function) &lt;br /&gt;
-이 함수의 경우, 변수에 선택할 HTML Element를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CSS Selector&lt;/code&gt; 형식으로 입력해야한다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;event&quot;&gt;Event&lt;/h2&gt;
-
-&lt;p&gt;웹 페이지에서 일어나는 상황이다. Click, Submit, Change 등 웹 페이지 상에서 우리가 하는 모든 행동들을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;event&lt;/code&gt;라고 생각하면 편하다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Javascript&lt;/code&gt;에서 이러한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;event&lt;/code&gt;들이 일어나는지 확인할 수 있는 방법이 존재한다.&lt;/p&gt;
-
-&lt;h3 id=&quot;addeventlistener&quot;&gt;addEventListener()&lt;/h3&gt;
-
-&lt;p&gt;이 함수의 경우, 앞에 어떤 HTML Element의 일어나는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;event&lt;/code&gt;를 관찰할 것인가에 대한 내용이 필요하다. 그래서 앞서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Document Object&lt;/code&gt;에서 HTML Element에 접근하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;addEventListener()&lt;/code&gt;을 통해서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;event&lt;/code&gt;를 관찰한다. &lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;addEventListener( )&lt;/code&gt;의 경우, 2가지의 입력 변수를 받는다.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;event&lt;/li&gt;
-  &lt;li&gt;function&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;해당 HTML Element에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;event&lt;/code&gt;가 발생하면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;function&lt;/code&gt;을 실행하는 기능을 구현하고 싶을 때 사용하면 된다.&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>CodePurple</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="study" />
-      
-
-      
-        <summary type="html">Document Object</summary>
       
 
       

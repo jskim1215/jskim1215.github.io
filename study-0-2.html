@@ -11,7 +11,7 @@
 
 
     <title>
-      바닐라 JS로 크롬 앱 만들기 (3) - Local Storage And Clock
+      Array 관련 함수 정리 (Sort, Reduce)
     </title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -79,26 +79,26 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="우당탕 프로덕트 개발 여정" />
     <link rel="shortcut icon" href="https://jskim1215.github.io/assets/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="https://jskim1215.github.io/study-1-3" />
+    <link rel="canonical" href="https://jskim1215.github.io/study-0-2" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="우당탕 프로덕트 개발 여정" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="바닐라 JS로 크롬 앱 만들기 (3) - Local Storage And Clock" />
-    <meta property="og:description" content="Local Storage 웹 브라우저 내부에 데이터를 저장할 수 있는 공간이다. 해당 컴퓨터의 웹 브라우저에 데이터를 저장하기 때문에 다른 기기에서 사용할 때는 접근할 수 없다는 단점이 존재한다. 사용 예시 Local Stroage에 데이터를 관리하는 방법 중에서 저장, 불러오기와 관련된 과정이 처음에 가장 많이 사용한다. 아래 코드는 투두리스트 프로젝트에서 처음 local Storage를 통해" />
-    <meta property="og:url" content="https://jskim1215.github.io/study-1-3" />
-    <meta property="og:image" content="https://jskim1215.github.io/assets/study/study-1-3.png" />
+    <meta property="og:title" content="Array 관련 함수 정리 (Sort, Reduce)" />
+    <meta property="og:description" content="Sort Array를 정렬해주는 기능을 한다. MDN 문서에서 자세한 내용을 확인할 수 있다. 기본적인 형태는 Array.sort("function")이다. 오름차순, 내림차순 이게 단어가 오름차순, 내림차순이라고 말하면 순간 헷갈리게 된다. 그래서 계속해서 보고 완전히 외워놓는 것이 좋다. 1 2 3 4 5 6 7 8 9 // 오름차순 9 8 7 6 5 4 3" />
+    <meta property="og:url" content="https://jskim1215.github.io/study-0-2" />
+    <meta property="og:image" content="https://jskim1215.github.io/assets/study/study-0-2.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
     <meta property="article:author" content="https://www.facebook.com/" />
-    <meta property="article:published_time" content="2021-08-05T10:01:03+09:00" />
-    <meta property="article:modified_time" content="2021-08-05T10:01:03+09:00" />
+    <meta property="article:published_time" content="2021-08-18T10:01:01+09:00" />
+    <meta property="article:modified_time" content="2021-08-18T10:01:01+09:00" />
     <meta property="article:tag" content="Study" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="바닐라 JS로 크롬 앱 만들기 (3) - Local Storage And Clock" />
-    <meta name="twitter:description" content="Local Storage 웹 브라우저 내부에 데이터를 저장할 수 있는 공간이다. 해당 컴퓨터의 웹 브라우저에 데이터를 저장하기 때문에 다른 기기에서 사용할 때는 접근할 수 없다는 단점이 존재한다. 사용 예시 Local Stroage에 데이터를 관리하는 방법 중에서 저장, 불러오기와 관련된 과정이 처음에 가장 많이 사용한다. 아래 코드는 투두리스트 프로젝트에서 처음 local Storage를 통해" />
+    <meta name="twitter:title" content="Array 관련 함수 정리 (Sort, Reduce)" />
+    <meta name="twitter:description" content="Sort Array를 정렬해주는 기능을 한다. MDN 문서에서 자세한 내용을 확인할 수 있다. 기본적인 형태는 Array.sort("function")이다. 오름차순, 내림차순 이게 단어가 오름차순, 내림차순이라고 말하면 순간 헷갈리게 된다. 그래서 계속해서 보고 완전히 외워놓는 것이 좋다. 1 2 3 4 5 6 7 8 9 // 오름차순 9 8 7 6 5 4 3" />
     <meta name="twitter:url" content="https://jskim1215.github.io/" />
-    <meta name="twitter:image" content="https://jskim1215.github.io/assets/study/study-1-3.png" />
+    <meta name="twitter:image" content="https://jskim1215.github.io/assets/study/study-0-2.png" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="우당탕 프로덕트 개발 여정" />
     <meta name="twitter:label2" content="Filed under" />
@@ -117,18 +117,18 @@
         "name": "우당탕 프로덕트 개발 여정",
         "logo": "https://jskim1215.github.io/assets/images/blog-icon-2.png"
     },
-    "url": "https://jskim1215.github.io/study-1-3",
+    "url": "https://jskim1215.github.io/study-0-2",
     "image": {
         "@type": "ImageObject",
-        "url": "https://jskim1215.github.io/assets/study/study-1-3.png",
+        "url": "https://jskim1215.github.io/assets/study/study-0-2.png",
         "width": 2000,
         "height": 666
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://jskim1215.github.io/study-1-3"
+        "@id": "https://jskim1215.github.io/study-0-2"
     },
-    "description": "Local Storage 웹 브라우저 내부에 데이터를 저장할 수 있는 공간이다. 해당 컴퓨터의 웹 브라우저에 데이터를 저장하기 때문에 다른 기기에서 사용할 때는 접근할 수 없다는 단점이 존재한다. 사용 예시 Local Stroage에 데이터를 관리하는 방법 중에서 저장, 불러오기와 관련된 과정이 처음에 가장 많이 사용한다. 아래 코드는 투두리스트 프로젝트에서 처음 local Storage를 통해"
+    "description": "Sort Array를 정렬해주는 기능을 한다. MDN 문서에서 자세한 내용을 확인할 수 있다. 기본적인 형태는 Array.sort("function")이다. 오름차순, 내림차순 이게 단어가 오름차순, 내림차순이라고 말하면 순간 헷갈리게 된다. 그래서 계속해서 보고 완전히 외워놓는 것이 좋다. 1 2 3 4 5 6 7 8 9 // 오름차순 9 8 7 6 5 4 3"
 }
     </script>
 
@@ -141,7 +141,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="바닐라 JS로 크롬 앱 만들기 (3) - Local Storage And Clock" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Array 관련 함수 정리 (Sort, Reduce)" href="/feed.xml" />
 
   </head>
   <body
@@ -199,7 +199,7 @@ into the {body} of the default.hbs template -->
             
             <header class="post-full-header">
                 <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime=" 5 August 2021"> 5 August 2021</time>
+                    <time class="post-full-meta-date" datetime="18 August 2021">18 August 2021</time>
                     
                         <span class="date-divider">/</span>
                         
@@ -209,11 +209,11 @@ into the {body} of the default.hbs template -->
                         
                     
                 </section>
-                <h1 class="post-full-title">바닐라 JS로 크롬 앱 만들기 (3) - Local Storage And Clock</h1>
+                <h1 class="post-full-title">Array 관련 함수 정리 (Sort, Reduce)</h1>
             </header>
 
             
-            <figure class="post-full-image" style="background-image: url(/assets/study/study-1-3.png)">
+            <figure class="post-full-image" style="background-image: url(/assets/study/study-0-2.png)">
             </figure>
             
             <section class="post-full-content">
@@ -223,64 +223,125 @@ into the {body} of the default.hbs template -->
                         <div class="toc-container">
                             <div class="toc">
                                 <div class="toc-title">목차</div>
-                                <ul class="inline_toc" id="my_toc"><li><a href="#local-storage">Local Storage</a><ul class="sub_toc"><li><a href="#사용-예시">사용 예시</a></li></ul></li><li><a href="#filter">Filter</a><ul class="sub_toc"><li><a href="#사용예시">사용예시</a></li></ul></li><li><a href="#시간-관련-함수들">시간 관련 함수들</a><ul class="sub_toc"><li><a href="#date">Date</a></li><li><a href="#setinterval">setInterval</a></li><li><a href="#settimeout">setTimeout</a></li></ul></li></ul>
+                                <ul class="inline_toc" id="my_toc"><li><a href="#sort">Sort</a><ul class="sub_toc"><li><a href="#오름차순-내림차순">오름차순, 내림차순</a></li><li><a href="#원리">원리</a></li><li><a href="#실전-예시">실전 예시</a></li></ul></li><li><a href="#reduce">Reduce</a><ul class="sub_toc"><li><a href="#reducer-함수">reducer 함수</a></li><li><a href="#원리-1">원리</a></li><li><a href="#실전-예시-1">실전 예시</a></li></ul></li></ul>
 
                               </div>
                         </div>
-                        <h2 id="local-storage">Local Storage</h2>
+                        <h2 id="sort">Sort</h2>
 
-<p>웹 브라우저 내부에 데이터를 저장할 수 있는 공간이다. 해당 컴퓨터의 웹 브라우저에 데이터를 저장하기 때문에 다른 기기에서 사용할 때는 접근할 수 없다는 단점이 존재한다. <br /></p>
+<p>Array를 정렬해주는 기능을 한다. <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">MDN 문서</a>에서 자세한 내용을 확인할 수 있다.</p>
 
-<h3 id="사용-예시">사용 예시</h3>
+<ul>
+  <li>기본적인 형태는 <code class="language-plaintext highlighter-rouge">Array.sort("function")</code>이다.</li>
+</ul>
 
-<p><code class="language-plaintext highlighter-rouge">Local Stroage</code>에 데이터를 관리하는 방법 중에서 저장, 불러오기와 관련된 과정이 처음에 가장 많이 사용한다. 아래 코드는 <code class="language-plaintext highlighter-rouge">투두리스트 프로젝트</code>에서 처음 <code class="language-plaintext highlighter-rouge">local Storage</code>를 통해 정보 저장, 불러오기를 구현한 코드이다.</p>
+<h3 id="오름차순-내림차순">오름차순, 내림차순</h3>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">TODOS_KEY</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">todos</span><span class="dl">"</span><span class="p">;</span>
-<span class="c1">// 저장하기</span>
-<span class="kd">function</span> <span class="nx">saveToDos</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="nx">TODOS_KEY</span><span class="p">,</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">toDos</span><span class="p">));</span>
+<p>이게 단어가 오름차순, 내림차순이라고 말하면 순간 헷갈리게 된다. 그래서 계속해서 보고 완전히 외워놓는 것이 좋다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span> <span class="o">//</span> <span class="n">오름차순</span>
+<span class="mi">9</span> <span class="mi">8</span> <span class="mi">7</span> <span class="mi">6</span> <span class="mi">5</span> <span class="mi">4</span> <span class="mi">3</span> <span class="mi">2</span> <span class="mi">1</span> <span class="o">//</span> <span class="n">내림차순</span>
+</code></pre></div></div>
+
+<h3 id="원리">원리</h3>
+
+<p>우선 그냥 <code class="language-plaintext highlighter-rouge">.sort()</code>로 실행할 경우, 문자열의 유니코드 코드 포인트에 따라서 정렬된다. 코드로 직접 보면 무슨 말인지 이해할 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">months</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">March</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Jan</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Feb</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Dec</span><span class="dl">"</span><span class="p">];</span>
+<span class="nx">months</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">months</span><span class="p">);</span>
+<span class="c1">// expected output: Array ["Dec", "Feb", "Jan", "March"]</span>
+
+<span class="kd">const</span> <span class="nx">array1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">100000</span><span class="p">];</span>
+<span class="nx">array1</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">array1</span><span class="p">);</span>
+<span class="c1">// expected output: Array [1, 100000, 21, 30, 4]</span>
+</code></pre></div></div>
+
+<p>대부분의 경우, <code class="language-plaintext highlighter-rouge">Sort Function</code>을 통해 원하는 정렬 기능을 구현할 것이다. 간단하게 원리는 <code class="language-plaintext highlighter-rouge">Sort Function</code>이 Array Elemnet에서 2개의 args를 받는다.</p>
+
+<ul>
+  <li>f(a,b) &lt; 0 : <code class="language-plaintext highlighter-rouge">a</code>가 앞으로</li>
+  <li>f(a,b) &gt; 0 : <code class="language-plaintext highlighter-rouge">b</code>가 앞으로</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">f = (a-b)</code>의 경우, b가 작은 경우 계속 앞으로 가게 되므로 오름차순으로 정렬될 것이다.</p>
+
+<h3 id="실전-예시">실전 예시</h3>
+
+<p>프로젝트에서 마감일 순으로 할 일들을 분류해야할 때 사용한 코드이다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">date_ascending</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">dateA</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="dl">"</span><span class="s2">duedate</span><span class="dl">"</span><span class="p">]).</span><span class="nx">getTime</span><span class="p">();</span>
+  <span class="kd">var</span> <span class="nx">dateB</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">b</span><span class="p">[</span><span class="dl">"</span><span class="s2">duedate</span><span class="dl">"</span><span class="p">]).</span><span class="nx">getTime</span><span class="p">();</span>
+  <span class="k">return</span> <span class="nx">dateA</span> <span class="o">&gt;</span> <span class="nx">dateB</span> <span class="p">?</span> <span class="mi">1</span> <span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">filteredTodoLists</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="nx">date_ascending</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">a의 duedate</code>가 <code class="language-plaintext highlighter-rouge">b의 duedate</code>보다 클 경우, 1을 return하기 때문에 작은 duedate Elemnet들이 앞으로 정렬될 것이다.</p>
+
+<h2 id="reduce">Reduce</h2>
+
+<p>reduce 함수는 <code class="language-plaintext highlighter-rouge">map</code>처럼 Array를 반복하면서 코드를 진행시킨다. <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce">MDN 문서</a>에서 자세한 내용을 확인할 수 있다.</p>
+
+<ul>
+  <li>기본적인 형태는 <code class="language-plaintext highlighter-rouge">array.reduce(reducer(=함수), initialValue)</code>이다.</li>
+</ul>
+
+<h3 id="reducer-함수">reducer 함수</h3>
+
+<p><code class="language-plaintext highlighter-rouge">reducer 함수</code>는 4가지 인자를 받는다.</p>
+
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">accumulator</code></p>
+
+    <p>함수가 실행될 때마다 Return한 값. 즉 매 함수가 연산될 때마다 반환되는 결과 값이다.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">currentvalue</code></p>
+
+    <p>반복을 실행했을 때, 이번 회차에서 처리할 값.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">currentIndex</code></p>
+
+    <p>이번 회차가 몇번째인지에 대한 정보</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">array</code></p>
+
+    <p>반복이 진행되는 원래 배열에 대한 정보</p>
+  </li>
+</ol>
+
+<h3 id="원리-1">원리</h3>
+
+<p>accumulator에 initialValue가 존재한다면 initialValue가 들어가고, 아니면 Array[0]가 들어간다.</p>
+
+<p>이후에 Array의 다음 요소에서 또 reducer함수를 실행시킬텐데 이 때, Array[1]이 <code class="language-plaintext highlighter-rouge">currentvalue</code>가 되는 것이다. 이 <code class="language-plaintext highlighter-rouge">currentvalue</code>에 어떠한 처리를 해서 <code class="language-plaintext highlighter-rouge">accumulator에 추가할지</code>를 <code class="language-plaintext highlighter-rouge">reducer 함수</code>에서 구현하면 된다.</p>
+
+<h3 id="실전-예시-1">실전 예시</h3>
+
+<p>프로젝트에서 완료한 할 일들의 카테고리별 시간 합산 데이터를 구하기 위해 사용한 코드이다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">reducer</span><span class="p">(</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">s</span> <span class="o">=</span> <span class="nx">cur</span><span class="p">.</span><span class="nx">subject</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">s</span> <span class="k">in</span> <span class="nx">acc</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">acc</span><span class="p">[</span><span class="nx">s</span><span class="p">]</span> <span class="o">+=</span> <span class="nx">cur</span><span class="p">.</span><span class="nx">studyTime</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">acc</span><span class="p">[</span><span class="nx">s</span><span class="p">]</span> <span class="o">=</span> <span class="nx">cur</span><span class="p">.</span><span class="nx">studyTime</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">acc</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="c1">// 불러오기</span>
-<span class="kd">const</span> <span class="nx">savedToDos</span> <span class="o">=</span> <span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="nx">TODOS_KEY</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">counted</span> <span class="o">=</span> <span class="nx">todoLists</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">reducer</span><span class="p">,</span> <span class="p">{});</span>
 </code></pre></div></div>
 
-<p>저장의 경우, <code class="language-plaintext highlighter-rouge">setItem</code>을 통해 key와 value값을 저장한다. 불러오기의 경우, <code class="language-plaintext highlighter-rouge">getItem</code>을 통해 정보를 가져온다. 위 예시에서는, <code class="language-plaintext highlighter-rouge">JSON.stringify</code>라는 함수를 통해 저장 데이터를 전부 string처리하여 저장했다.
-<br /></p>
+<p>할 일 목록은 <code class="language-plaintext highlighter-rouge">객체로 구성된 배열</code>이라서 map 함수를 활용해서 subject가 있는지 판단하고 있다면 시간을 더하는 연산을 하기 위해서 <code class="language-plaintext highlighter-rouge">빈 배열</code>을 하나 선언한 다음 그것을 활용해서 구현해야 될 것 같다는 생각이 들었는데, <code class="language-plaintext highlighter-rouge">reduce</code>를 활용하면 더 쉽게 구현할 수 있는 것 같았다.</p>
 
-<p><code class="language-plaintext highlighter-rouge">Local Storage</code>에 대해 더 많은 정보는 <a href="https://developer.mozilla.org/ko/docs/Web/API/Window/localStorage">Local Storage MDN</a>에서 확인 할 수 있다.</p>
-
-<h2 id="filter">Filter</h2>
-
-<p>단어 그대로 원하지 않는 데이터를 정제하는 함수이다. <code class="language-plaintext highlighter-rouge">Array</code>에 사용이 가능하다.</p>
-
-<h3 id="사용예시">사용예시</h3>
-
-<p>수업에서 데이터 저장에 <code class="language-plaintext highlighter-rouge">Array</code>를 사용했는데, Array의 데이터를 삭제하는 과정은 특정 데이터를 삭제한 <code class="language-plaintext highlighter-rouge">새로운 Array</code>를 생성하는 과정이라고 설명했다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
-<span class="nx">toDos</span> <span class="o">=</span> <span class="nx">toDos</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">targetId</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">targetId</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">tr</span><span class="p">.</span><span class="nx">id</span><span class="p">));</span>
-<span class="nx">saveToDos</span><span class="p">();</span>
-<span class="p">...</span>
-</code></pre></div></div>
-
-<p>따라서, 삭제하려고 하는 데이터를 제외하고 <code class="language-plaintext highlighter-rouge">새로운 Array</code>를 만든 다음에 다시 저장하는 과정을 통해 데이터를 삭제했다.</p>
-
-<h2 id="시간-관련-함수들">시간 관련 함수들</h2>
-
-<p><code class="language-plaintext highlighter-rouge">Javascript</code>에서 현재 시간 상황을 알려주거나 시간 상황을 부여하는 함수가 있다.</p>
-
-<h3 id="date">Date</h3>
-
-<p>먼저 현재 시간 상황을 알려주는 함수이다. 자세한 내용은 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date">Date MDN</a>을 통해 확인하면 된다.</p>
-
-<h3 id="setinterval">setInterval</h3>
-
-<p><code class="language-plaintext highlighter-rouge">setInterval (function, time)</code>의 형태로 해당 <code class="language-plaintext highlighter-rouge">function</code>을 시간 간격마다 <code class="language-plaintext highlighter-rouge">반복 실행</code>할 경우 사용한다</p>
-
-<h3 id="settimeout">setTimeout</h3>
-
-<p><code class="language-plaintext highlighter-rouge">setTimeout (function, time)</code>의 형태로 해당 <code class="language-plaintext highlighter-rouge">function</code>을 time <code class="language-plaintext highlighter-rouge">특정 시간 이후</code> 실행할 경우 사용한다.</p>
+<p>구현 과정은 단순하게 이미 subject가 있으면 존재하는 subject의 studyTime에다가 더하고 없다면 subject key값에 현재 studyTime을 추가해서 전달하기. 이런 방식을 통해 전체 완료한 할 일 목록을 정리할 수 있었다.</p>
 
                       </article>
                 </div>
@@ -366,11 +427,6 @@ into the {body} of the default.hbs template -->
                                 
                                   
                                     
-                                        
-                                        
-                                            <li><a href="/study-0-2">Array 관련 함수 정리 (Sort, Reduce)</a></li>
-                                        
-                                    
                                   
                                 
                                   
@@ -397,12 +453,7 @@ into the {body} of the default.hbs template -->
                                     
                                         
                                         
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
+                                            <li><a href="/study-3-1">트위터 클론 코딩 (1) - FireBase란?</a></li>
                                         
                                     
                                   
@@ -422,6 +473,13 @@ into the {body} of the default.hbs template -->
                                   
                                 
                                   
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
                                 
                                   
                                     
@@ -444,6 +502,9 @@ into the {body} of the default.hbs template -->
                                   
                                 
                                   
+                                    
+                                        
+                                        
                                     
                                   
                                 
@@ -476,57 +537,6 @@ into the {body} of the default.hbs template -->
 
             <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
             
-                
-
-    <article class="post-card post-template">
-        
-            <a class="post-card-image-link" href="/project-2-1">
-                <div class="post-card-image" style="background-image: url(/assets/project/project-2-1.png)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/project-2-1">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Project</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">투두리스트 Chrome Extension (1) - 기획하기</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>기획의도
-
-</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                        
-                        <img class="author-profile-image" src="/assets/images/author-logo.png" alt="CodePurple" />
-                        
-                        <span class="post-card-author">
-                            <a href="/author/CodePurple/">CodePurple</a>
-                        </span>
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      1 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-            
 
             <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
             
@@ -534,12 +544,12 @@ into the {body} of the default.hbs template -->
 
     <article class="post-card post-template">
         
-            <a class="post-card-image-link" href="/study-1-2">
-                <div class="post-card-image" style="background-image: url(/assets/study/study-1-2.png)"></div>
+            <a class="post-card-image-link" href="/study-0-1">
+                <div class="post-card-image" style="background-image: url(/assets/study/study-0-1.png)"></div>
             </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="/study-1-2">
+            <a class="post-card-content-link" href="/study-0-1">
                 <header class="post-card-header">
                     
                         
@@ -549,11 +559,11 @@ into the {body} of the default.hbs template -->
                         
                     
 
-                    <h2 class="post-card-title">바닐라 JS로 크롬 앱 만들기 (2) - Document Object And Event</h2>
+                    <h2 class="post-card-title">(React with Firebase) - Chrome Extension 프로젝트시 주의해야할 점</h2>
                 </header>
                 <section class="post-card-excerpt">
                     
-                        <p>Document Object
+                        <p>React-Router-DOM 사용 불가
 
 </p>
                     
@@ -597,18 +607,18 @@ into the {body} of the default.hbs template -->
         </a>
     </div>
     <span class="floating-header-divider">&mdash;</span>
-    <div class="floating-header-title">바닐라 JS로 크롬 앱 만들기 (3) - Local Storage And Clock</div>
+    <div class="floating-header-title">Array 관련 함수 정리 (Sort, Reduce)</div>
     <div class="floating-header-share">
         <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
 </svg>
 </div>
-        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%EB%B0%94%EB%8B%90%EB%9D%BC+JS%EB%A1%9C+%ED%81%AC%EB%A1%AC+%EC%95%B1+%EB%A7%8C%EB%93%A4%EA%B8%B0+%283%29+-+Local+Storage+And+Clock&amp;url=https://jskim1215.github.iostudy-1-3"
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=Array+%EA%B4%80%EB%A0%A8+%ED%95%A8%EC%88%98+%EC%A0%95%EB%A6%AC+%28Sort%2C+Reduce%29&amp;url=https://jskim1215.github.iostudy-0-2"
             onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
 
         </a>
-        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://jskim1215.github.iostudy-1-3"
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://jskim1215.github.iostudy-0-2"
             onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
 
