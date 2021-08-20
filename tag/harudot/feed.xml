@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" >
+  <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
+  <link href="https://jskim1215.github.io/tag/harudot/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://jskim1215.github.io/" rel="alternate" type="text/html" />
+  <updated>2021-08-20T15:53:31+09:00</updated>
+  <id>https://jskim1215.github.io/tag/harudot/feed.xml</id>
+
+  
+  
+  
+
+  
+    <title type="html">우당탕 프로덕트 개발 여정 | </title>
+  
+
+  
+    <subtitle>우당탕 프로덕트 개발 여정</subtitle>
+  
+
+  
+
+  
+    
+      
+    
+  
+
+  
+  
+
+  
+    <entry>
+      <title type="html">베타 서비스 런칭 (08.20)</title>
+      <link href="https://jskim1215.github.io/harudot-1-2" rel="alternate" type="text/html" title="베타 서비스 런칭 (08.20)" />
+      <published>2021-08-19T10:01:05+09:00</published>
+      <updated>2021-08-19T10:01:05+09:00</updated>
+      <id>https://jskim1215.github.io/harudot-1-2</id>
+      <content type="html" xml:base="https://jskim1215.github.io/harudot-1-2">&lt;h2 id=&quot;로그인-페이지&quot;&gt;로그인 페이지&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/73425926/130192252-9f68767a-6f85-4d48-a9a7-ccd151b75ba3.png&quot; alt=&quot;2-1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nomadcoders.co/nwitter&quot;&gt;노마드 코더 Firebase 강의&lt;/a&gt; 강의에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Authentication&lt;/code&gt; 구현 수업에서 배운 코드를 통해 구현했다.&lt;/p&gt;
+
+&lt;h2 id=&quot;메인-페이지&quot;&gt;메인 페이지&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/73425926/130192391-c3191200-7e6d-4c08-b087-55ba769a4110.png&quot; alt=&quot;2-2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;4개의 박스로 각 기능들을 구분지어 구현했다. Todo List 아래 카테고리를 누르면 해당 카테고리만 볼 수 있도록 구현했다.&lt;/p&gt;
+
+&lt;h2 id=&quot;마이-페이지&quot;&gt;마이 페이지&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/73425926/130192563-709cb95f-0d99-48c9-b11f-225677f82e49.png&quot; alt=&quot;2-3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;우선 완료일, 소요시간 데이터만 완료한 일에 대해서 확인할 수 있다. 카테고리 별 총 소요시간과 Top 3 카테고리를 확인할 수 있는 기능만 구현해놓은 상태이다. 사용자들의 피드백에 맞추어 해당 페이지를 수정할 예정이다.&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>CodePurple</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="harudot" />
+      
+
+      
+        <summary type="html">로그인 페이지</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">서비스 런칭 준비 과정 - 입문 개발자 기계공학부 학생에서</title>
+      <link href="https://jskim1215.github.io/harudot-1-1" rel="alternate" type="text/html" title="서비스 런칭 준비 과정 - 입문 개발자 기계공학부 학생에서" />
+      <published>2021-08-19T10:01:04+09:00</published>
+      <updated>2021-08-19T10:01:04+09:00</updated>
+      <id>https://jskim1215.github.io/harudot-1-1</id>
+      <content type="html" xml:base="https://jskim1215.github.io/harudot-1-1">&lt;h2 id=&quot;서비스-기획-의도&quot;&gt;서비스 기획 의도&lt;/h2&gt;
+
+&lt;p&gt;코로나 시대가 되고 온라인으로 수업을 듣고 과제를 제출하는 과정이 잦아졌다. 하지만 생각보다 대학교 학습 지원 사이트에서 과제를 확인하는 것은 여전히 불편했다. 어떤 교수님은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;메일&lt;/code&gt;로 과제를 제출해야하고, 어떤 교수님은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;과제란&lt;/code&gt;을 활용해서 과제를 제출하도록 수업을 진행하신다.&lt;/p&gt;
+
+&lt;p&gt;처음 학습 지원 사이트를 들어가서 과제가 있는지 확인하는 과정은 너무 번거롭다. 우선 목차 형태로 수업 리스트를 확인한 후, 각 수업 페이지로 접속해서 공지사항과 과제란을 확인하면서 과제가 있는지 확인한다. 물론 5~7개 정도 되는 수업의 과제를 기억하고 제출하는데는 크게 어렵지 않지만 마감일이 언제까지인지 기억하고 있기에는 내 인지능력을 계속해서 사용해야한다는 생각이 들었다.&lt;/p&gt;
+
+&lt;p&gt;과거의 경험과 친구들의 사용환경을 고려했을 때, 자체 메모장을 활용해 직접 들어가서 과제를 계속해서 확인하는 과정을 줄이려는 노력을 관찰했다.&lt;/p&gt;
+
+&lt;p&gt;대학생의 경우, 대부분의 학습 환경이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;노트북&lt;/code&gt; 또는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;태블릿 PC&lt;/code&gt;를 통해 이루어진다. 그래서 사용률이 가장 높은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;크롬 브라우저 익스텐션&lt;/code&gt; 형태로 매번 새 탭을 불러올 때마다, Todo List를 불러올 수 있다면 학습 환경에 도움이 되지 않을까? 라는 아이디어에서 시작했다.&lt;/p&gt;
+
+&lt;h2 id=&quot;서비스-준비-과정&quot;&gt;서비스 준비 과정&lt;/h2&gt;
+
+&lt;p&gt;창업을 늘 희망해왔으나 직접 서비스를 만들어서 런칭을 해본 적이 없다. 스스로 개발자가 되지 않을 것이라면서 기획만 열심히 준비해봤지만 그렇게 돌아오는 결과는 늘 회의적이였다. 간단하게 생각하면 내 기획력으로 개발을 도와줄 개발자가 있을까? 역으로 생각해보면 간단한 일이였는데 말이다. 실제로 개발을 준비하는 과정에서 내가 얼마나 기획에 있어서 무지했는지 느끼기도 했다.&lt;/p&gt;
+
+&lt;p&gt;우연한 기회에 &lt;a href=&quot;https://nomadcoders.co/courses&quot;&gt;노마드 코더&lt;/a&gt;의 무료 강의들을 통해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;React&lt;/code&gt;라는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Javascript 라이브러리&lt;/code&gt;를 배울 수 있었고 1주 안에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;React&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;javascript&lt;/code&gt; 그리고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Firebase&lt;/code&gt; 관련 수업을 듣고 서비스 개발을 시작했다.&lt;/p&gt;
+
+&lt;h2 id=&quot;mvp-제작&quot;&gt;MVP 제작&lt;/h2&gt;
+
+&lt;p&gt;일단 제작 목적을 다시 한 번 명확히 했다. 노트북 학습 환경이 주를 이루는 대학생의 경우, 할 일 목록을 쉽게 확인하고 공부 시간을 기록함으로써 자신의 학습 상황을 돌아볼 수 있도록하는 것. 해당 아이디어를 검증하기 위한 최소 기능을 몇가지 나열했다.&lt;/p&gt;
+
+&lt;h3 id=&quot;로그인-페이지&quot;&gt;로그인 페이지&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Firebase&lt;/code&gt;를 활용해서 우선 쉽게 로그인 기능을 제작했다. 추후 백엔드 개발자를 구해서 자체 서버를 통해 사용자들의 행동 데이터 분석에 더욱 효과적으로 할 예정이다.&lt;/p&gt;
+
+&lt;h3 id=&quot;할-일-목록-입력란&quot;&gt;할 일 목록 입력란&lt;/h3&gt;
+
+&lt;p&gt;할 일 데이터를 입력 받을 때, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;카테고리, 형식, 마감일&lt;/code&gt; 데이터를 추가함으로써 해당 Task에 대한 정보를 인지하기 쉽도록 했다.&lt;/p&gt;
+
+&lt;h3 id=&quot;스터디-타이머&quot;&gt;스터디 타이머&lt;/h3&gt;
+
+&lt;p&gt;웹 페이지 특성 상, 여러 탭을 켜놓을 수 있으니 탭 하나를 할애해서 공부 시간을 기록할 수 있도록 했다. 타이머의 부가적인 기능은 추가로 업데이트 예정이다.&lt;/p&gt;
+
+&lt;h3 id=&quot;히스토리-페이지&quot;&gt;히스토리 페이지&lt;/h3&gt;
+
+&lt;p&gt;스터디 타이머의 기능을 최대한 활용하기 위한 페이지이다. 공부 시간을 기록하고 완료할 경우 개인 히스토리 페이지를 통해 과거 기록을 확인하고 분석해볼 수 있다. 부가적인 기능이 더 필요할 것 같은 페이지로 최소 기능 구현에 초점을 맞추고 일단 제작했다.&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>CodePurple</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="harudot" />
+      
+
+      
+        <summary type="html">서비스 기획 의도</summary>
+      
+
+      
+      
+    </entry>
+  
+</feed>
