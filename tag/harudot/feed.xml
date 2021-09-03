@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://jskim1215.github.io/tag/harudot/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://jskim1215.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-08-26T23:29:12+09:00</updated>
+  <updated>2021-09-03T22:21:17+09:00</updated>
   <id>https://jskim1215.github.io/tag/harudot/feed.xml</id>
 
   
@@ -30,6 +30,79 @@
   
   
 
+  
+    <entry>
+      <title type="html">학습시간 기록 프로그램 “하루닷” 사용설명서</title>
+      <link href="https://jskim1215.github.io/harudot-1-4" rel="alternate" type="text/html" title="학습시간 기록 프로그램 &quot;하루닷&quot; 사용설명서" />
+      <published>2021-09-01T10:01:05+09:00</published>
+      <updated>2021-09-01T10:01:05+09:00</updated>
+      <id>https://jskim1215.github.io/harudot-1-4</id>
+      <content type="html" xml:base="https://jskim1215.github.io/harudot-1-4">&lt;h2 id=&quot;사용-안내-카드뉴스&quot;&gt;사용 안내 카드뉴스&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/73425926/132011690-0c36a27f-9411-4968-b686-8d1bda2f25b0.png&quot; alt=&quot;메인 페이지&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/73425926/132011712-654c3068-ef33-4288-8d70-1efeb9909aca.png&quot; alt=&quot;안내-1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/73425926/132011731-e40ec0a4-f15a-40bc-9462-3f863f40141f.png&quot; alt=&quot;안내-2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/73425926/132011803-918bc5e2-6c7d-4b1e-9452-89e5b50413ea.png&quot; alt=&quot;안내-3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/73425926/132011834-1e1d91d2-ec0c-4cfb-bdf7-c8f7d2229a95.png&quot; alt=&quot;안내-4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/73425926/132011857-27fc97dd-d914-437c-90ad-d60a43d3be88.png&quot; alt=&quot;안내-5&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/73425926/132011883-5cfd20d8-b0d0-4272-b759-eed59e035e95.png&quot; alt=&quot;안내-6&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;수정사항&quot;&gt;수정사항&lt;/h2&gt;
+
+&lt;p&gt;베타 테스터분들이 주신 문제점은 아래와 같았습니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1.&lt;/code&gt; 기존의 타이머의 경우, 화면을 이탈할 경우 너무 간단하게 초기화되는 문제&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2.&lt;/code&gt; 추가로 타이머를 실수로 까먹고 키지 않는 경우가 발생하는 문제&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3.&lt;/code&gt; Format란에 무엇을 입력해야하는지&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;이런 문제를 이번 버젼에서 다음과 같이 해결했습니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1.&lt;/code&gt; 타이머가 켜져있을 경우, 화면 이탈시 알람을 통해 나가기 방지&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2.&lt;/code&gt; 타이머 알림 기능을 추가하여, 타이머 알림 ON일 경우에 주변 탭에서 타이머가 켜져있지 않을 경우에 타이머 실행하라는 알림 제공&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3.&lt;/code&gt; Format란 삭제&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;추가로 다음과 같은 기능을 추가 및 수정했습니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1.&lt;/code&gt; 타이머가 켜져있을 경우, Tab의 이름을 변경해 타이머가 켜져있는지 간접적으로 확인 기능 추가&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2.&lt;/code&gt; 마이페이지의 완료한 일 테이블이 완료일 기준으로 정렬되도록 수정&lt;/li&gt;
+&lt;/ol&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>CodePurple</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="harudot" />
+      
+
+      
+        <summary type="html">사용 안내 카드뉴스</summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">베타 서비스 런칭 (08.20)</title>

@@ -1,4 +1,102 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://jskim1215.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jskim1215.github.io/" rel="alternate" type="text/html" /><updated>2021-08-26T23:29:12+09:00</updated><id>https://jskim1215.github.io/feed.xml</id><title type="html">우당탕 프로덕트 개발 여정</title><subtitle>우당탕 프로덕트 개발 여정</subtitle><entry><title type="html">GraphQL 영화 API 만들기 (2) - Query &amp;amp; Mutation</title><link href="https://jskim1215.github.io/study-5-2" rel="alternate" type="text/html" title="GraphQL 영화 API 만들기 (2) - Query &amp;amp; Mutation" /><published>2021-08-25T10:01:02+09:00</published><updated>2021-08-25T10:01:02+09:00</updated><id>https://jskim1215.github.io/study-5-2</id><content type="html" xml:base="https://jskim1215.github.io/study-5-2">&lt;h2 id=&quot;query--mutation&quot;&gt;Query &amp;amp; Mutation&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://jskim1215.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jskim1215.github.io/" rel="alternate" type="text/html" /><updated>2021-09-03T22:21:17+09:00</updated><id>https://jskim1215.github.io/feed.xml</id><title type="html">우당탕 프로덕트 개발 여정</title><subtitle>우당탕 프로덕트 개발 여정</subtitle><entry><title type="html">학습시간 기록 프로그램 “하루닷” 사용설명서</title><link href="https://jskim1215.github.io/harudot-1-4" rel="alternate" type="text/html" title="학습시간 기록 프로그램 “하루닷” 사용설명서" /><published>2021-09-01T10:01:05+09:00</published><updated>2021-09-01T10:01:05+09:00</updated><id>https://jskim1215.github.io/harudot-1-4</id><content type="html" xml:base="https://jskim1215.github.io/harudot-1-4">&lt;h2 id=&quot;사용-안내-카드뉴스&quot;&gt;사용 안내 카드뉴스&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/73425926/132011690-0c36a27f-9411-4968-b686-8d1bda2f25b0.png&quot; alt=&quot;메인 페이지&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/73425926/132011712-654c3068-ef33-4288-8d70-1efeb9909aca.png&quot; alt=&quot;안내-1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/73425926/132011731-e40ec0a4-f15a-40bc-9462-3f863f40141f.png&quot; alt=&quot;안내-2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/73425926/132011803-918bc5e2-6c7d-4b1e-9452-89e5b50413ea.png&quot; alt=&quot;안내-3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/73425926/132011834-1e1d91d2-ec0c-4cfb-bdf7-c8f7d2229a95.png&quot; alt=&quot;안내-4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/73425926/132011857-27fc97dd-d914-437c-90ad-d60a43d3be88.png&quot; alt=&quot;안내-5&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/73425926/132011883-5cfd20d8-b0d0-4272-b759-eed59e035e95.png&quot; alt=&quot;안내-6&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;수정사항&quot;&gt;수정사항&lt;/h2&gt;
+
+&lt;p&gt;베타 테스터분들이 주신 문제점은 아래와 같았습니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1.&lt;/code&gt; 기존의 타이머의 경우, 화면을 이탈할 경우 너무 간단하게 초기화되는 문제&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2.&lt;/code&gt; 추가로 타이머를 실수로 까먹고 키지 않는 경우가 발생하는 문제&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3.&lt;/code&gt; Format란에 무엇을 입력해야하는지&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;이런 문제를 이번 버젼에서 다음과 같이 해결했습니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1.&lt;/code&gt; 타이머가 켜져있을 경우, 화면 이탈시 알람을 통해 나가기 방지&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2.&lt;/code&gt; 타이머 알림 기능을 추가하여, 타이머 알림 ON일 경우에 주변 탭에서 타이머가 켜져있지 않을 경우에 타이머 실행하라는 알림 제공&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3.&lt;/code&gt; Format란 삭제&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;추가로 다음과 같은 기능을 추가 및 수정했습니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1.&lt;/code&gt; 타이머가 켜져있을 경우, Tab의 이름을 변경해 타이머가 켜져있는지 간접적으로 확인 기능 추가&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2.&lt;/code&gt; 마이페이지의 완료한 일 테이블이 완료일 기준으로 정렬되도록 수정&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>CodePurple</name></author><category term="harudot" /><summary type="html">사용 안내 카드뉴스</summary></entry><entry><title type="html">Optional Chaining</title><link href="https://jskim1215.github.io/study-0-3" rel="alternate" type="text/html" title="Optional Chaining" /><published>2021-08-27T00:01:01+09:00</published><updated>2021-08-27T00:01:01+09:00</updated><id>https://jskim1215.github.io/study-0-3</id><content type="html" xml:base="https://jskim1215.github.io/study-0-3">&lt;h2 id=&quot;cannot-read-property-something-of-undefined&quot;&gt;Cannot read property “something” of undefined&lt;/h2&gt;
+
+&lt;p&gt;내가 프로젝트를 진행하면서 가장 많이 겪었던 오류다. 구글링을 통해 해석한 오류의 원인은 UI Component를 불러오기 전에 미리 렌더링 되기 때문에 발생하는 오류라고 알게 되었다. 보통 대부분의 경우 이 오류를 해결하기 위해 아래처럼 코드를 작성한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;loading&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;movie&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Subtitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;movie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;language&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/ {data.movie.rating&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}
+&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/Subtitle&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Description&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;movie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;description_intro&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/Description&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이렇게 작성하면 보통 길어지게 되는데 이를 해결하기 위한 도구가 바로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Optional Chaining&lt;/code&gt;이라고 할 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;optional-chaining&quot;&gt;Optional Chaining&lt;/h2&gt;
+
+&lt;p&gt;자세한 내용은 &lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Optional_chaining&quot;&gt;MDN 사이트&lt;/a&gt; 혹은 &lt;a href=&quot;https://ko.javascript.info/optional-chaining&quot;&gt;Javascript.Info&lt;/a&gt; 를 통해 확인할 수 있다.&lt;/p&gt;</content><author><name>CodePurple</name></author><category term="study" /><summary type="html">Cannot read property “something” of undefined</summary></entry><entry><title type="html">GraphQL 영화 앱 만들기 (1) 기본 세팅</title><link href="https://jskim1215.github.io/study-6-1" rel="alternate" type="text/html" title="GraphQL 영화 앱 만들기 (1) 기본 세팅" /><published>2021-08-26T10:01:02+09:00</published><updated>2021-08-26T10:01:02+09:00</updated><id>https://jskim1215.github.io/study-6-1</id><content type="html" xml:base="https://jskim1215.github.io/study-6-1">&lt;h2 id=&quot;시작하기에-앞서&quot;&gt;시작하기에 앞서&lt;/h2&gt;
+
+&lt;p&gt;알고 있어야하는 내용으로는 &lt;a href=&quot;&quot;&gt;React&lt;/a&gt;, &lt;a href=&quot;&quot;&gt;React Hooks&lt;/a&gt;, &lt;a href=&quot;&quot;&gt;GraphQL&lt;/a&gt;이 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;기본-세팅&quot;&gt;기본 세팅&lt;/h2&gt;
+
+&lt;h3 id=&quot;폴더-생성-및-설정&quot;&gt;폴더 생성 및 설정&lt;/h3&gt;
+
+&lt;p&gt;NodeJS 버젼에 주의할 것!! &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nvm&lt;/code&gt;을 활용해서 NodeJS 버젼을 여러개 사용할 수 있다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1.&lt;/code&gt; npx react-create-app “Folder”&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2.&lt;/code&gt; src 폴더에서 index.js 그리고 App.js 말고 전부 삭제&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;기본-파일-설치&quot;&gt;기본 파일 설치&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1.&lt;/code&gt; npm install –save styled-components&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2.&lt;/code&gt; npm install –save react-router-dom&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3.&lt;/code&gt; npm install @apollo/client graphql&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;폴더-구조-변경&quot;&gt;폴더 구조 변경&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;react-router-dom&lt;/code&gt; Router를 사용하여 폴더 구조화.&lt;/p&gt;
+
+&lt;p&gt;components : App.js&lt;/p&gt;
+
+&lt;p&gt;routes : Home.js / Detail.js&lt;/p&gt;
+
+&lt;h3 id=&quot;reset-css&quot;&gt;Reset CSS&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1.&lt;/code&gt; public 폴더에 reset.css에 &lt;a href=&quot;https://meyerweb.com/eric/tools/css/reset/&quot;&gt;해당 코드&lt;/a&gt; 추가&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2.&lt;/code&gt; public 폴더에 index.html에 코드 추가&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%PUBLIC_URL%/reset.css&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>CodePurple</name></author><category term="study" /><summary type="html">시작하기에 앞서</summary></entry><entry><title type="html">GraphQL 영화 API 만들기 (2) - Query &amp;amp; Mutation</title><link href="https://jskim1215.github.io/study-5-2" rel="alternate" type="text/html" title="GraphQL 영화 API 만들기 (2) - Query &amp;amp; Mutation" /><published>2021-08-25T10:01:02+09:00</published><updated>2021-08-25T10:01:02+09:00</updated><id>https://jskim1215.github.io/study-5-2</id><content type="html" xml:base="https://jskim1215.github.io/study-5-2">&lt;h2 id=&quot;query--mutation&quot;&gt;Query &amp;amp; Mutation&lt;/h2&gt;
 
 &lt;h3 id=&quot;query&quot;&gt;Query&lt;/h3&gt;
 
@@ -185,23 +283,7 @@
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;yarn start&lt;/code&gt; 입력 후, &lt;a href=&quot;http://localhost:4000/&quot;&gt;http://localhost:4000/&lt;/a&gt; 접속하면 GraphQL Playground에 접속할 수 있다.&lt;/p&gt;
 
-&lt;p&gt;여기까지가 초반 GraphQL 세팅하는 과정이다.&lt;/p&gt;</content><author><name>CodePurple</name></author><category term="study" /><summary type="html">GraphQL의 차이</summary></entry><entry><title type="html">베타 서비스 런칭 (08.20)</title><link href="https://jskim1215.github.io/harudot-1-2" rel="alternate" type="text/html" title="베타 서비스 런칭 (08.20)" /><published>2021-08-19T10:01:05+09:00</published><updated>2021-08-19T10:01:05+09:00</updated><id>https://jskim1215.github.io/harudot-1-2</id><content type="html" xml:base="https://jskim1215.github.io/harudot-1-2">&lt;h2 id=&quot;로그인-페이지&quot;&gt;로그인 페이지&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/73425926/130192252-9f68767a-6f85-4d48-a9a7-ccd151b75ba3.png&quot; alt=&quot;2-1&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nomadcoders.co/nwitter&quot;&gt;노마드 코더 Firebase 강의&lt;/a&gt; 강의에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Authentication&lt;/code&gt; 구현 수업에서 배운 코드를 통해 구현했다.&lt;/p&gt;
-
-&lt;h2 id=&quot;메인-페이지&quot;&gt;메인 페이지&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/73425926/130192391-c3191200-7e6d-4c08-b087-55ba769a4110.png&quot; alt=&quot;2-2&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;4개의 박스로 각 기능들을 구분지어 구현했다. Todo List 아래 카테고리를 누르면 해당 카테고리만 볼 수 있도록 구현했다.&lt;/p&gt;
-
-&lt;h2 id=&quot;마이-페이지&quot;&gt;마이 페이지&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/73425926/130192563-709cb95f-0d99-48c9-b11f-225677f82e49.png&quot; alt=&quot;2-3&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;우선 완료일, 소요시간 데이터만 완료한 일에 대해서 확인할 수 있다. 카테고리 별 총 소요시간과 Top 3 카테고리를 확인할 수 있는 기능만 구현해놓은 상태이다. 사용자들의 피드백에 맞추어 해당 페이지를 수정할 예정이다.&lt;/p&gt;</content><author><name>CodePurple</name></author><category term="harudot" /><summary type="html">로그인 페이지</summary></entry><entry><title type="html">개인정보처리방침 (크롬 웹스토어용)</title><link href="https://jskim1215.github.io/harudot-1-3" rel="alternate" type="text/html" title="개인정보처리방침 (크롬 웹스토어용)" /><published>2021-08-19T10:01:05+09:00</published><updated>2021-08-19T10:01:05+09:00</updated><id>https://jskim1215.github.io/harudot-1-3</id><content type="html" xml:base="https://jskim1215.github.io/harudot-1-3">&lt;p&gt;개인정보처리방침&lt;/p&gt;
+&lt;p&gt;여기까지가 초반 GraphQL 세팅하는 과정이다.&lt;/p&gt;</content><author><name>CodePurple</name></author><category term="study" /><summary type="html">GraphQL의 차이</summary></entry><entry><title type="html">개인정보처리방침 (크롬 웹스토어용)</title><link href="https://jskim1215.github.io/harudot-1-3" rel="alternate" type="text/html" title="개인정보처리방침 (크롬 웹스토어용)" /><published>2021-08-19T10:01:05+09:00</published><updated>2021-08-19T10:01:05+09:00</updated><id>https://jskim1215.github.io/harudot-1-3</id><content type="html" xml:base="https://jskim1215.github.io/harudot-1-3">&lt;p&gt;개인정보처리방침&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;&amp;lt; HaruDot &amp;gt;(‘https://jskim1215.github.io/pecker/’이하 ‘하루닷’)&lt;/em&gt;은(는) 「개인정보 보호법」 제30조에 따라 정보주체의 개인정보를 보호하고 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여 다음과 같이 개인정보 처리방침을 수립·공개합니다.&lt;/p&gt;
 
@@ -387,7 +469,23 @@ _&lt;/p&gt;
 
 &lt;p&gt;예시 ) - 20XX. X. X ~ 20XX. X. X 적용 (클릭)&lt;/p&gt;
 
-&lt;p&gt;__&lt;/p&gt;</content><author><name>CodePurple</name></author><category term="harudot" /><summary type="html">개인정보처리방침</summary></entry><entry><title type="html">서비스 런칭 준비 과정 - 입문 개발자 기계공학부 학생에서</title><link href="https://jskim1215.github.io/harudot-1-1" rel="alternate" type="text/html" title="서비스 런칭 준비 과정 - 입문 개발자 기계공학부 학생에서" /><published>2021-08-19T10:01:04+09:00</published><updated>2021-08-19T10:01:04+09:00</updated><id>https://jskim1215.github.io/harudot-1-1</id><content type="html" xml:base="https://jskim1215.github.io/harudot-1-1">&lt;h2 id=&quot;서비스-기획-의도&quot;&gt;서비스 기획 의도&lt;/h2&gt;
+&lt;p&gt;__&lt;/p&gt;</content><author><name>CodePurple</name></author><category term="harudot" /><summary type="html">개인정보처리방침</summary></entry><entry><title type="html">베타 서비스 런칭 (08.20)</title><link href="https://jskim1215.github.io/harudot-1-2" rel="alternate" type="text/html" title="베타 서비스 런칭 (08.20)" /><published>2021-08-19T10:01:05+09:00</published><updated>2021-08-19T10:01:05+09:00</updated><id>https://jskim1215.github.io/harudot-1-2</id><content type="html" xml:base="https://jskim1215.github.io/harudot-1-2">&lt;h2 id=&quot;로그인-페이지&quot;&gt;로그인 페이지&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/73425926/130192252-9f68767a-6f85-4d48-a9a7-ccd151b75ba3.png&quot; alt=&quot;2-1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nomadcoders.co/nwitter&quot;&gt;노마드 코더 Firebase 강의&lt;/a&gt; 강의에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Authentication&lt;/code&gt; 구현 수업에서 배운 코드를 통해 구현했다.&lt;/p&gt;
+
+&lt;h2 id=&quot;메인-페이지&quot;&gt;메인 페이지&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/73425926/130192391-c3191200-7e6d-4c08-b087-55ba769a4110.png&quot; alt=&quot;2-2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;4개의 박스로 각 기능들을 구분지어 구현했다. Todo List 아래 카테고리를 누르면 해당 카테고리만 볼 수 있도록 구현했다.&lt;/p&gt;
+
+&lt;h2 id=&quot;마이-페이지&quot;&gt;마이 페이지&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/73425926/130192563-709cb95f-0d99-48c9-b11f-225677f82e49.png&quot; alt=&quot;2-3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;우선 완료일, 소요시간 데이터만 완료한 일에 대해서 확인할 수 있다. 카테고리 별 총 소요시간과 Top 3 카테고리를 확인할 수 있는 기능만 구현해놓은 상태이다. 사용자들의 피드백에 맞추어 해당 페이지를 수정할 예정이다.&lt;/p&gt;</content><author><name>CodePurple</name></author><category term="harudot" /><summary type="html">로그인 페이지</summary></entry><entry><title type="html">서비스 런칭 준비 과정 - 입문 개발자 기계공학부 학생에서</title><link href="https://jskim1215.github.io/harudot-1-1" rel="alternate" type="text/html" title="서비스 런칭 준비 과정 - 입문 개발자 기계공학부 학생에서" /><published>2021-08-19T10:01:04+09:00</published><updated>2021-08-19T10:01:04+09:00</updated><id>https://jskim1215.github.io/harudot-1-1</id><content type="html" xml:base="https://jskim1215.github.io/harudot-1-1">&lt;h2 id=&quot;서비스-기획-의도&quot;&gt;서비스 기획 의도&lt;/h2&gt;
 
 &lt;p&gt;코로나 시대가 되고 온라인으로 수업을 듣고 과제를 제출하는 과정이 잦아졌다. 하지만 생각보다 대학교 학습 지원 사이트에서 과제를 확인하는 것은 여전히 불편했다. 어떤 교수님은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;메일&lt;/code&gt;로 과제를 제출해야하고, 어떤 교수님은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;과제란&lt;/code&gt;을 활용해서 과제를 제출하도록 수업을 진행하신다.&lt;/p&gt;
 
@@ -574,244 +672,4 @@ _&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Firebase Auth 페이지에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Sign-in method -&amp;gt; 승인된 도메인&lt;/code&gt;에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;chrome-extension:// 자기 아이디 &lt;/code&gt;를 추가한다.&lt;/li&gt;
   &lt;li&gt;프로젝트 폴더에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;public -&amp;gt; manifest.json&lt;/code&gt;에서 CSP에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://apis.google.com&lt;/code&gt;를 추가한다.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>CodePurple</name></author><category term="study" /><summary type="html">React-Router-DOM 사용 불가</summary></entry><entry><title type="html">투두리스트 Chrome Extension (4) - JS to React</title><link href="https://jskim1215.github.io/project-2-4" rel="alternate" type="text/html" title="투두리스트 Chrome Extension (4) - JS to React" /><published>2021-08-12T13:01:06+09:00</published><updated>2021-08-12T13:01:06+09:00</updated><id>https://jskim1215.github.io/project-2-4</id><content type="html" xml:base="https://jskim1215.github.io/project-2-4">&lt;h2 id=&quot;시작에-앞서&quot;&gt;시작에 앞서&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nomadcoders.co/nwitter&quot;&gt;Firebase 수업&lt;/a&gt;까지 듣고나니 React로 프로젝트를 진행해야겠다는 생각을 했다. 따라서 기존의 구현했던 기능들을 전부 React 파일로 옮겨서 진행하기로 결정했다.&lt;/p&gt;
-
-&lt;h2 id=&quot;페이지-설계&quot;&gt;페이지 설계&lt;/h2&gt;
-
-&lt;p&gt;우선 기본적으로 로그인 페이지와 메인 랜딩 페이지 두 개로 구분해서 페이지를 설계했다. 추후에 기능을 추가할 경우 페이지를 추가해서 사용할 예정이다.&lt;/p&gt;
-
-&lt;h3 id=&quot;로그인-페이지&quot;&gt;로그인 페이지&lt;/h3&gt;
-
-&lt;p&gt;로그인 페이지의 경우 기존의 수업에서 사용했던 코드를 대부분 가져와서 사용했다. CSS만 조금 변경했다.&lt;/p&gt;
-
-&lt;h3 id=&quot;메인-페이지&quot;&gt;메인 페이지&lt;/h3&gt;
-
-&lt;p&gt;메인 페이지에 크게 4가지 Component를 담기로 결정했다.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;개인정보 페이지&lt;/code&gt; &lt;br /&gt;
-간단하게 환영인사와 할 일을 입력할 수 있는 박스를 오른쪽 상단에 위치 시키기로 했다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;할 일 목록 페이지&lt;/code&gt;&lt;br /&gt;
-입력한 할 일들의 데이터를 왼쪽 상단에서 확인할 수 있도록 테이블 리스트 형식으로 구현할 예정이다. 추가적으로 할 일 카테고리 기준으로 filtering이 가능한 기능을 구현할 것이다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;타이머 페이지&lt;/code&gt;&lt;br /&gt;
-공부를 얼마나 했는지 추후에 data Tracking이 가능하도록 하기 위해 공부 시간 측정용 스톱워치 기능을 오른쪽 하단에 구현할 예정이다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;개인 PR 페이지&lt;/code&gt;&lt;br /&gt;
-페이지의 구글 광고를 넣어 사용자 경험을 해치기보다는 프로젝트 제작 타임랩스, 블로그, 그리고 팀원 모집 글을 왼쪽 하단에 구현할 예정이다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;폴더-구성&quot;&gt;폴더 구성&lt;/h2&gt;
-
-&lt;p&gt;React의 Router 기능을 활용해서 구현할 예정이다. Router 관련 설명은 &lt;a href=&quot;https://jskim1215.github.io/study-4-2&quot;&gt;Router 관련 포스팅&lt;/a&gt;에서 확인할 수 있다.&lt;/p&gt;
-
-&lt;h3 id=&quot;routes&quot;&gt;Routes&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Home.js&lt;/li&gt;
-  &lt;li&gt;Auth.js&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;components&quot;&gt;Components&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Profile.js&lt;/li&gt;
-  &lt;li&gt;TodoAssign.js&lt;/li&gt;
-  &lt;li&gt;TodoTable.js&lt;/li&gt;
-  &lt;li&gt;Timer.js&lt;/li&gt;
-  &lt;li&gt;Notice.js&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;변화하는-점&quot;&gt;변화하는 점&lt;/h2&gt;
-
-&lt;h3 id=&quot;local-storage---firebase&quot;&gt;Local Storage -&amp;gt; Firebase&lt;/h3&gt;
-
-&lt;p&gt;Auth 기능을 통해 유저 정보를 토대로 각자 database를 만들어서 사용자들의 할 일 데이터들을 다양한 기기에서 확인할 수 있도록 한다. Local Storage의 경우, 하나의 컴퓨터에서 밖에 사용이 안된다는 점을 보완할 수 있다.&lt;/p&gt;
-
-&lt;h3 id=&quot;react-component&quot;&gt;React Component&lt;/h3&gt;
-
-&lt;p&gt;하나의 Html, Javascript 파일로 구현했던 프로젝트를 React Component를 활용해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2개의 페이지&lt;/code&gt;로 구성된 프로젝트로 구현할 예정이다.
-&lt;img src=&quot;https://user-images.githubusercontent.com/73425926/129823400-31114b3a-a26b-448a-beb7-6edb1165f117.png&quot; alt=&quot;1-2&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;추가-예정-사항&quot;&gt;추가 예정 사항&lt;/h2&gt;
-
-&lt;h3 id=&quot;개인-시간-관리-히스토리-기능&quot;&gt;개인 시간 관리 히스토리 기능&lt;/h3&gt;
-
-&lt;p&gt;할 일 완료시 데이터들을 수집해서 전체 소요시간 및 카테고리별 소요시간 등 할 일 관련 데이터 분석한 내용을 보여주는 페이지이다.&lt;/p&gt;
-
-&lt;h3 id=&quot;스터디서프-모드&quot;&gt;스터디/서프 모드&lt;/h3&gt;
-
-&lt;p&gt;매번 타이머를 키지 못할 사용자들을 위해서 스터디모드일 경우, 타이머가 켜지지 않은 경우 사용자가 페이지를 떠날 경우 알람을 받을 수 있는 기능이다.&lt;/p&gt;
-
-&lt;h3 id=&quot;마감일-기준-sorting&quot;&gt;마감일 기준 Sorting&lt;/h3&gt;
-
-&lt;p&gt;마감일이 얼마 남지 않은 순으로 보여주는 기능이다.&lt;/p&gt;</content><author><name>CodePurple</name></author><category term="project" /><summary type="html">시작에 앞서</summary></entry><entry><title type="html">트위터 클론 코딩 (2) - Authentication</title><link href="https://jskim1215.github.io/study-3-2" rel="alternate" type="text/html" title="트위터 클론 코딩 (2) - Authentication" /><published>2021-08-12T13:01:01+09:00</published><updated>2021-08-12T13:01:01+09:00</updated><id>https://jskim1215.github.io/study-3-2</id><content type="html" xml:base="https://jskim1215.github.io/study-3-2">&lt;h2 id=&quot;시작에-앞서&quot;&gt;시작에 앞서&lt;/h2&gt;
-
-&lt;p&gt;만약 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Router&lt;/code&gt; 대해 충분히 이해하지 못했다면 &lt;a href=&quot;https://nomadcoders.co/courses&quot;&gt;React JS로 영화 웹 서비스 만들기&lt;/a&gt; 무료 강의를 먼저 수강하시기를 추천드립니다. 추가로 간단하게 정리본을 보고 싶다면 &lt;a href=&quot;https://jskim1215.github.io/study-4-2&quot;&gt;해당 블로그&lt;/a&gt;를 참고하시면 됩니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;authentication이란&quot;&gt;Authentication이란?&lt;/h2&gt;
-
-&lt;p&gt;Auth, OAuth, Authentication 모두 인증 기능과 관련있다. Firebase를 활용하면 코드 몇 줄로 쉽게 인증 기능을 구현할 수 있고, 추가적으로 다른 소셜 플랫폼의 로그인 기능을 이용할 수 있게 된다.&lt;/p&gt;
-
-&lt;h2 id=&quot;일반-login-기능-구현하기&quot;&gt;일반 Login 기능 구현하기&lt;/h2&gt;
-
-&lt;h3 id=&quot;firebase-설정하기&quot;&gt;Firebase 설정하기&lt;/h3&gt;
-
-&lt;p&gt;우선 미리 Firebase 페이지에서 App을 생성했다는 가정하에 Authentication 페이지에 들어가서 Auth 페이지에서 로그인 설정을 해줘야한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/73425926/129816526-a995a2d7-06b2-4fd2-bc13-f282969115ff.png&quot; alt=&quot;3-2-1&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;구현-코드&quot;&gt;구현 코드&lt;/h3&gt;
-
-&lt;p&gt;먼저 input에서 이메일, 비밀번호를 입력받고 회원정보 여부에 따라 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Create Account&lt;/code&gt; OR &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Sign In&lt;/code&gt;를 통해 회원여부를 판단한다.&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;파이어베이스.js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;authService&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;firebase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;auth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;로그인.js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;onChange&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;setEmail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;setPassword&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;onSubmit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;preventDefault&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;newAccount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;authService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createUserWithEmailAndPassword&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;authService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;signInWithEmailAndPassword&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;setError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;social-login-기능-구현하기&quot;&gt;Social Login 기능 구현하기&lt;/h2&gt;
-
-&lt;h3 id=&quot;firebase-설정&quot;&gt;Firebase 설정&lt;/h3&gt;
-
-&lt;p&gt;일반 로그인 경우와 마찬가지로 사용하고자하는 소셜 로그인 기능을 미리 활성화 해놓아야한다.&lt;/p&gt;
-
-&lt;h3 id=&quot;구현-코드-1&quot;&gt;구현 코드&lt;/h3&gt;
-
-&lt;p&gt;Firebase와 Auth javascript file에 다음과 같은 코드들을 추가해줘야한다.&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;파이어베이스.js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;firebaseInstance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;firebase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;로그인.js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;provider&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;google&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;provider&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;firebaseInstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;auth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;GoogleAuthProvider&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;provider&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;firebaseInstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;auth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;GithubAuthProvider&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;authService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;signInWithPopup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;provider&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;유저-정보-불러오기&quot;&gt;유저 정보 불러오기&lt;/h2&gt;
-
-&lt;p&gt;이전까지는 회원인지 아닌지 구분해주는 수문장의 기능을 담당했다. 하지만 실제로 필요한 것은 이 유저가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A유저&lt;/code&gt;인지 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;B유저&lt;/code&gt;인지와 같이 유저 정보이다.&lt;/p&gt;
-
-&lt;h3 id=&quot;코드-구조&quot;&gt;코드 구조&lt;/h3&gt;
-
-&lt;p&gt;앞서 Router를 활용해 사이트 구조를 미리 설계했다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;App.js -&amp;gt; Route.js -&amp;gt; Components&lt;/code&gt; 구조로 코드가 Render될 예정이다. 회원 정보는 Component들이 필요할 가능성이 높기 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;상위 코드&lt;/code&gt;에서 불러오는 것이 좋을 것이라고 생각된다.&lt;/p&gt;
-
-&lt;p&gt;실제로 해당 수업의 경우, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;App.js&lt;/code&gt;에서 User 정보를 불러와서 아래 Component에 뿌려주는 식으로 코드를 작성했다.&lt;/p&gt;
-
-&lt;h3 id=&quot;구현-코드-2&quot;&gt;구현 코드&lt;/h3&gt;
-
-&lt;p&gt;useEffect를 활용해 페이지가 실행될 때마다 매번 user의 data를 불러와서 Object로 저장해서 아래 component들에 전달할 수 있도록 구현했다.&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;useEffect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;authService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onAuthStateChanged&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;setUserObj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;displayName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;displayName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;uid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;uid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;updateProfile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;updateProfile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;setUserObj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;setInit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;주의사항&quot;&gt;주의사항&lt;/h3&gt;
-
-&lt;p&gt;firebase에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;user&lt;/code&gt;와 관련해서 전달하는 정보는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;이름, uid, 프로필 사진&lt;/code&gt; 정도밖에 되지 않는다. 추가적인 정보를 저장하려면 database를 활용해서 저장하는 방법으로 구현해야한다.&lt;/p&gt;</content><author><name>CodePurple</name></author><category term="study" /><summary type="html">시작에 앞서</summary></entry><entry><title type="html">트위터 클론 코딩 (1) - FireBase란?</title><link href="https://jskim1215.github.io/study-3-1" rel="alternate" type="text/html" title="트위터 클론 코딩 (1) - FireBase란?" /><published>2021-08-12T12:01:01+09:00</published><updated>2021-08-12T12:01:01+09:00</updated><id>https://jskim1215.github.io/study-3-1</id><content type="html" xml:base="https://jskim1215.github.io/study-3-1">&lt;p&gt;나는 창업을 하고 싶었지 프로그래밍을 배우고 싶지는 않았다. 하지만 당신이 가진 리소스가 충분하지 않다면 시간을 좀만 투자해서 당장 서비스를 런칭할 수 있는 방법 중 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FireBase&lt;/code&gt;는 최고의 선택이라고 생각한다.&lt;!--break--&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;firebase란&quot;&gt;FireBase란?&lt;/h2&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FireBase&lt;/code&gt;는 백엔드 프로그램이라고 말할 수 있다. 그렇기 때문에 백엔드에 대한 큰 공부 없이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;로그인 기능&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;데이터베이스&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;저장공간&lt;/code&gt;을 사용할 수 있다. &lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;하지만 이렇게 쉽게 사용할 수 있기 때문에 앞서 내가 서비스를 런칭해서 사용자의 피드백을 듣는 정도로 사용할 수 있는 것이다. 이후에 서비스를 계속해서 유지하는데 있어서 직접 서버를 운영해야하는 것은 틀림없다. 말그대로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;아이디어를 테스트&lt;/code&gt;하는 정도로 사용해야한다는 것이다.&lt;/p&gt;
-
-&lt;h2 id=&quot;firebase-사용하는-방법&quot;&gt;FireBase 사용하는 방법&lt;/h2&gt;
-
-&lt;p&gt;수업을 듣거나 이 블로그를 보는 경우, 다음의 과정을 통해 기본 세팅을 해주면 된다.&lt;/p&gt;
-
-&lt;h3 id=&quot;react-application-세팅하기&quot;&gt;React Application 세팅하기&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npx create-react-app &quot;폴더 명&quot;&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;u&gt;index.js&lt;/u&gt; / &lt;u&gt;App.js&lt;/u&gt;빼고 정리하기&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;firebase-연결하기&quot;&gt;FireBase 연결하기&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://firebase.google.com/&quot;&gt;FireBase 페이지&lt;/a&gt; 접속하기&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm install --save firebase&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;u&gt;fbase.js&lt;/u&gt; 파일 생성하고 아래 코드 입력하기 (index.js 파일 있는 위치)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;firebase&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;firebase/app&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;firebaseConfig&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;apiKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;authDomain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;projectId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;storageBucket&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;messagingSenderId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;appId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;firebase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;initializeApp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;firebaseConfig&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;router-setup&quot;&gt;Router Setup&lt;/h2&gt;
-
-&lt;p&gt;이 과정은 전체적인 서비스의 뼈대를 구축하는 과정이라고 생각하면 된다. 기획을 하는 입장이라면 스토리보드 같은 것이다.
-다른 비유를 하자면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;코딩&lt;/code&gt;이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;구슬 꿰기 과정&lt;/code&gt;라면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Router Setup&lt;/code&gt;은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;구슬과 실을 소분하는 과정&lt;/code&gt;이다. &lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;트위터 클론코딩에 있어 크게 4가지 페이지를 구축할 예정이다.&lt;/p&gt;
-
-&lt;h3 id=&quot;auth&quot;&gt;Auth&lt;/h3&gt;
-
-&lt;p&gt;회원가입과 로그인을 위한 페이지.&lt;/p&gt;
-
-&lt;h3 id=&quot;home&quot;&gt;Home&lt;/h3&gt;
-
-&lt;p&gt;기본 랜딩페이지&lt;/p&gt;
-
-&lt;h3 id=&quot;profile&quot;&gt;Profile&lt;/h3&gt;
-
-&lt;p&gt;개인 페이지.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Router&lt;/code&gt;에 대해 잘 모른다면 &lt;a href=&quot;https://jskim1215.github.io/study-4-2&quot;&gt;React로 웹 앱 만들기&lt;/a&gt;를 먼저 공부하고 진행해야한다.&lt;/p&gt;</content><author><name>CodePurple</name></author><category term="study" /><summary type="html">나는 창업을 하고 싶었지 프로그래밍을 배우고 싶지는 않았다. 하지만 당신이 가진 리소스가 충분하지 않다면 시간을 좀만 투자해서 당장 서비스를 런칭할 수 있는 방법 중 FireBase는 최고의 선택이라고 생각한다.</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>CodePurple</name></author><category term="study" /><summary type="html">React-Router-DOM 사용 불가</summary></entry></feed>
